@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{54BDDF5E-8E46-4DCE-A134-E235F56E4E08}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Antix.EASI.Domain</RootNamespace>
+    <AssemblyName>Antix.EASI.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Validation\DomainValidationConstants.cs" />
+    <Compile Include="Validation\IDomainValidationPredicates.cs" />
+    <Compile Include="Validation\DomainValidationPredicates.cs" />
+    <Compile Include="People\Clincians\ICreateClinicianService.cs" />
+    <Compile Include="People\Clincians\Models\ClinicianModel.cs" />
+    <Compile Include="People\Clincians\Models\CreateClinicianModel.cs" />
+    <Compile Include="People\Clincians\Validation\CreateClinicianValidator.cs" />
+    <Compile Include="People\Clincians\Validation\ICreateClinicianValidator.cs" />
+    <Compile Include="People\Models\Genders.cs" />
+    <Compile Include="People\Models\PatientModel.cs" />
+    <Compile Include="People\Models\PersonModel.cs" />
+    <Compile Include="People\Patients\ICreateClinicianService.cs" />
+    <Compile Include="People\Patients\Models\CreatePatientModel.cs" />
+    <Compile Include="People\Patients\Validation\CreatePatientValidator.cs" />
+    <Compile Include="People\Patients\Validation\ICreatePatientValidator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scores\Models\ScoreData.cs" />
+    <Compile Include="Scores\Models\ScoreRegionData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Antix\Antix.csproj">
+      <Project>{ACB0D648-801C-4457-B5D1-42D9ED62D6C8}</Project>
+      <Name>Antix</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
