@@ -1,9 +1,8 @@
 ﻿using System;
-using Antix.EASI.Data.EF.People.Clinicians.Models;
 using Antix.EASI.Data.EF.People.Models;
 using Antix.EASI.Domain.People.Clincians.Models;
 
-namespace Antix.EASI.Data.EF.People.Clinicians
+namespace Antix.EASI.Data.EF.People.Clinicians.Models
 {
     public static class ClinicianMappings
     {
@@ -15,6 +14,7 @@ namespace Antix.EASI.Data.EF.People.Clinicians
             return new ClinicianData
             {
                 Id = Guid.NewGuid(),
+                Identifier = model.Identifier,
                 Person = new PersonData
                 {
                     Name = model.Name

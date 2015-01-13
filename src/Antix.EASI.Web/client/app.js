@@ -8,6 +8,7 @@ var app = angular.module('antix.easi', [
     'ui.router',
     'ui.utils',
     'antix.easi.home',
+    'antix.easi.clinicians',
     'antix.status'
 ]);
 

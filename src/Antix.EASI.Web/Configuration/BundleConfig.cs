@@ -25,6 +25,7 @@ namespace Antix.EASI.Web.Configuration
         {
             bundle
                 .Include("~/Content/animate.css")
+                .Include("~/Content/font-awesome.css")
                 .IncludeDirectory("~/Content/site/", "*.css", true)
                 .IncludeDirectory("~/Scripts/antix/", "*.css", true);
 

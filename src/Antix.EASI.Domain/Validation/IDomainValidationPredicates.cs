@@ -1,9 +1,10 @@
-﻿using Antix.Services.Validation.Predicates;
+﻿using Antix.Services;
+using Antix.Services.Validation.Predicates;
 
 namespace Antix.EASI.Domain.Validation
 {
     public interface IDomainValidationPredicates :
-        IStandardValidationPredicates
+        IStandardValidationPredicates, IService
     {
         IValidationPredicate<string> StringSmall { get; }
         IValidationPredicate<string> StringMedium { get; }

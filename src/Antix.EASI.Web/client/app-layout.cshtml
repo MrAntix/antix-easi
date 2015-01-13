@@ -17,7 +17,7 @@
 
 </head>
 
-<body ng-app="antix.booker" ng-controller="AppController" antix-season>
+<body ng-app="antix.easi" ng-controller="AppController" antix-season>
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="navbar-inner container">
             <div class="navbar-header">
@@ -35,6 +35,9 @@
             </div>
             <div class="navbar-collapse collapse" role="navigation"
                  data-ng-class="{in:collapse}">
+                <clinicians-select id="clinicianId"></clinicians-select>
+                
+                {{clinicianId}}
             </div>
         </div>
     </div>
@@ -42,12 +45,14 @@
     <div class="page-body view-container">
         <div ui-view autoscroll="false" class="view-frame"></div>
     </div>
-
-    <div class="page-footer">
+    
+    <footer class="footer">
         <div class="container">
-            <p>&copy; antix</p>
+            <div class="navbar">
+                <p class="navbar-text">&copy; antix</p>
+            </div>
         </div>
-    </div>
+    </footer>
 
     <a-status></a-status>
 

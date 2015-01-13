@@ -12,6 +12,7 @@ namespace Antix.EASI.Data.EF.People.Clinicians.Models
         }
 
         public Guid Id { get; set; }
+        public string Identifier { get; set; }
         public PersonData Person { get; set; }
 
         public class Configuration :

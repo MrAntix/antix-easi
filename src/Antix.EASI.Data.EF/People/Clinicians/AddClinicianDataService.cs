@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Antix.EASI.Application.People.Clinicians;
+using Antix.EASI.Data.EF.People.Clinicians.Models;
 using Antix.EASI.Domain.People.Clincians.Models;
 
 namespace Antix.EASI.Data.EF.People.Clinicians
@@ -18,6 +19,8 @@ namespace Antix.EASI.Data.EF.People.Clinicians
 
         public async Task<Guid> ExecuteAsync(CreateClinicianModel model)
         {
+            if (model == null) throw new ArgumentNullException("model");
+
             var data = model.ToData();
 
             _dataContext.Clinicians.Add(data);

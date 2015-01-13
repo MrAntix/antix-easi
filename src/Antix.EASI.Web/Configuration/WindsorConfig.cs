@@ -6,6 +6,7 @@ using System.Web.Http.Dispatcher;
 using System.Web.Http.Filters;
 using Antix.Data.Projections;
 using Antix.EASI.Api;
+using Antix.EASI.Application.People.Clinicians;
 using Antix.EASI.Data.EF;
 using Antix.EASI.Domain.Validation;
 using Antix.Http.Dispatcher;
@@ -14,6 +15,7 @@ using Antix.Http.Filters.Logging;
 using Antix.Http.Services.Filters;
 using Antix.Logging;
 using Antix.Services;
+using Antix.Services.Validation;
 using Castle.Facilities.TypedFactory;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
@@ -24,8 +26,9 @@ namespace Antix.EASI.Web.Configuration
     public static class WindsorConfig
     {
         static readonly Assembly CoreAssembly = typeof (Log).Assembly;
-        static readonly Assembly DomainAssembly = typeof (DomainValidationPredicates).Assembly;
-        static readonly Assembly DataAssembly = typeof (DataContext).Assembly;
+        static readonly Assembly DomainAssembly = typeof(DomainValidationPredicates).Assembly;
+        static readonly Assembly ApplicationAssembly = typeof(CreateClinicianService).Assembly;
+        static readonly Assembly DataAssembly = typeof(DataContext).Assembly;
         static readonly Assembly ApiAssembly = typeof(ApiRoutes).Assembly;
         static readonly Assembly PortalAssembly = typeof(Global).Assembly;
 
@@ -91,7 +94,19 @@ namespace Antix.EASI.Web.Configuration
             IWindsorContainer container)
         {
             container.Register(
+                Component.For(typeof (IValidationRuleBuilder<>))
+                    .ImplementedBy(typeof (ValidationRuleBuilder<>))
+                    .LifestyleTransient()
+                );
+            container.Register(
                 Classes.FromAssembly(DomainAssembly)
+                    .BasedOn<IService>()
+                    .WithServiceAllInterfaces()
+                    .WithServiceSelf()
+                    .LifestyleTransient()
+                );
+            container.Register(
+                Classes.FromAssembly(ApplicationAssembly)
                     .BasedOn<IService>()
                     .WithServiceAllInterfaces()
                     .WithServiceSelf()

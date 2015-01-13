@@ -127,16 +127,29 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="client\app.js" />
+    <Content Include="client\clinicians\clinicians-api.js" />
+    <Content Include="client\clinicians\clinicians.js" />
+    <Content Include="client\clinicians\create\clinicians-create.js" />
+    <Content Include="client\clinicians\select\clinicians-select.js" />
     <Content Include="client\home\home.js" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\animate.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\site\form.css">
+      <DependentUpon>form.less</DependentUpon>
+    </Content>
+    <Content Include="Content\site\form.min.css">
+      <DependentUpon>form.css</DependentUpon>
+    </Content>
     <Content Include="Content\site\layout.css">
       <DependentUpon>layout.less</DependentUpon>
     </Content>
     <Content Include="Content\site\layout.min.css">
       <DependentUpon>layout.css</DependentUpon>
     </Content>
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <Content Include="Scripts\angular-animate.js" />
@@ -994,6 +1007,16 @@
     <Content Include="Content\site\layout.css.map">
       <DependentUpon>layout.css</DependentUpon>
     </Content>
+    <Content Include="client\clinicians\select\clinicians-select.cshtml" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="client\clinicians\create\clinicians-create.cshtml" />
+    <Content Include="Content\site\form.less" />
+    <Content Include="Content\site\form.css.map">
+      <DependentUpon>form.css</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-2.1.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.3.js" />
     <Content Include="Scripts\jquery-2.1.3.min.js" />
@@ -1050,6 +1073,10 @@
     <ProjectReference Include="..\Antix.EASI.Api\Antix.EASI.Api.csproj">
       <Project>{7FBBD30C-0691-4789-AFE4-C42422A411E4}</Project>
       <Name>Antix.EASI.Api</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Antix.EASI.Application\Antix.EASI.Application.csproj">
+      <Project>{D4BD4519-5C4D-47FC-8743-4511E16BF90F}</Project>
+      <Name>Antix.EASI.Application</Name>
     </ProjectReference>
     <ProjectReference Include="..\Antix.EASI.Data.EF\Antix.EASI.Data.EF.csproj">
       <Project>{84CD90A1-81A7-4FC6-A2D2-BFEDC4FBE86E}</Project>

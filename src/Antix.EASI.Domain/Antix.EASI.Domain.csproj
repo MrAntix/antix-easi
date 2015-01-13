@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="People\Clincians\ILookupCliniciansService.cs" />
+    <Compile Include="People\Clincians\Models\ClinicianInfoModel.cs" />
     <Compile Include="Validation\DomainValidationConstants.cs" />
     <Compile Include="Validation\IDomainValidationPredicates.cs" />
     <Compile Include="Validation\DomainValidationPredicates.cs" />

@@ -1,0 +1,28 @@
+﻿<form name="clinicianSelectForm" class="navbar-form navbar-right">
+    <div class="input-group"
+         ng-disabled="!clinicians">
+        <div class="input-group-addon">
+            <span class="fa fa-user-md"></span>
+        </div>
+        <input class="form-control" placeholder="(clinician)"
+               ng-model="name" />
+        <div class="input-group-btn" dropdown>
+            <a href="#" class="btn btn-default dropdown-toggle" dropdown-toggle aria-expanded="false">
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li ng-repeat="clinician in clinicians">
+                    <a href="#"
+                       ng-click="select(clinician.id)">{{clinician.name}}</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="/#/clinicians/create">
+                        <span class="fa fa-asterisk"></span>
+                        Create Clinician
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</form>

@@ -9,7 +9,7 @@ angular.module('antix.status', [
             return {
                 restrict: 'E',
                 replace: true,
-                templateUrl: 'Scripts/antix/status/antix-status.cshtml',
+                templateUrl: '/Scripts/antix/status/antix-status.cshtml',
                 controller: 'AntixStatusController'
             };
         }

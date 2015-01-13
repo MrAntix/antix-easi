@@ -24,6 +24,8 @@ namespace Antix.EASI.Application.People.Clinicians
         protected override async Task<IServiceResponse<Guid>> ThenAsync(
             CreateClinicianModel model)
         {
+            if (model == null) throw new ArgumentNullException("model");
+
             var result = await _dataService.ExecuteAsync(model);
 
             return ServiceResponse.Empty.WithData(result);

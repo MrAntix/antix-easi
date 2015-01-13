@@ -55,12 +55,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiRoutes.cs" />
-    <Compile Include="PatientsController.cs" />
+    <Compile Include="Clinicians\CliniciansCreateController.cs" />
+    <Compile Include="Clinicians\CliniciansLookupController.cs" />
+    <Compile Include="Clinicians\Models\ClinicianInfo.cs" />
+    <Compile Include="Clinicians\Models\CliniciansMapper.cs" />
+    <Compile Include="Clinicians\Models\CreateClinician.cs" />
+    <Compile Include="Patients\PatientsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Antix.EASI.Domain\Antix.EASI.Domain.csproj">
+      <Project>{54BDDF5E-8E46-4DCE-A134-E235F56E4E08}</Project>
+      <Name>Antix.EASI.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Antix\Antix.csproj">
+      <Project>{ACB0D648-801C-4457-B5D1-42D9ED62D6C8}</Project>
+      <Name>Antix</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
