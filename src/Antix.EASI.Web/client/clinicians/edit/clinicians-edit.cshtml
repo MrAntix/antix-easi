@@ -2,7 +2,7 @@
 
     <ol class="breadcrumb row">
         <li><a href="/#/">Home</a></li>
-        <li><a href="/#/clinicians/create">Create Clinician</a></li>
+        <li><a href="/#/clinicians/{{data.id}}/edit">Edit Clinician</a></li>
     </ol>
 
     <form name="form" class="form">
@@ -10,7 +10,7 @@
             <div class="panel-heading">
                 <h3 class="panel-title">
                     <span class="fa fa-user-md"></span>
-                    Create a new Clinician
+                    Edit Clinician
                 </h3>
             </div>
             <div class="panel-body">
@@ -46,10 +46,14 @@
                             Cancel
                         </a>
                         <button class="btn btn-primary"
-                                ng-click="create()">
-                            Create
+                                ng-click="update()">
+                            Update
                         </button>
                     </span>
+                    <button class="btn btn-danger"
+                            ng-click="delete()">
+                        Delete
+                    </button>
                 </div>
             </div>
         </div>

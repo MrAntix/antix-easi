@@ -14,12 +14,12 @@ angular.module('antix.easi.clinicians.create', [
 
                 $log.debug('AntixEASICliniciansCreateController init');
 
-                $scope.clinician = {};
+                $scope.data = {};
 
                 $scope.create = function () {
 
                     CliniciansApi
-                        .create($scope.clinician).$promise
+                        .create($scope.data).$promise
                         .then(function (data) {
 
                             $scope.$root.$broadcast(ClinicianEvents.Created, data);

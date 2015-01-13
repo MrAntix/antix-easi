@@ -5,24 +5,17 @@
             <span class="fa fa-user-md"></span>
         </div>
         <input class="form-control" placeholder="(clinician)"
-               ng-model="name" />
-        <div class="input-group-btn" dropdown>
-            <a href="#" class="btn btn-default dropdown-toggle" dropdown-toggle aria-expanded="false">
-                <span class="caret"></span>
+               ng-model="clinician"
+               ng-model-options="{debounce:500}"
+               typeahead="i as i.name for i in clinicians | filter:$viewValue | limitTo:8" />
+        <div class="input-group-btn">
+            <a href="#/clinicians/{{clinician.id}}/edit" class="btn btn-default"
+               ng-disabled="!clinician">
+                <span class="fa fa-pencil"></span>
             </a>
-            <ul class="dropdown-menu" role="menu">
-                <li ng-repeat="clinician in clinicians">
-                    <a href="#"
-                       ng-click="select(clinician.id)">{{clinician.name}}</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="/#/clinicians/create">
-                        <span class="fa fa-asterisk"></span>
-                        Create Clinician
-                    </a>
-                </li>
-            </ul>
+            <a href="#/clinicians/create" class="btn btn-default">
+                <span class="fa fa-plus"></span>
+            </a>
         </div>
     </div>
 </form>

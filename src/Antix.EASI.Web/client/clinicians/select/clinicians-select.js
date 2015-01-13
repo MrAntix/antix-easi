@@ -19,7 +19,7 @@ angular.module('antix.easi.clinicians.select', [
                     replace: true,
                     templateUrl: 'clinicians/select/clinicians-select.cshtml',
                     scope: {
-                        'id': '='
+                        'clinician': '='
                     },
                     link: function($scope, element, attrs) {
                         $log.debug('cliniciansSelect link');
@@ -30,17 +30,6 @@ angular.module('antix.easi.clinicians.select', [
 
                                 $scope.clinicians = data;
                             });
-
-                        var firstById = function(id) {
-                            for(var i=0; i<$scope.clinicians.length;i++)
-                                if ($scope.clinicians[i].id === id) return $scope.clinicians[i];
-                            return null;
-                        };
-
-                        $scope.select = function(id) {
-                            $scope.id = id;
-                            $scope.name = firstById(id).name;
-                        };
                     }
                 }
             }

@@ -29,15 +29,15 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a class="navbar-brand site-title notranslate" href="/#/">
+                <a class="navbar-brand site-title notranslate" href="#/">
                     @AppResources.Title
                 </a>
             </div>
             <div class="navbar-collapse collapse" role="navigation"
                  data-ng-class="{in:collapse}">
-                <clinicians-select id="clinicianId"></clinicians-select>
+                <clinicians-select clinician="it"></clinicians-select>
                 
-                {{clinicianId}}
+                {{it | json}}
             </div>
         </div>
     </div>
