@@ -6,8 +6,8 @@ using Antix.EASI.Domain.People.Clincians.Models;
 
 namespace Antix.EASI.Data.EF.People.Clinicians.Projections
 {
-    public class ClinicianInfoProjection:
-        ProjectionBase<ClinicianData,ClinicianInfoModel>
+    public class ClinicianInfoProjection :
+        ProjectionBase<ClinicianData, ClinicianInfoModel>
     {
         public override Expression<Func<ClinicianData, ClinicianInfoModel>> GetExpression()
         {

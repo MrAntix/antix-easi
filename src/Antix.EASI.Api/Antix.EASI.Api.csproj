@@ -55,12 +55,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiRoutes.cs" />
-    <Compile Include="Clinicians\CliniciansCreateController.cs" />
-    <Compile Include="Clinicians\CliniciansLookupController.cs" />
-    <Compile Include="Clinicians\Models\ClinicianInfo.cs" />
-    <Compile Include="Clinicians\Models\CliniciansMapper.cs" />
-    <Compile Include="Clinicians\Models\CreateClinician.cs" />
-    <Compile Include="Patients\PatientsController.cs" />
+    <Compile Include="People\Clinicians\CliniciansCreateController.cs" />
+    <Compile Include="People\Clinicians\CliniciansLookupController.cs" />
+    <Compile Include="People\Clinicians\CliniciansReadController.cs" />
+    <Compile Include="People\Clinicians\CliniciansWriteController.cs" />
+    <Compile Include="People\Clinicians\Models\Clinician.cs" />
+    <Compile Include="People\Clinicians\Models\ClinicianInfo.cs" />
+    <Compile Include="People\Clinicians\Models\CliniciansMapper.cs" />
+    <Compile Include="People\Clinicians\Models\CreateClinician.cs" />
+    <Compile Include="People\Models\PeopleMappings.cs" />
+    <Compile Include="People\Models\Person.cs" />
+    <Compile Include="People\Clinicians\Models\UpdateClinician.cs" />
+    <Compile Include="People\Patients\PatientsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

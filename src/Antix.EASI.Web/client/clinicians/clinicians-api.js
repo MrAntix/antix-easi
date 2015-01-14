@@ -19,6 +19,15 @@ angular.module('antix.easi.clinicians.api', [
                     create: {
                         method: 'POST',
                         url: '/api/clinicians'
+                    },
+                    read: {
+                        method: 'GET',
+                        url: '/api/clinicians/:id/read'
+                    },
+                    update: {
+                        method: 'PUT',
+                        url: '/api/clinicians/:id/update',
+                        params: { id: '@id' }
                     }
                 });
             }

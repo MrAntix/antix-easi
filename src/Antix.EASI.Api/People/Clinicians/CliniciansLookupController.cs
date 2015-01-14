@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Http;
-using Antix.EASI.Api.Clinicians.Models;
+using Antix.EASI.Api.People.Clinicians.Models;
 using Antix.EASI.Domain.People.Clincians;
-using Antix.EASI.Domain.People.Clincians.Models;
 using Antix.Services.Models;
 
-namespace Antix.EASI.Api.Clinicians
+namespace Antix.EASI.Api.People.Clinicians
 {
     [RoutePrefix(ApiRoutes.ROOT)]
     public class CliniciansLookupController :

@@ -40,7 +40,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="People\Clincians\ILookupCliniciansService.cs" />
+    <Compile Include="People\Clincians\IReadClinicianService.cs" />
+    <Compile Include="People\Clincians\IUpdateClinicianService.cs" />
     <Compile Include="People\Clincians\Models\ClinicianInfoModel.cs" />
+    <Compile Include="People\Clincians\Models\UpdateClinicianModel.cs" />
+    <Compile Include="People\Clincians\Validation\IUpdateClinicianValidator.cs" />
+    <Compile Include="People\Clincians\Validation\UpdateClinicianValidator.cs" />
+    <Compile Include="People\Validation\IUpdatePersonValidator.cs" />
+    <Compile Include="People\Models\UpdatePersonModel.cs" />
     <Compile Include="Validation\DomainValidationConstants.cs" />
     <Compile Include="Validation\IDomainValidationPredicates.cs" />
     <Compile Include="Validation\DomainValidationPredicates.cs" />

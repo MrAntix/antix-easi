@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Antix.EASI.Api.People.Models;
 using Antix.EASI.Domain.People.Clincians.Models;
 
-namespace Antix.EASI.Api.Clinicians.Models
+namespace Antix.EASI.Api.People.Clinicians.Models
 {
     public static class CliniciansMapper
     {
@@ -26,6 +27,19 @@ namespace Antix.EASI.Api.Clinicians.Models
             return models.Select(m => m.ToContract()).ToArray();
         }
 
+        public static Clinician ToContract(
+            this ClinicianModel model)
+        {
+            if (model == null) return null;
+
+            return new Clinician
+            {
+                Id = model.Id,
+                Identifier = model.Identifier,
+                Person = model.Person.ToContract()
+            };
+        }
+
         public static CreateClinicianModel ToModel(
             this CreateClinician contract)
         {
@@ -35,6 +49,18 @@ namespace Antix.EASI.Api.Clinicians.Models
             {
                 Identifier = contract.Identifier,
                 Name = contract.Name
+            };
+        }
+
+        public static UpdateClinicianModel ToModel(
+            this UpdateClinician contract)
+        {
+            if (contract == null) return null;
+
+            return new UpdateClinicianModel
+            {
+                Identifier = contract.Identifier,
+                Person = contract.Person.ToModel()
             };
         }
     }

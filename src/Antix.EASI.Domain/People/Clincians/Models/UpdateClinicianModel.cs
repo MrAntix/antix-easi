@@ -3,15 +3,15 @@ using Antix.EASI.Domain.People.Models;
 
 namespace Antix.EASI.Domain.People.Clincians.Models
 {
-    public class ClinicianModel
+    public class UpdateClinicianModel
     {
-        public ClinicianModel()
+        public UpdateClinicianModel()
         {
-            Person = new PersonModel();
+            Person = new UpdatePersonModel();
         }
 
         public Guid Id { get; set; }
         public string Identifier { get; set; }
-        public PersonModel Person { get; set; }
+        public UpdatePersonModel Person { get; set; }
     }
 }

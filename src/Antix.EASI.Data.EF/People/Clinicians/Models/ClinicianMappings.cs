@@ -21,5 +21,12 @@ namespace Antix.EASI.Data.EF.People.Clinicians.Models
                 }
             };
         }
+
+        public static void Map(
+            this ClinicianData data, UpdateClinicianModel model)
+        {
+            data.Identifier = model.Identifier;
+            data.Person.Map(model.Person);
+        }
     }
 }

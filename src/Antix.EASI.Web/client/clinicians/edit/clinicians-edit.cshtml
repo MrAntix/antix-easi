@@ -4,7 +4,7 @@
         <li><a href="/#/">Home</a></li>
         <li><a href="/#/clinicians/{{data.id}}/edit">Edit Clinician</a></li>
     </ol>
-
+    
     <form name="form" class="form">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -18,7 +18,7 @@
                     <label class="control-label">Name</label>
                     <input class="form-control"
                            name="name"
-                           ng-model="data.name" />
+                           ng-model="data.person.name" />
                     
                     <div class="errors"
                          ng-messages="form.name.$error"

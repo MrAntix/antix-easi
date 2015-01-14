@@ -1,6 +1,6 @@
 using System;
 
-namespace Antix.EASI.Api.Clinicians.Models
+namespace Antix.EASI.Api.People.Clinicians.Models
 {
     public class ClinicianInfo
     {

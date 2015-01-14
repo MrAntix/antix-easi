@@ -60,12 +60,17 @@
     <Compile Include="People\Clinicians\AddClinicianDataService.cs" />
     <Compile Include="People\Clinicians\LookupCliniciansService.cs" />
     <Compile Include="People\Clinicians\Projections\ClinicianInfoProjection.cs" />
+    <Compile Include="People\Clinicians\Projections\ClinicianProjection.cs" />
+    <Compile Include="People\Clinicians\ReadClinicianDataService.cs" />
+    <Compile Include="People\Clinicians\UpdateClinicianDataService.cs" />
+    <Compile Include="People\Models\PersonMappings.cs" />
     <Compile Include="People\Patients\AddPatientDataService.cs" />
     <Compile Include="People\Clinicians\Models\ClinicianMappings.cs" />
     <Compile Include="People\Clinicians\Models\ClinicianData.cs" />
     <Compile Include="People\Models\PersonData.cs" />
     <Compile Include="People\Patients\PatientMappings.cs" />
     <Compile Include="People\Patients\Models\PatientData.cs" />
+    <Compile Include="People\Projections\PersonProjection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scores\Models\ScoreData.cs" />
     <Compile Include="Scores\Models\ScoreRegionData.cs" />
