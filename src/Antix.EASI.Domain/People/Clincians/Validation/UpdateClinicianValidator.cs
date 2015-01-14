@@ -27,7 +27,8 @@ namespace Antix.EASI.Domain.People.Clincians.Validation
                 .Assert(Is.NotNull)
                 .Assert(Is.StringMedium);
 
-            //IUpdatePersonValidator
+            rules.For(m => m.Person)
+                .Validate(_personValidator);
         }
     }
 }

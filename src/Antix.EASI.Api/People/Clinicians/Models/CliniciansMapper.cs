@@ -59,6 +59,7 @@ namespace Antix.EASI.Api.People.Clinicians.Models
 
             return new UpdateClinicianModel
             {
+                Id = contract.Id,
                 Identifier = contract.Identifier,
                 Person = contract.Person.ToModel()
             };

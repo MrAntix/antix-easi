@@ -19,7 +19,7 @@ namespace Antix.EASI.Api.People.Clinicians
         }
 
         [Route(ApiRoutes.Clinicians.UPDATE)]
-        public async Task<IServiceResponse> Get(
+        public async Task<IServiceResponse> Put(
             UpdateClinician contract)
         {
             var response = await _service.ExecuteAsync(

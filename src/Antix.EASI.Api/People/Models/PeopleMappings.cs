@@ -15,12 +15,12 @@ namespace Antix.EASI.Api.People.Models
             };
         }
 
-        public static PersonModel ToModel(
+        public static UpdatePersonModel ToModel(
             this Person contract)
         {
             if (contract == null) return null;
 
-            return new PersonModel
+            return new UpdatePersonModel
             {
                 Name = contract.Name
             };
