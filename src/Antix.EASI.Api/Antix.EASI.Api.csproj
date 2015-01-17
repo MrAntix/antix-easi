@@ -60,6 +60,7 @@
     <Compile Include="People\Clinicians\Models\ClinicianInfo.cs" />
     <Compile Include="People\Clinicians\Models\CliniciansMapper.cs" />
     <Compile Include="People\Clinicians\Models\CreateClinician.cs" />
+    <Compile Include="People\Clinicians\Models\LookupClinicians.cs" />
     <Compile Include="People\Models\PeopleMappings.cs" />
     <Compile Include="People\Models\Person.cs" />
     <Compile Include="People\Clinicians\Models\UpdateClinician.cs" />

@@ -35,7 +35,7 @@ namespace Antix.EASI.Api.People.Clinicians
 
         [Route(ApiRoutes.Clinicians.LOOKUP)]
         public async Task<IServiceResponse<IEnumerable<ClinicianInfo>>> Get(
-            string filter, int limitTo)
+            LookupClinicians contract)
         {
             var response = await _lookupService.ExecuteAsync();
 

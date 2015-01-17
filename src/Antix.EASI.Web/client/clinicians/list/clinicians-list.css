@@ -1,0 +1,25 @@
+﻿.clinicians-list-item {
+  float: left;
+  width: 100%;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding: 5px;
+}
+@media (min-width: 768px) {
+  .clinicians-list-item {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .clinicians-list-item {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+.clinicians-list-item .panel {
+  margin: 0;
+}
+/*# sourceMappingURL=clinicians-list.css.map */

@@ -14,7 +14,8 @@ namespace Antix.EASI.Data.EF.People.Clinicians.Projections
             return d => new ClinicianInfoModel
             {
                 Id = d.Id,
-                Name = d.Person.Name
+                Name = d.Person.Name,
+                Identifier = d.Identifier
             };
         }
     }

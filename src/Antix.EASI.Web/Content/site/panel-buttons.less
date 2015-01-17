@@ -1,0 +1,34 @@
+﻿@import (reference) "../bootstrap.variables.less";
+
+.panel-heading {
+    overflow: auto;
+}
+
+.panel-heading,
+.table td {
+    position: relative;
+}
+
+.panel-heading > .btn-group,
+.table td > .btn-group {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+
+    .btn {
+        height: 100%;
+        line-height: 100%;
+        width: 40px;
+        border: none;
+        border-left: solid 1px rgba(0,0,0,.1);
+        border-radius: 0;
+        background-color: transparent;
+        color: inherit;
+
+        & > span {
+            height: 100%;
+            line-height: 150%;
+        }
+    }
+}

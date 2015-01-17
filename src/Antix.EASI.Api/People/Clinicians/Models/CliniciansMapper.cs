@@ -15,7 +15,8 @@ namespace Antix.EASI.Api.People.Clinicians.Models
             return new ClinicianInfo
             {
                 Id = model.Id,
-                Name = model.Name
+                Name = model.Name,
+                Identifier = model.Identifier
             };
         }
 

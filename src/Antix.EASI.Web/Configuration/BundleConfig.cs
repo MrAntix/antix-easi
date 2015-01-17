@@ -9,6 +9,7 @@ namespace Antix.EASI.Web.Configuration
             bundles
                 .Add(new StyleBundle("~/bundles/style")
                     .IncludeCommonStyle()
+                    .IncludeDirectory("~/Client/", "*.css", true)
                 );
 
             bundles.Add(

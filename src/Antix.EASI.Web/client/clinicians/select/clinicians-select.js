@@ -21,21 +21,21 @@ angular.module('antix.easi.clinicians.select', [
                     scope: {
                         'clinician': '='
                     },
-                    link: function ($scope, element, attrs) {
+                    link: function($scope, element, attrs) {
                         $log.debug('cliniciansSelect link');
 
-                        $scope.get = function (filter) {
+                        $scope.get = function(filter) {
                             return CliniciansApi.lookup({
-                                filter: filter,
-                                limitTo: 8
-                            }).$promise
-                                .then(function (data) {
+                                    filter: filter,
+                                    limitTo: 8
+                                }).$promise
+                                .then(function(data) {
                                     $log.debug('cliniciansSelect lookup ' + JSON.stringify(data));
 
                                     return data;
                                 });
                         }
                     }
-                }
+                };
             }
         ]);
