@@ -6305,4 +6305,7 @@ body {
   background-color: #eee;
   min-height: 300px;
 }
+.page-content > form > .panel {
+  margin: -20px -15px 0;
+}
 /*# sourceMappingURL=layout.css.map */
