@@ -132,9 +132,9 @@
     <Content Include="client\clinicians\create\clinicians-create.js" />
     <Content Include="client\clinicians\edit\clinicians-edit.js" />
     <Content Include="client\clinicians\index\clinicians-index.js" />
-    <None Include="client\clinicians\list\clinicians-list-item.cshtml" />
+    <Content Include="client\clinicians\list\clinicians-list-item.cshtml" />
     <Content Include="client\clinicians\list\clinicians-list-directive.js" />
-    <None Include="client\clinicians\list\clinicians-list.cshtml" />
+    <Content Include="client\clinicians\list\clinicians-list.cshtml" />
     <Content Include="client\clinicians\list\clinicians-list.css">
       <DependentUpon>clinicians-list.less</DependentUpon>
     </Content>
