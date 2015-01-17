@@ -57,7 +57,8 @@
       <DependentUpon>201501131659306_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="People\Clinicians\AddClinicianDataService.cs" />
+    <Compile Include="People\Clinicians\CreateClinicianDataService.cs" />
+    <Compile Include="People\Clinicians\DeleteClinicianDataService.cs" />
     <Compile Include="People\Clinicians\LookupCliniciansService.cs" />
     <Compile Include="People\Clinicians\Projections\ClinicianInfoProjection.cs" />
     <Compile Include="People\Clinicians\Projections\ClinicianProjection.cs" />

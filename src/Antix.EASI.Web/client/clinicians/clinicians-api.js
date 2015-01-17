@@ -13,21 +13,25 @@ angular.module('antix.easi.clinicians.api', [
                 return $resource('/api/clinicians/', {}, {
                     lookup: {
                         method: 'GET',
-                        url: '/api/clinicians/lookup',
+                        url: '/api/clinicians/',
                         isArray: true
                     },
                     create: {
                         method: 'POST',
-                        url: '/api/clinicians'
+                        url: '/api/clinicians/'
                     },
                     read: {
                         method: 'GET',
-                        url: '/api/clinicians/:id/read'
+                        url: '/api/clinicians/:id'
                     },
                     update: {
                         method: 'PUT',
-                        url: '/api/clinicians/:id/update',
+                        url: '/api/clinicians/:id',
                         params: { id: '@id' }
+                    },
+                    'delete': {
+                        method: 'DELETE',
+                        url: '/api/clinicians/:id'
                     }
                 });
             }

@@ -55,10 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiRoutes.cs" />
-    <Compile Include="People\Clinicians\CliniciansCreateController.cs" />
-    <Compile Include="People\Clinicians\CliniciansLookupController.cs" />
-    <Compile Include="People\Clinicians\CliniciansReadController.cs" />
-    <Compile Include="People\Clinicians\CliniciansWriteController.cs" />
+    <Compile Include="People\Clinicians\CliniciansController.cs" />
     <Compile Include="People\Clinicians\Models\Clinician.cs" />
     <Compile Include="People\Clinicians\Models\ClinicianInfo.cs" />
     <Compile Include="People\Clinicians\Models\CliniciansMapper.cs" />

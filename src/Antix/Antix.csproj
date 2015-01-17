@@ -72,6 +72,10 @@
     <Compile Include="Http\Filters\Logging\LogActionFilter.cs" />
     <Compile Include="Http\Filters\ServiceFilterProvider.cs" />
     <Compile Include="Http\HttpRequestMessageExtensions.cs" />
+    <Compile Include="Http\HttpResponse.cs" />
+    <Compile Include="Http\HttpResponseExtenstions.cs" />
+    <Compile Include="Http\ICreatedResponse.cs" />
+    <Compile Include="Http\ICreatedServiceResponse.cs" />
     <Compile Include="Http\Services\Filters\ServiceResponseGlobalFilter.cs" />
     <Compile Include="Http\Services\ServiceModelExtensions.cs" />
     <Compile Include="IO\FileSystemChangedEvent.cs" />
@@ -138,6 +142,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

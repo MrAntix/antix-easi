@@ -4,7 +4,7 @@ using Antix.Services;
 
 namespace Antix.EASI.Application.People.Clinicians
 {
-    public interface IAddClinicianDataService :
+    public interface ICreateClinicianDataService :
         IServiceInOut<CreateClinicianModel, Guid>
     {
     }

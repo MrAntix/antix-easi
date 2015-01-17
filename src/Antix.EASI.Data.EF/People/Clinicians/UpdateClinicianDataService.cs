@@ -19,14 +19,14 @@ namespace Antix.EASI.Data.EF.People.Clinicians
         }
 
         public async Task ExecuteAsync(
-            UpdateClinicianModel model)
+            UpdateClinicianModel id)
         {
             var query = _dataContext.Clinicians
-                .Where(d => d.Id == model.Id);
+                .Where(d => d.Id == id.Id);
 
             var data = await query.SingleAsync();
 
-            data.Map(model);
+            data.Map(id);
 
             await _dataContext.SaveChangesAsync();
         }

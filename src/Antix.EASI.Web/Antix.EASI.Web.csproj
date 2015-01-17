@@ -176,6 +176,8 @@
     <Content Include="Scripts\angular-touch.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\antix\form\confirm\antix-form-confirm.html" />
+    <Content Include="Scripts\antix\form\confirm\antix-form-confirm.js" />
     <Content Include="Scripts\antix\status\antix-status.css" />
     <Content Include="Scripts\antix\status\antix-status.js" />
     <Content Include="Scripts\antix\status\antix-status.min.css" />
@@ -1019,6 +1021,7 @@
       <DependentUpon>form.css</DependentUpon>
     </Content>
     <Content Include="client\clinicians\edit\clinicians-edit.cshtml" />
+    <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Scripts\jquery-2.1.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.3.js" />
     <Content Include="Scripts\jquery-2.1.3.min.js" />

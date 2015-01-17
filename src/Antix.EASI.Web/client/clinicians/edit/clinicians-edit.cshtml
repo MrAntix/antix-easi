@@ -50,8 +50,10 @@
                             Update
                         </button>
                     </span>
-                    <button class="btn btn-danger"
-                            ng-click="delete()">
+                    <button class="btn btn-warning"
+                            a-confirm="delete()" 
+                            a-confirm-ok="Delete" 
+                            a-confirm-message="Delete the clinician '{{data.person.name}}'?">
                         Delete
                     </button>
                 </div>

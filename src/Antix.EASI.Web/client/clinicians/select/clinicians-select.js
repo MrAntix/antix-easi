@@ -2,13 +2,13 @@
 
 angular.module('antix.easi.clinicians.select', [
         'antix.easi.clinicians.api'
-    ])
+])
     .directive(
         'cliniciansSelect',
         [
             '$log',
             'CliniciansApi',
-            function(
+            function (
                 $log,
                 CliniciansApi) {
 
@@ -21,15 +21,20 @@ angular.module('antix.easi.clinicians.select', [
                     scope: {
                         'clinician': '='
                     },
-                    link: function($scope, element, attrs) {
+                    link: function ($scope, element, attrs) {
                         $log.debug('cliniciansSelect link');
 
-                        CliniciansApi.lookup().$promise
-                            .then(function(data) {
-                                $log.debug('cliniciansSelect lookup ' + JSON.stringify(data));
+                        $scope.get = function (filter) {
+                            return CliniciansApi.lookup({
+                                filter: filter,
+                                limitTo: 8
+                            }).$promise
+                                .then(function (data) {
+                                    $log.debug('cliniciansSelect lookup ' + JSON.stringify(data));
 
-                                $scope.clinicians = data;
-                            });
+                                    return data;
+                                });
+                        }
                     }
                 }
             }

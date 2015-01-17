@@ -6,10 +6,12 @@
 
         public static class Clinicians
         {
+            public const string LOOKUP = "clinicians";
             public const string CREATE = "clinicians";
-            public const string READ = "clinicians/{id}/read";
-            public const string UPDATE = "clinicians/{id}/update";
-            public const string LOOKUP = "clinicians/lookup";
+            public const string READ = "clinicians/{id}";
+            public const string READ_NAME = "clinicians:read";
+            public const string UPDATE = "clinicians/{id}";
+            public const string DELETE = "clinicians/{id}";
         }
     }
 }

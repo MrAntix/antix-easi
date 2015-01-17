@@ -1,7 +1,8 @@
 ﻿'use strict';
 
 angular.module('antix.easi.clinicians.edit', [
-        'antix.easi.clinicians.api'
+        'antix.easi.clinicians.api',
+        'antix.form.confirm'
 ])
     .controller(
         'AntixEASICliniciansEditController',
@@ -30,7 +31,19 @@ angular.module('antix.easi.clinicians.edit', [
                             $scope.$root.$broadcast(ClinicianEvents.Updated, $scope.data);
 
                         });
+                };
 
-                }
+                $scope.delete = function () {
+                    $log.debug('AntixEASICliniciansEditController delete ' + $scope.data.id);
+
+                    CliniciansApi
+                        .delete({ id: $scope.data.id }).$promise
+                        .then(function () {
+
+                            $scope.$root.$broadcast(ClinicianEvents.Deleted, $scope.data);
+                            $state.go('home');
+                        });
+
+                };
             }
         ]);

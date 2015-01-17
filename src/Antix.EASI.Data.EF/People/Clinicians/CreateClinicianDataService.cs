@@ -6,12 +6,12 @@ using Antix.EASI.Domain.People.Clincians.Models;
 
 namespace Antix.EASI.Data.EF.People.Clinicians
 {
-    public class AddClinicianDataService :
-        IAddClinicianDataService
+    public class CreateClinicianDataService :
+        ICreateClinicianDataService
     {
         readonly DataContext _dataContext;
 
-        public AddClinicianDataService(
+        public CreateClinicianDataService(
             DataContext dataContext)
         {
             _dataContext = dataContext;

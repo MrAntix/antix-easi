@@ -20,10 +20,10 @@ angular.module('antix.easi.clinicians.create', [
 
                     CliniciansApi
                         .create($scope.data).$promise
-                        .then(function (data) {
+                        .then(function (data, x, y) {
 
                             $scope.$root.$broadcast(ClinicianEvents.Created, data);
-                            $state.go('home');
+                            $state.go('clinicians-edit', { id: data.id });
                         })
                         .catch(function (e) {
                             $log.debug('AntixEASICliniciansCreateController create invalid ' + JSON.stringify(e.data));

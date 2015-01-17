@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="People\Clincians\IDeleteClinicianService.cs" />
     <Compile Include="People\Clincians\ILookupCliniciansService.cs" />
     <Compile Include="People\Clincians\IReadClinicianService.cs" />
     <Compile Include="People\Clincians\IUpdateClinicianService.cs" />

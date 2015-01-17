@@ -11,11 +11,11 @@ namespace Antix.EASI.Application.People.Clinicians
     public class CreateClinicianService :
         ValidatingServiceBase<CreateClinicianModel, Guid>, ICreateClinicianService
     {
-        readonly IAddClinicianDataService _dataService;
+        readonly ICreateClinicianDataService _dataService;
 
         public CreateClinicianService(
             IValidator<CreateClinicianModel> validator,
-            IAddClinicianDataService dataService) :
+            ICreateClinicianDataService dataService) :
                 base(validator)
         {
             _dataService = dataService;
