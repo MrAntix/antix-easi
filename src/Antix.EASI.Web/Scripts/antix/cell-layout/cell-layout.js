@@ -7,6 +7,7 @@
                 cellElements = [];
 
             var positionElement = function(cellElement) {
+                $log.debug('cellLayoutContainer.positionElement()');
 
                 cellElement.css({ marginTop: 0, marginBottom: 0 });
 
@@ -22,13 +23,21 @@
                 columns[column] += height;
             }
 
-            this.addElement = function(cellElement) {
+            this.addElement = function (cellElement) {
+                $log.debug('cellLayoutContainer.addElement()');
 
                 cellElements.push(cellElement);
             };
 
+            this.removeElement = function (cellElement) {
+                $log.debug('cellLayoutContainer.removeElement()');
+
+                var index = cellElements.indexOf(cellElement);
+                cellElements.splice(index, 1);
+            };
+
             var resize = this.resize = function() {
-                    $log.debug('cellLayoutContainer.resize()');
+                    $log.debug('cellLayoutContainer.resize(' + cellElements.length + ')');
 
                     columns = {};
                     $scope.$evalAsync(function() {
@@ -77,6 +86,10 @@
                     element.addClass('cell-layout-cell');
                     
                     cellsContainer.addElement(element);
+
+                    $scope.$on('$destroy', function () {
+                        cellsContainer.removeElement(element);
+                    });
                 }
             };
         }

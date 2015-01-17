@@ -143,6 +143,7 @@
     </Content>
     <Content Include="client\clinicians\select\clinicians-select.js" />
     <Content Include="client\home\home.js" />
+    <Content Include="client\search-box\search-box-directive.js" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\animate.min.css" />
     <Content Include="Content\font-awesome.css" />
@@ -1051,6 +1052,7 @@
     <Content Include="Content\site\panel-buttons.css.map">
       <DependentUpon>panel-buttons.css</DependentUpon>
     </Content>
+    <Content Include="client\search-box\search-box.cshtml" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <Content Include="Scripts\antix\cell-layout\readme.md" />
     <Content Include="Scripts\antix\cell-layout\cell-layout.less" />

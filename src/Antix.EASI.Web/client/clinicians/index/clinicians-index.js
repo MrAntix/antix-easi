@@ -8,18 +8,28 @@ angular.module('antix.easi.clinicians.index', [
         'AntixEASICliniciansIndexController',
         [
             '$log', '$scope',
-            'CliniciansApi',
+            'CliniciansApi', 'SearchBoxEvents',
             function(
                 $log, $scope,
-                CliniciansApi) {
+                CliniciansApi, SearchBoxEvents) {
 
                 $log.debug('AntixEASICliniciansIndexController init');
 
-                CliniciansApi.lookup({
-                        text: ''
-                    }).$promise
-                    .then(function(data) {
-                        $scope.clinicians = data;
-                    });
+                var search = function (e, criteria) {
+
+                    criteria = criteria || {};
+                    $log.debug('AntixEASICliniciansIndexController search(' + JSON.stringify(criteria) + ")");
+
+                    CliniciansApi.lookup({
+                            text: criteria.text
+                        }).$promise
+                        .then(function(data) {
+                            $scope.clinicians = data;
+                        });
+                };
+
+                search();
+
+                $scope.$root.$on(SearchBoxEvents.Search, search);
             }
         ]);
