@@ -1,11 +1,16 @@
 ﻿<form name="searchBox" class="navbar-form navbar-right">
     <div class="input-group">
-        <div class="input-group-addon">
-            <span class="fa fa-search"></span>
-        </div>
         <input class="form-control" placeholder="(search)"
                ng-model="text"
                ng-model-options="{debounce:500}"
-               ng-change="search(text)" />
+               ng-change="search(text)"
+               ui-keypress="{13:'search(text)'}"
+               a-clear-button />
+        <div class="input-group-btn">
+            <a href="" class="btn btn-primary"
+               ng-click="search(text)">
+                <span class="fa fa-search"></span>
+            </a>
+        </div>
     </div>
 </form>

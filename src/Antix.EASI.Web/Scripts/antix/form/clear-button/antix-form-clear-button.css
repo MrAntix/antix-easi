@@ -1,0 +1,12 @@
+﻿.clear-button {
+  position: absolute;
+  z-index: 10;
+  margin-left: -1em;
+  padding: .15em;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+.has-clear-button::-ms-clear {
+  display: none;
+}
+/*# sourceMappingURL=antix-form-clear-button.css.map */

@@ -10,7 +10,8 @@ var app = angular.module('antix.easi', [
     'antix.easi.searchBox',
     'antix.easi.home',
     'antix.easi.clinicians',
-    'antix.status'
+    'antix.status',
+    'antix.form'
 ]);
 
 app
