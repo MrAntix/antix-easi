@@ -6,7 +6,7 @@
 
         public static class Clinicians
         {
-            public const string LOOKUP = "clinicians";
+            public const string LIST = "clinicians";
             public const string CREATE = "clinicians";
             public const string READ = "clinicians/{id}";
             public const string READ_NAME = "clinicians:read";
