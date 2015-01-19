@@ -13,7 +13,7 @@ namespace Antix.EASI.Data.EF.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201501131659306_init"; }
+            get { return "201501191850260_init"; }
         }
         
         string IMigrationMetadata.Source

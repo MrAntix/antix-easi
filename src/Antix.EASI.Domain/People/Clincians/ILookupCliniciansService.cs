@@ -5,7 +5,7 @@ using Antix.Services.Models;
 namespace Antix.EASI.Domain.People.Clincians
 {
     public interface ILookupCliniciansService :
-        IServiceOut<IServiceResponse<ClinicianInfoModel[]>>
+        IServiceInOut<LookupCliniciansModel, IServiceResponse<ClinicianInfoModel[]>>
     {
     }
 }

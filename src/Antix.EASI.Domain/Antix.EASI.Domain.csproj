@@ -44,6 +44,7 @@
     <Compile Include="People\Clincians\IReadClinicianService.cs" />
     <Compile Include="People\Clincians\IUpdateClinicianService.cs" />
     <Compile Include="People\Clincians\Models\ClinicianInfoModel.cs" />
+    <Compile Include="People\Clincians\Models\LookupCliniciansModel.cs" />
     <Compile Include="People\Clincians\Models\UpdateClinicianModel.cs" />
     <Compile Include="People\Clincians\Validation\IUpdateClinicianValidator.cs" />
     <Compile Include="People\Clincians\Validation\UpdateClinicianValidator.cs" />

@@ -52,9 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
-    <Compile Include="Migrations\201501131659306_init.cs" />
-    <Compile Include="Migrations\201501131659306_init.Designer.cs">
-      <DependentUpon>201501131659306_init.cs</DependentUpon>
+    <Compile Include="Migrations\201501191850260_init.cs" />
+    <Compile Include="Migrations\201501191850260_init.Designer.cs">
+      <DependentUpon>201501191850260_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="People\Clinicians\CreateClinicianDataService.cs" />
@@ -95,8 +95,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201501131659306_init.resx">
-      <DependentUpon>201501131659306_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201501191850260_init.resx">
+      <DependentUpon>201501191850260_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

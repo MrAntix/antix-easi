@@ -18,6 +18,31 @@ namespace Antix.EASI.Data.EF.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
+                "dbo.IndexedEntityKeywords",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Frequency = c.Int(nullable: false),
+                        Keyword_Id = c.Int(),
+                        ClinicianData_Id = c.Guid(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Keywords", t => t.Keyword_Id)
+                .ForeignKey("dbo.ClinicianDatas", t => t.ClinicianData_Id)
+                .Index(t => t.Keyword_Id)
+                .Index(t => t.ClinicianData_Id);
+            
+            CreateTable(
+                "dbo.Keywords",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Value = c.String(),
+                        Frequency = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
                 "dbo.PatientDatas",
                 c => new
                     {
@@ -71,10 +96,16 @@ namespace Antix.EASI.Data.EF.Migrations
         {
             DropForeignKey("dbo.ScoreDatas", "Patient_Id", "dbo.PatientDatas");
             DropForeignKey("dbo.ScoreDatas", "Clinician_Id", "dbo.ClinicianDatas");
+            DropForeignKey("dbo.IndexedEntityKeywords", "ClinicianData_Id", "dbo.ClinicianDatas");
+            DropForeignKey("dbo.IndexedEntityKeywords", "Keyword_Id", "dbo.Keywords");
             DropIndex("dbo.ScoreDatas", new[] { "Patient_Id" });
             DropIndex("dbo.ScoreDatas", new[] { "Clinician_Id" });
+            DropIndex("dbo.IndexedEntityKeywords", new[] { "ClinicianData_Id" });
+            DropIndex("dbo.IndexedEntityKeywords", new[] { "Keyword_Id" });
             DropTable("dbo.ScoreDatas");
             DropTable("dbo.PatientDatas");
+            DropTable("dbo.Keywords");
+            DropTable("dbo.IndexedEntityKeywords");
             DropTable("dbo.ClinicianDatas");
         }
     }

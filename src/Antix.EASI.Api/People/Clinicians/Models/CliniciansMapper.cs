@@ -41,6 +41,19 @@ namespace Antix.EASI.Api.People.Clinicians.Models
             };
         }
 
+        public static LookupCliniciansModel ToModel(
+            this LookupClinicians contract)
+        {
+            if (contract == null) return null;
+
+            return new LookupCliniciansModel
+            {
+                Text = contract.Text,
+                Index = contract.Index,
+                Count = contract.Count
+            };
+        }
+
         public static CreateClinicianModel ToModel(
             this CreateClinician contract)
         {

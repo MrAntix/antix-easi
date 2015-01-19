@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Data.Entity.ModelConfiguration;
+using Antix.Data.Keywords.EF.Entities;
 using Antix.EASI.Data.EF.People.Models;
 
 namespace Antix.EASI.Data.EF.People.Clinicians.Models
 {
-    public class ClinicianData
+    public class ClinicianData : IndexedEntity
     {
         public ClinicianData()
         {

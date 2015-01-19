@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Antix.EASI.Api.People.Clinicians.Models;
 using Antix.EASI.Domain.People.Clincians;
+using Antix.EASI.Domain.People.Clincians.Models;
 using Antix.Http;
 using Antix.Services.Models;
 
@@ -25,9 +26,11 @@ namespace Antix.EASI.Api.People.Clinicians
 
         [Route(ApiRoutes.Clinicians.LIST)]
         public async Task<IServiceResponse<IEnumerable<ClinicianInfo>>> Get(
-            LookupClinicians contract)
+            [FromUri] LookupClinicians contract)
         {
-            var response = await _lookupService.ExecuteAsync();
+            var response = await _lookupService.ExecuteAsync(
+                contract.ToModel() ?? LookupCliniciansModel.Default
+                );
 
             return response.Map(m => m.ToContract());
         }

@@ -1,13 +1,19 @@
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Reflection;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Dispatcher;
 using System.Web.Http.Filters;
+using Antix.Data.Keywords;
+using Antix.Data.Keywords.EF;
+using Antix.Data.Keywords.Processing;
+using Antix.Data.Keywords.Stemming;
 using Antix.Data.Projections;
 using Antix.EASI.Api;
 using Antix.EASI.Application.People.Clinicians;
 using Antix.EASI.Data.EF;
+using Antix.EASI.Data.EF.People.Clinicians.Models;
 using Antix.EASI.Domain.Validation;
 using Antix.Http.Dispatcher;
 using Antix.Http.Filters;
@@ -20,6 +26,7 @@ using Castle.Facilities.TypedFactory;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using Newtonsoft.Json.Converters;
+using Component = Castle.MicroKernel.Registration.Component;
 
 namespace Antix.EASI.Web.Configuration
 {
@@ -45,11 +52,36 @@ namespace Antix.EASI.Web.Configuration
 
             RegisterWebApi(container, configuration, log);
 
+            RegisterKeywordIndexing(container);
+
             log.Information(m => m("Application Configured"));
 
             return container;
         }
 
+        static void RegisterKeywordIndexing(IWindsorContainer container)
+        {
+            container.Register(
+                Component.For<IKeywordProcessor>()
+                    .Instance(WordSplitKeywordProcessor.Create())
+                    .LifestyleSingleton()
+                );
+            container.Register(
+                Component.For<IKeywordsBuilderProvider, KeywordsBuilderProvider>()
+                    .LifestyleSingleton()
+                );
+            container.Register(
+                Component.For<IKeywordsIndexer, EFKeywordsManager>()
+                    .LifestyleSingleton()
+                );
+
+            var indexer = container.Resolve<IKeywordsIndexer>();
+
+            indexer
+                .Entity<ClinicianData>()
+                .Index(entry => entry.Identifier)
+                .Index(entry => entry.Person.Name);
+        }
         static Log.Delegate RegisterLogging(IWindsorContainer container)
         {
             var log = Log.ToTrace;

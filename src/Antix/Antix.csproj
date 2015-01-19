@@ -32,11 +32,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -54,6 +61,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Keywords\EF\EFEntityState.cs" />
+    <Compile Include="Data\Keywords\EF\EFKeywordsLinqExtensions.cs" />
+    <Compile Include="Data\Keywords\EF\EFKeywordsManager.cs" />
+    <Compile Include="Data\Keywords\EF\Entities\IndexedEntity.cs" />
+    <Compile Include="Data\Keywords\EF\Entities\IndexedEntityKeyword.cs" />
+    <Compile Include="Data\Keywords\EF\Entities\Keyword.cs" />
+    <Compile Include="Data\Keywords\Entities\IIndexedEntity.cs" />
+    <Compile Include="Data\Keywords\Entities\IIndexedEntityKeyword.cs" />
+    <Compile Include="Data\Keywords\Entities\IKeyword.cs" />
+    <Compile Include="Data\Keywords\EntityTypeNotIndexedException.cs" />
+    <Compile Include="Data\Keywords\IKeywordsIndexer.cs" />
+    <Compile Include="Data\Keywords\KeywordsIndexer.cs" />
+    <Compile Include="Data\Keywords\Processing\IKeywordProcessor.cs" />
+    <Compile Include="Data\Keywords\Processing\IKeywordsBuilder.cs" />
+    <Compile Include="Data\Keywords\Processing\IKeywordsBuilderProvider.cs" />
+    <Compile Include="Data\Keywords\Processing\KeywordsBuilder.cs" />
+    <Compile Include="Data\Keywords\Processing\KeywordsBuilderProvider.cs" />
+    <Compile Include="Data\Keywords\Processing\WordSplitKeywordProcessor.cs" />
+    <Compile Include="Data\Keywords\Stemming\Among.cs" />
+    <Compile Include="Data\Keywords\Stemming\EnglishStemmer.cs" />
+    <Compile Include="Data\Keywords\Stemming\IStemmer.cs" />
+    <Compile Include="Data\Keywords\Stemming\StemmerOperations.cs" />
     <Compile Include="Data\Models\IHasInternalId.cs" />
     <Compile Include="Data\Models\IHasIsActive.cs" />
     <Compile Include="Data\Models\IHasPublicId.cs" />
