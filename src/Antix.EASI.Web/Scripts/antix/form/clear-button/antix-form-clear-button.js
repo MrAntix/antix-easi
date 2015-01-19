@@ -15,7 +15,7 @@ angular.module('antix.form.clearButton', [])
                         var button = angular
                             .element('<span class="clear-button">&times;</span>')
                             .on('click', function () {
-                                element.val('');
+                                element.val('').triggerHandler('change');
                                 button.css({ display: 'none' });
                             });
 
