@@ -229,3 +229,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+/src/Antix.EASI.Web/client/patients/patients.js
+/src/Antix.EASI.Web/client/patients/list/patients-list.css.map
+/src/Antix.EASI.Web/client/patients/list/patients-list.min.css

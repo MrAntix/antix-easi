@@ -25,12 +25,15 @@ namespace Antix.EASI.Data.EF.Migrations
                         Frequency = c.Int(nullable: false),
                         Keyword_Id = c.Int(),
                         ExaminerData_Id = c.Guid(),
+                        PatientData_Id = c.Guid(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Keywords", t => t.Keyword_Id)
                 .ForeignKey("dbo.ExaminerDatas", t => t.ExaminerData_Id)
+                .ForeignKey("dbo.PatientDatas", t => t.PatientData_Id)
                 .Index(t => t.Keyword_Id)
-                .Index(t => t.ExaminerData_Id);
+                .Index(t => t.ExaminerData_Id)
+                .Index(t => t.PatientData_Id);
             
             CreateTable(
                 "dbo.Keywords",
@@ -39,6 +42,16 @@ namespace Antix.EASI.Data.EF.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         Value = c.String(),
                         Frequency = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.PatientDatas",
+                c => new
+                    {
+                        Id = c.Guid(nullable: false),
+                        Identifier = c.String(),
+                        Person_Name = c.String(maxLength: 50),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -80,12 +93,15 @@ namespace Antix.EASI.Data.EF.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.ScoreDatas", "Examiner_Id", "dbo.ExaminerDatas");
+            DropForeignKey("dbo.IndexedEntityKeywords", "PatientData_Id", "dbo.PatientDatas");
             DropForeignKey("dbo.IndexedEntityKeywords", "ExaminerData_Id", "dbo.ExaminerDatas");
             DropForeignKey("dbo.IndexedEntityKeywords", "Keyword_Id", "dbo.Keywords");
             DropIndex("dbo.ScoreDatas", new[] { "Examiner_Id" });
+            DropIndex("dbo.IndexedEntityKeywords", new[] { "PatientData_Id" });
             DropIndex("dbo.IndexedEntityKeywords", new[] { "ExaminerData_Id" });
             DropIndex("dbo.IndexedEntityKeywords", new[] { "Keyword_Id" });
             DropTable("dbo.ScoreDatas");
+            DropTable("dbo.PatientDatas");
             DropTable("dbo.Keywords");
             DropTable("dbo.IndexedEntityKeywords");
             DropTable("dbo.ExaminerDatas");

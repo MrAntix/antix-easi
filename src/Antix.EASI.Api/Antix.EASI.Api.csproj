@@ -57,14 +57,22 @@
     <Compile Include="ApiRoutes.cs" />
     <Compile Include="People\Examiners\ExaminersController.cs" />
     <Compile Include="People\Examiners\ExaminersListController.cs" />
+    <Compile Include="People\Examiners\Models\CreateExaminer.cs" />
     <Compile Include="People\Examiners\Models\Examiner.cs" />
     <Compile Include="People\Examiners\Models\ExaminerInfo.cs" />
     <Compile Include="People\Examiners\Models\ExaminersMapper.cs" />
-    <Compile Include="People\Examiners\Models\CreateExaminer.cs" />
     <Compile Include="People\Examiners\Models\LookupExaminers.cs" />
+    <Compile Include="People\Examiners\Models\UpdateExaminer.cs" />
     <Compile Include="People\Models\PeopleMappings.cs" />
     <Compile Include="People\Models\Person.cs" />
-    <Compile Include="People\Examiners\Models\UpdateExaminer.cs" />
+    <Compile Include="People\Patients\Models\CreatePatient.cs" />
+    <Compile Include="People\Patients\Models\LookupPatients.cs" />
+    <Compile Include="People\Patients\Models\Patient.cs" />
+    <Compile Include="People\Patients\Models\PatientInfo.cs" />
+    <Compile Include="People\Patients\Models\PatientsMapper.cs" />
+    <Compile Include="People\Patients\Models\UpdatePatient.cs" />
+    <Compile Include="People\Patients\PatientsController.cs" />
+    <Compile Include="People\Patients\PatientsListController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +89,7 @@
       <Name>Antix</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

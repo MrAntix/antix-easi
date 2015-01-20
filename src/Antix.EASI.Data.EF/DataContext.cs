@@ -1,8 +1,10 @@
 ﻿using System.Data.Entity;
 using System.Threading.Tasks;
 using Antix.Data.Keywords.EF;
+using Antix.Data.Keywords.Processing;
 using Antix.EASI.Data.EF.People.Examiners.Models;
 using Antix.EASI.Data.EF.People.Models;
+using Antix.EASI.Data.EF.People.Patients.Models;
 using Antix.EASI.Data.EF.Scores.Models;
 
 namespace Antix.EASI.Data.EF
@@ -18,11 +20,12 @@ namespace Antix.EASI.Data.EF
 
         // Required by migrations
         public DataContext()
-            : this(null)
+            : this(new EFKeywordsManager(
+                new KeywordsBuilderProvider(WordSplitKeywordProcessor.Create())))
         {
         }
 
-       // public IDbSet<PatientData> Patients { get; set; }
+        public IDbSet<PatientData> Patients { get; set; }
         public IDbSet<ExaminerData> Examiners { get; set; }
 
         public IDbSet<ScoreData> Scores { get; set; }

@@ -1,0 +1,21 @@
+﻿<form name="patientSelectForm" class="navbar-form navbar-right">
+    <div class="input-group"
+         ng-disabled="!patients">
+        <div class="input-group-addon">
+            <span class="fa fa-user-md"></span>
+        </div>
+        <input class="form-control" placeholder="(patient)"
+               ng-model="patient"
+               ng-model-options="{debounce:500}"
+               typeahead="i as i.name for i in get($viewValue) | filter:$viewValue | limitTo:8" />
+        <div class="input-group-btn">
+            <a href="#/patients/{{patient.id}}/edit" class="btn btn-default"
+               ng-disabled="!patient">
+                <span class="fa fa-pencil"></span>
+            </a>
+            <a href="#/patients/create" class="btn btn-default">
+                <span class="fa fa-plus"></span>
+            </a>
+        </div>
+    </div>
+</form>

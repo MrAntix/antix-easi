@@ -39,14 +39,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="People\Examiners\CreateExaminerService.cs" />
     <Compile Include="People\Examiners\DeleteExaminerService.cs" />
+    <Compile Include="People\Examiners\ICreateExaminerDataService.cs" />
     <Compile Include="People\Examiners\IDeleteExaminerDataService.cs" />
     <Compile Include="People\Examiners\IReadExaminerDataService.cs" />
     <Compile Include="People\Examiners\IUpdateExaminerDataService.cs" />
     <Compile Include="People\Examiners\ReadClincianService.cs" />
     <Compile Include="People\Examiners\UpdateExaminerService.cs" />
-    <Compile Include="People\Examiners\CreateExaminerService.cs" />
-    <Compile Include="People\Examiners\ICreateExaminerDataService.cs" />
+    <Compile Include="People\Patients\CreatePatientService.cs" />
+    <Compile Include="People\Patients\DeletePatientService.cs" />
+    <Compile Include="People\Patients\ICreatePatientDataService.cs" />
+    <Compile Include="People\Patients\IDeletePatientDataService.cs" />
+    <Compile Include="People\Patients\IReadPatientDataService.cs" />
+    <Compile Include="People\Patients\IUpdatePatientDataService.cs" />
+    <Compile Include="People\Patients\ReadClincianService.cs" />
+    <Compile Include="People\Patients\UpdatePatientService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -62,6 +70,7 @@
   <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

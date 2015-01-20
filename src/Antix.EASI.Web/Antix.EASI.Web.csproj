@@ -127,22 +127,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="client\app.js" />
-    <Content Include="client\examiners\examiners-api.js" />
-    <Content Include="client\examiners\examiners.js" />
     <Content Include="client\examiners\create\examiners-create.js" />
     <Content Include="client\examiners\edit\examiners-edit.js" />
+    <Content Include="client\examiners\examiners-api.js" />
     <Content Include="client\examiners\index\examiners-index.js" />
-    <Content Include="client\examiners\list\examiners-list-item.cshtml" />
     <Content Include="client\examiners\list\examiners-list-directive.js" />
-    <Content Include="client\examiners\list\examiners-list.cshtml" />
-    <Content Include="client\examiners\list\examiners-list.css">
-      <DependentUpon>examiners-list.less</DependentUpon>
-    </Content>
-    <Content Include="client\examiners\list\examiners-list.min.css">
-      <DependentUpon>examiners-list.css</DependentUpon>
-    </Content>
     <Content Include="client\examiners\select\examiners-select.js" />
     <Content Include="client\home\home.js" />
+    <Content Include="client\patients\create\patients-create.js" />
+    <Content Include="client\patients\edit\patients-edit.js" />
+    <Content Include="client\patients\index\patients-index.js" />
+    <Content Include="client\patients\list\patients-list-directive.js" />
+    <Content Include="client\patients\list\patients-list.css" />
+    <Content Include="client\patients\list\patients-list.min.css" />
+    <Content Include="client\patients\patients-api.js" />
+    <Content Include="client\patients\patients.js" />
+    <Content Include="client\patients\select\patients-select.js" />
     <Content Include="client\search-box\search-box-directive.js" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\animate.min.css" />
@@ -297,27 +297,34 @@
     <Content Include="Content\site\layout.css.map">
       <DependentUpon>layout.css</DependentUpon>
     </Content>
-    <Content Include="client\examiners\select\examiners-select.cshtml" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
-    <Content Include="client\examiners\create\examiners-create.cshtml" />
     <Content Include="Content\site\form.less" />
     <Content Include="Content\site\form.css.map">
       <DependentUpon>form.css</DependentUpon>
-    </Content>
-    <Content Include="client\examiners\edit\examiners-edit.cshtml" />
-    <Content Include="client\examiners\index\examiners-index.cshtml" />
-    <Content Include="client\examiners\list\examiners-list.less" />
-    <Content Include="client\examiners\list\examiners-list.css.map">
-      <DependentUpon>examiners-list.css</DependentUpon>
     </Content>
     <Content Include="Content\site\panel-buttons.less" />
     <Content Include="Content\site\panel-buttons.css.map">
       <DependentUpon>panel-buttons.css</DependentUpon>
     </Content>
     <Content Include="client\search-box\search-box.cshtml" />
+    <Content Include="client\examiners\create\examiners-create.cshtml" />
+    <Content Include="client\examiners\edit\examiners-edit.cshtml" />
+    <Content Include="client\examiners\index\examiners-index.cshtml" />
+    <Content Include="client\examiners\list\examiners-list-item.cshtml" />
+    <Content Include="client\examiners\list\examiners-list.cshtml" />
+    <Content Include="client\examiners\list\examiners-list.less" />
+    <Content Include="client\examiners\select\examiners-select.cshtml" />
+    <Content Include="client\patients\create\patients-create.cshtml" />
+    <Content Include="client\patients\edit\patients-edit.cshtml" />
+    <Content Include="client\patients\index\patients-index.cshtml" />
+    <Content Include="client\patients\list\patients-list-item.cshtml" />
+    <Content Include="client\patients\list\patients-list.cshtml" />
+    <Content Include="client\patients\list\patients-list.css.map" />
+    <Content Include="client\patients\list\patients-list.less" />
+    <Content Include="client\patients\select\patients-select.cshtml" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <Content Include="Scripts\antix\cell-layout\readme.md" />
     <Content Include="Scripts\antix\cell-layout\cell-layout.less" />
@@ -1149,6 +1156,7 @@
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

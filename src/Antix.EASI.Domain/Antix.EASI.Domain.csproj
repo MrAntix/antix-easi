@@ -39,28 +39,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="People\Examiners\ICreateExaminerService.cs" />
     <Compile Include="People\Examiners\IDeleteExaminerService.cs" />
     <Compile Include="People\Examiners\ILookupExaminersService.cs" />
     <Compile Include="People\Examiners\IReadExaminerService.cs" />
     <Compile Include="People\Examiners\IUpdateExaminerService.cs" />
+    <Compile Include="People\Examiners\Models\CreateExaminerModel.cs" />
     <Compile Include="People\Examiners\Models\ExaminerInfoModel.cs" />
+    <Compile Include="People\Examiners\Models\ExaminerModel.cs" />
     <Compile Include="People\Examiners\Models\LookupExaminersModel.cs" />
     <Compile Include="People\Examiners\Models\UpdateExaminerModel.cs" />
+    <Compile Include="People\Examiners\Validation\CreateExaminerValidator.cs" />
+    <Compile Include="People\Examiners\Validation\ICreateExaminerValidator.cs" />
     <Compile Include="People\Examiners\Validation\IUpdateExaminerValidator.cs" />
     <Compile Include="People\Examiners\Validation\UpdateExaminerValidator.cs" />
+    <Compile Include="People\Patients\ICreatePatientService.cs" />
+    <Compile Include="People\Patients\IDeletePatientService.cs" />
+    <Compile Include="People\Patients\ILookupPatientsService.cs" />
+    <Compile Include="People\Patients\IReadPatientService.cs" />
+    <Compile Include="People\Patients\IUpdatePatientService.cs" />
+    <Compile Include="People\Patients\Models\CreatePatientModel.cs" />
+    <Compile Include="People\Patients\Models\LookupPatientsModel.cs" />
+    <Compile Include="People\Patients\Models\PatientInfoModel.cs" />
+    <Compile Include="People\Patients\Models\PatientModel.cs" />
+    <Compile Include="People\Patients\Models\UpdatePatientModel.cs" />
+    <Compile Include="People\Patients\Validation\CreatePatientValidator.cs" />
+    <Compile Include="People\Patients\Validation\ICreatePatientValidator.cs" />
+    <Compile Include="People\Patients\Validation\IUpdatePatientValidator.cs" />
+    <Compile Include="People\Patients\Validation\UpdatePatientValidator.cs" />
     <Compile Include="People\Validation\IUpdatePersonValidator.cs" />
     <Compile Include="People\Models\UpdatePersonModel.cs" />
     <Compile Include="People\Validation\UpdatePersonValidator.cs" />
     <Compile Include="Validation\DomainValidationConstants.cs" />
     <Compile Include="Validation\IDomainValidationPredicates.cs" />
     <Compile Include="Validation\DomainValidationPredicates.cs" />
-    <Compile Include="People\Examiners\ICreateExaminerService.cs" />
-    <Compile Include="People\Examiners\Models\ExaminerModel.cs" />
-    <Compile Include="People\Examiners\Models\CreateExaminerModel.cs" />
-    <Compile Include="People\Examiners\Validation\CreateExaminerValidator.cs" />
-    <Compile Include="People\Examiners\Validation\ICreateExaminerValidator.cs" />
     <Compile Include="People\Models\Genders.cs" />
-    <Compile Include="People\Models\PatientModel.cs" />
     <Compile Include="People\Models\PersonModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scores\Models\ScoreModel.cs" />
@@ -75,6 +88,7 @@
   <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
