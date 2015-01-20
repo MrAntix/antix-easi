@@ -65,7 +65,6 @@
     <Compile Include="People\Models\PeopleMappings.cs" />
     <Compile Include="People\Models\Person.cs" />
     <Compile Include="People\Clinicians\Models\UpdateClinician.cs" />
-    <Compile Include="People\Patients\PatientsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

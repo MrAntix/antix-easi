@@ -45,8 +45,6 @@
     <Compile Include="People\Clinicians\IUpdateClinicianDataService.cs" />
     <Compile Include="People\Clinicians\ReadClincianService.cs" />
     <Compile Include="People\Clinicians\UpdateClinicianService.cs" />
-    <Compile Include="People\Patients\CreateClinicianService.cs" />
-    <Compile Include="People\Patients\IAddClinicianDataService.cs" />
     <Compile Include="People\Clinicians\CreateClinicianService.cs" />
     <Compile Include="People\Clinicians\ICreateClinicianDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

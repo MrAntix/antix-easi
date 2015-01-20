@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Antix.Data.Keywords.EF;
 using Antix.EASI.Data.EF.People.Clinicians.Models;
 using Antix.EASI.Data.EF.People.Models;
-using Antix.EASI.Data.EF.People.Patients.Models;
 using Antix.EASI.Data.EF.Scores.Models;
 
 namespace Antix.EASI.Data.EF
@@ -23,7 +22,7 @@ namespace Antix.EASI.Data.EF
         {
         }
 
-        public IDbSet<PatientData> Patients { get; set; }
+       // public IDbSet<PatientData> Patients { get; set; }
         public IDbSet<ClinicianData> Clinicians { get; set; }
 
         public IDbSet<ScoreData> Scores { get; set; }

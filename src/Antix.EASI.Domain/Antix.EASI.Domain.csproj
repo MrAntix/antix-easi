@@ -61,10 +61,6 @@
     <Compile Include="People\Models\Genders.cs" />
     <Compile Include="People\Models\PatientModel.cs" />
     <Compile Include="People\Models\PersonModel.cs" />
-    <Compile Include="People\Patients\ICreateClinicianService.cs" />
-    <Compile Include="People\Patients\Models\CreatePatientModel.cs" />
-    <Compile Include="People\Patients\Validation\CreatePatientValidator.cs" />
-    <Compile Include="People\Patients\Validation\ICreatePatientValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scores\Models\ScoreData.cs" />
     <Compile Include="Scores\Models\ScoreRegionData.cs" />

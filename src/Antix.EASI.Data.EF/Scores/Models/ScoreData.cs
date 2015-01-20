@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Data.Entity.ModelConfiguration;
 using Antix.EASI.Data.EF.People.Clinicians.Models;
-using Antix.EASI.Data.EF.People.Models;
-using Antix.EASI.Data.EF.People.Patients.Models;
 
 namespace Antix.EASI.Data.EF.Scores.Models
 {
@@ -18,7 +16,7 @@ namespace Antix.EASI.Data.EF.Scores.Models
 
         public Guid Id { get; set; }
         public ClinicianData Clinician { get; set; }
-        public PatientData Patient { get; set; }
+        //public PatientData Patient { get; set; }
 
         public DateTimeOffset TakenOn { get; set; }
 
