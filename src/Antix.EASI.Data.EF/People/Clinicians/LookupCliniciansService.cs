@@ -47,9 +47,15 @@ namespace Antix.EASI.Data.EF.People.Clinicians
                     .Match(model.Text, _keywordProcessor);
             }
 
-            var result = await query
-                .Select(d => projectInfo.Invoke(d))
-                .OrderBy(d => d.Name)
+            var projected = query
+                .Select(d => projectInfo.Invoke(d));
+
+            if (string.IsNullOrWhiteSpace(model.Text))
+            {
+                projected = projected.OrderBy(d => d.Name);
+            }
+
+            var result = await projected
                 .Skip(model.Index).Take(model.Count)
                 .ToArrayAsync();
 
