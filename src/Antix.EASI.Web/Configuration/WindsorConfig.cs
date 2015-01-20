@@ -11,9 +11,9 @@ using Antix.Data.Keywords.Processing;
 using Antix.Data.Keywords.Stemming;
 using Antix.Data.Projections;
 using Antix.EASI.Api;
-using Antix.EASI.Application.People.Clinicians;
+using Antix.EASI.Application.People.Examiners;
 using Antix.EASI.Data.EF;
-using Antix.EASI.Data.EF.People.Clinicians.Models;
+using Antix.EASI.Data.EF.People.Examiners.Models;
 using Antix.EASI.Domain.Validation;
 using Antix.Http.Dispatcher;
 using Antix.Http.Filters;
@@ -34,7 +34,7 @@ namespace Antix.EASI.Web.Configuration
     {
         static readonly Assembly CoreAssembly = typeof (Log).Assembly;
         static readonly Assembly DomainAssembly = typeof(DomainValidationPredicates).Assembly;
-        static readonly Assembly ApplicationAssembly = typeof(CreateClinicianService).Assembly;
+        static readonly Assembly ApplicationAssembly = typeof(CreateExaminerService).Assembly;
         static readonly Assembly DataAssembly = typeof(DataContext).Assembly;
         static readonly Assembly ApiAssembly = typeof(ApiRoutes).Assembly;
         static readonly Assembly PortalAssembly = typeof(Global).Assembly;
@@ -78,7 +78,7 @@ namespace Antix.EASI.Web.Configuration
             var indexer = container.Resolve<IKeywordsIndexer>();
 
             indexer
-                .Entity<ClinicianData>()
+                .Entity<ExaminerData>()
                 .Index(entry => entry.Identifier)
                 .Index(entry => entry.Person.Name);
         }

@@ -39,14 +39,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="People\Clinicians\DeleteClinicianService.cs" />
-    <Compile Include="People\Clinicians\IDeleteClinicianDataService.cs" />
-    <Compile Include="People\Clinicians\IReadClinicianDataService.cs" />
-    <Compile Include="People\Clinicians\IUpdateClinicianDataService.cs" />
-    <Compile Include="People\Clinicians\ReadClincianService.cs" />
-    <Compile Include="People\Clinicians\UpdateClinicianService.cs" />
-    <Compile Include="People\Clinicians\CreateClinicianService.cs" />
-    <Compile Include="People\Clinicians\ICreateClinicianDataService.cs" />
+    <Compile Include="People\Examiners\DeleteExaminerService.cs" />
+    <Compile Include="People\Examiners\IDeleteExaminerDataService.cs" />
+    <Compile Include="People\Examiners\IReadExaminerDataService.cs" />
+    <Compile Include="People\Examiners\IUpdateExaminerDataService.cs" />
+    <Compile Include="People\Examiners\ReadClincianService.cs" />
+    <Compile Include="People\Examiners\UpdateExaminerService.cs" />
+    <Compile Include="People\Examiners\CreateExaminerService.cs" />
+    <Compile Include="People\Examiners\ICreateExaminerDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

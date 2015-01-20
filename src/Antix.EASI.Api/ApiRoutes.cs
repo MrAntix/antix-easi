@@ -4,14 +4,14 @@
     {
         public const string ROOT = "api";
 
-        public static class Clinicians
+        public static class Examiners
         {
-            public const string LIST = "clinicians";
-            public const string CREATE = "clinicians";
-            public const string READ = "clinicians/{id}";
-            public const string READ_NAME = "clinicians:read";
-            public const string UPDATE = "clinicians/{id}";
-            public const string DELETE = "clinicians/{id}";
+            public const string LIST = "examiners";
+            public const string CREATE = "examiners";
+            public const string READ = "examiners/{id}";
+            public const string READ_NAME = "examiners:read";
+            public const string UPDATE = "examiners/{id}";
+            public const string DELETE = "examiners/{id}";
         }
     }
 }

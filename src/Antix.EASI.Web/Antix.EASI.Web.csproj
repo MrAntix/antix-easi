@@ -127,21 +127,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="client\app.js" />
-    <Content Include="client\clinicians\clinicians-api.js" />
-    <Content Include="client\clinicians\clinicians.js" />
-    <Content Include="client\clinicians\create\clinicians-create.js" />
-    <Content Include="client\clinicians\edit\clinicians-edit.js" />
-    <Content Include="client\clinicians\index\clinicians-index.js" />
-    <Content Include="client\clinicians\list\clinicians-list-item.cshtml" />
-    <Content Include="client\clinicians\list\clinicians-list-directive.js" />
-    <Content Include="client\clinicians\list\clinicians-list.cshtml" />
-    <Content Include="client\clinicians\list\clinicians-list.css">
-      <DependentUpon>clinicians-list.less</DependentUpon>
+    <Content Include="client\examiners\examiners-api.js" />
+    <Content Include="client\examiners\examiners.js" />
+    <Content Include="client\examiners\create\examiners-create.js" />
+    <Content Include="client\examiners\edit\examiners-edit.js" />
+    <Content Include="client\examiners\index\examiners-index.js" />
+    <Content Include="client\examiners\list\examiners-list-item.cshtml" />
+    <Content Include="client\examiners\list\examiners-list-directive.js" />
+    <Content Include="client\examiners\list\examiners-list.cshtml" />
+    <Content Include="client\examiners\list\examiners-list.css">
+      <DependentUpon>examiners-list.less</DependentUpon>
     </Content>
-    <Content Include="client\clinicians\list\clinicians-list.min.css">
-      <DependentUpon>clinicians-list.css</DependentUpon>
+    <Content Include="client\examiners\list\examiners-list.min.css">
+      <DependentUpon>examiners-list.css</DependentUpon>
     </Content>
-    <Content Include="client\clinicians\select\clinicians-select.js" />
+    <Content Include="client\examiners\select\examiners-select.js" />
     <Content Include="client\home\home.js" />
     <Content Include="client\search-box\search-box-directive.js" />
     <Content Include="Content\animate.css" />
@@ -297,21 +297,21 @@
     <Content Include="Content\site\layout.css.map">
       <DependentUpon>layout.css</DependentUpon>
     </Content>
-    <Content Include="client\clinicians\select\clinicians-select.cshtml" />
+    <Content Include="client\examiners\select\examiners-select.cshtml" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
-    <Content Include="client\clinicians\create\clinicians-create.cshtml" />
+    <Content Include="client\examiners\create\examiners-create.cshtml" />
     <Content Include="Content\site\form.less" />
     <Content Include="Content\site\form.css.map">
       <DependentUpon>form.css</DependentUpon>
     </Content>
-    <Content Include="client\clinicians\edit\clinicians-edit.cshtml" />
-    <Content Include="client\clinicians\index\clinicians-index.cshtml" />
-    <Content Include="client\clinicians\list\clinicians-list.less" />
-    <Content Include="client\clinicians\list\clinicians-list.css.map">
-      <DependentUpon>clinicians-list.css</DependentUpon>
+    <Content Include="client\examiners\edit\examiners-edit.cshtml" />
+    <Content Include="client\examiners\index\examiners-index.cshtml" />
+    <Content Include="client\examiners\list\examiners-list.less" />
+    <Content Include="client\examiners\list\examiners-list.css.map">
+      <DependentUpon>examiners-list.css</DependentUpon>
     </Content>
     <Content Include="Content\site\panel-buttons.less" />
     <Content Include="Content\site\panel-buttons.css.map">

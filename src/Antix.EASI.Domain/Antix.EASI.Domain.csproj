@@ -39,31 +39,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="People\Clincians\IDeleteClinicianService.cs" />
-    <Compile Include="People\Clincians\ILookupCliniciansService.cs" />
-    <Compile Include="People\Clincians\IReadClinicianService.cs" />
-    <Compile Include="People\Clincians\IUpdateClinicianService.cs" />
-    <Compile Include="People\Clincians\Models\ClinicianInfoModel.cs" />
-    <Compile Include="People\Clincians\Models\LookupCliniciansModel.cs" />
-    <Compile Include="People\Clincians\Models\UpdateClinicianModel.cs" />
-    <Compile Include="People\Clincians\Validation\IUpdateClinicianValidator.cs" />
-    <Compile Include="People\Clincians\Validation\UpdateClinicianValidator.cs" />
+    <Compile Include="People\Examiners\IDeleteExaminerService.cs" />
+    <Compile Include="People\Examiners\ILookupExaminersService.cs" />
+    <Compile Include="People\Examiners\IReadExaminerService.cs" />
+    <Compile Include="People\Examiners\IUpdateExaminerService.cs" />
+    <Compile Include="People\Examiners\Models\ExaminerInfoModel.cs" />
+    <Compile Include="People\Examiners\Models\LookupExaminersModel.cs" />
+    <Compile Include="People\Examiners\Models\UpdateExaminerModel.cs" />
+    <Compile Include="People\Examiners\Validation\IUpdateExaminerValidator.cs" />
+    <Compile Include="People\Examiners\Validation\UpdateExaminerValidator.cs" />
     <Compile Include="People\Validation\IUpdatePersonValidator.cs" />
     <Compile Include="People\Models\UpdatePersonModel.cs" />
+    <Compile Include="People\Validation\UpdatePersonValidator.cs" />
     <Compile Include="Validation\DomainValidationConstants.cs" />
     <Compile Include="Validation\IDomainValidationPredicates.cs" />
     <Compile Include="Validation\DomainValidationPredicates.cs" />
-    <Compile Include="People\Clincians\ICreateClinicianService.cs" />
-    <Compile Include="People\Clincians\Models\ClinicianModel.cs" />
-    <Compile Include="People\Clincians\Models\CreateClinicianModel.cs" />
-    <Compile Include="People\Clincians\Validation\CreateClinicianValidator.cs" />
-    <Compile Include="People\Clincians\Validation\ICreateClinicianValidator.cs" />
+    <Compile Include="People\Examiners\ICreateExaminerService.cs" />
+    <Compile Include="People\Examiners\Models\ExaminerModel.cs" />
+    <Compile Include="People\Examiners\Models\CreateExaminerModel.cs" />
+    <Compile Include="People\Examiners\Validation\CreateExaminerValidator.cs" />
+    <Compile Include="People\Examiners\Validation\ICreateExaminerValidator.cs" />
     <Compile Include="People\Models\Genders.cs" />
     <Compile Include="People\Models\PatientModel.cs" />
     <Compile Include="People\Models\PersonModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scores\Models\ScoreData.cs" />
-    <Compile Include="Scores\Models\ScoreRegionData.cs" />
+    <Compile Include="Scores\Models\ScoreModel.cs" />
+    <Compile Include="Scores\Models\ScoreRegionModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Antix\Antix.csproj">

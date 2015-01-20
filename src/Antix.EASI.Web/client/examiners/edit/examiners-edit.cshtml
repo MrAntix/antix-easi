@@ -1,0 +1,55 @@
+﻿<div id="page-home" class="page-content container">
+
+    <ol class="breadcrumb row">
+        <li><a href="#/">Home</a></li>
+        <li><a href="#/examiners/">Examiners</a></li>
+        <li><a href="#/examiners/{{data.id}}/edit">Edit</a></li>
+    </ol>
+
+    <form name="form">
+        <h3>
+            <span class="fa fa-user-md"></span>
+            Edit Examiner
+        </h3>
+        <hr />
+        <div class="form-group">
+            <label class="control-label">Name</label>
+            <input class="form-control"
+                   name="name"
+                   ng-model="data.person.name" />
+
+            <div class="errors"
+                 ng-messages="form.name.$error"
+                 ng-if="form.name.$invalid">
+                <div ng-message="not-null">please enter a name</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Identifier</label>
+            <input class="form-control"
+                   name="identifier"
+                   ng-model="data.identifier" />
+            <div class="errors"
+                 ng-messages="form.name.$errors"
+                 ng-if="form.identifier.$invalid">
+                <div ng-message="not-null">please enter an identifier</div>
+            </div>
+        </div>
+        <hr/>
+        <div class="form-group">
+            <span class="pull-right">
+                <button class="btn btn-primary"
+                        ng-click="update()">
+                    Update
+                </button>
+            </span>
+            <button class="btn btn-warning"
+                    a-confirm="delete()"
+                    a-confirm-ok="Delete"
+                    a-confirm-message="Delete the examiner '{{data.person.name}}'?">
+                Delete
+            </button>
+        </div>
+    </form>
+
+</div>

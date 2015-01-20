@@ -1,0 +1,21 @@
+﻿<form name="examinerSelectForm" class="navbar-form navbar-right">
+    <div class="input-group"
+         ng-disabled="!examiners">
+        <div class="input-group-addon">
+            <span class="fa fa-user-md"></span>
+        </div>
+        <input class="form-control" placeholder="(examiner)"
+               ng-model="examiner"
+               ng-model-options="{debounce:500}"
+               typeahead="i as i.name for i in get($viewValue) | filter:$viewValue | limitTo:8" />
+        <div class="input-group-btn">
+            <a href="#/examiners/{{examiner.id}}/edit" class="btn btn-default"
+               ng-disabled="!examiner">
+                <span class="fa fa-pencil"></span>
+            </a>
+            <a href="#/examiners/create" class="btn btn-default">
+                <span class="fa fa-plus"></span>
+            </a>
+        </div>
+    </div>
+</form>

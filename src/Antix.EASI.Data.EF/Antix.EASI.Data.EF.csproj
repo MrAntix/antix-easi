@@ -52,17 +52,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
+    <Compile Include="Migrations\201501202010066_init.cs" />
+    <Compile Include="Migrations\201501202010066_init.Designer.cs">
+      <DependentUpon>201501202010066_init.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="People\Clinicians\CreateClinicianDataService.cs" />
-    <Compile Include="People\Clinicians\DeleteClinicianDataService.cs" />
-    <Compile Include="People\Clinicians\LookupCliniciansService.cs" />
-    <Compile Include="People\Clinicians\Projections\ClinicianInfoProjection.cs" />
-    <Compile Include="People\Clinicians\Projections\ClinicianProjection.cs" />
-    <Compile Include="People\Clinicians\ReadClinicianDataService.cs" />
-    <Compile Include="People\Clinicians\UpdateClinicianDataService.cs" />
+    <Compile Include="People\Examiners\CreateExaminerDataService.cs" />
+    <Compile Include="People\Examiners\DeleteExaminerDataService.cs" />
+    <Compile Include="People\Examiners\LookupExaminersService.cs" />
+    <Compile Include="People\Examiners\Projections\ExaminerInfoProjection.cs" />
+    <Compile Include="People\Examiners\Projections\ExaminerProjection.cs" />
+    <Compile Include="People\Examiners\ReadExaminerDataService.cs" />
+    <Compile Include="People\Examiners\UpdateExaminerDataService.cs" />
     <Compile Include="People\Models\PersonMappings.cs" />
-    <Compile Include="People\Clinicians\Models\ClinicianMappings.cs" />
-    <Compile Include="People\Clinicians\Models\ClinicianData.cs" />
+    <Compile Include="People\Examiners\Models\ExaminerMappings.cs" />
+    <Compile Include="People\Examiners\Models\ExaminerData.cs" />
     <Compile Include="People\Models\PersonData.cs" />
     <Compile Include="People\Projections\PersonProjection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,6 +90,11 @@
       <Project>{ACB0D648-801C-4457-B5D1-42D9ED62D6C8}</Project>
       <Name>Antix</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201501202010066_init.resx">
+      <DependentUpon>201501202010066_init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
