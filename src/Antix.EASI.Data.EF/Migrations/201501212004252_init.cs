@@ -29,8 +29,8 @@ namespace Antix.EASI.Data.EF.Migrations
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Keywords", t => t.Keyword_Id)
-                .ForeignKey("dbo.ExaminerDatas", t => t.ExaminerData_Id)
-                .ForeignKey("dbo.PatientDatas", t => t.PatientData_Id)
+                .ForeignKey("dbo.ExaminerDatas", t => t.ExaminerData_Id, cascadeDelete: true)
+                .ForeignKey("dbo.PatientDatas", t => t.PatientData_Id, cascadeDelete: true)
                 .Index(t => t.Keyword_Id)
                 .Index(t => t.ExaminerData_Id)
                 .Index(t => t.PatientData_Id);

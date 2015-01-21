@@ -19,6 +19,8 @@ namespace Antix.Data.Keywords.EF
         public async Task UpdateKeywordsAsync(DbContext context)
         {
             var objectContext = ((IObjectContextAdapter) context).ObjectContext;
+
+            objectContext.DetectChanges();
             var entities =
                 objectContext.ObjectStateManager.GetObjectStateEntries(
                     EntityState.Added | EntityState.Modified)
@@ -32,8 +34,6 @@ namespace Antix.Data.Keywords.EF
                     .ToArray();
 
             await UpdateKeywordsAsync(entities, context.Set<Keyword>());
-
-            objectContext.DetectChanges();
         }
 
         public async Task UpdateKeywordsAsync(

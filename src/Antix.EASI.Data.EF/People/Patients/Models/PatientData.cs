@@ -22,6 +22,9 @@ namespace Antix.EASI.Data.EF.People.Patients.Models
             public Configuration()
             {
                 HasKey(d => d.Id);
+                HasMany(d => d.Keywords)
+                    .WithOptional()
+                    .WillCascadeOnDelete();
             }
         }
     }
