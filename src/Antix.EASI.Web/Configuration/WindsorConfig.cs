@@ -14,6 +14,8 @@ using Antix.EASI.Api;
 using Antix.EASI.Application.People.Examiners;
 using Antix.EASI.Data.EF;
 using Antix.EASI.Data.EF.People.Examiners.Models;
+using Antix.EASI.Data.EF.People.Models;
+using Antix.EASI.Data.EF.People.Patients.Models;
 using Antix.EASI.Domain.Validation;
 using Antix.Http.Dispatcher;
 using Antix.Http.Filters;
@@ -79,6 +81,10 @@ namespace Antix.EASI.Web.Configuration
 
             indexer
                 .Entity<ExaminerData>()
+                .Index(entry => entry.Identifier)
+                .Index(entry => entry.Person.Name);
+            indexer
+                .Entity<PatientData>()
                 .Index(entry => entry.Identifier)
                 .Index(entry => entry.Person.Name);
         }
