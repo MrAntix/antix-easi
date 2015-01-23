@@ -5,10 +5,43 @@
     margin: 0 auto;
 }
 
-.errors {
-    color: @state-danger-text;
-}
-
 .ng-submitted .ng-invalid {
     border-color: @state-danger-border;
+}
+
+.form-group {
+    position: relative;
+
+    .errors {
+        position: absolute;
+        left: 0;
+        top: -1px;
+        margin-top: -2px;
+        padding: 3px 20px 4px;
+        color: @state-danger-bg;
+        background-color: @state-danger-text;
+        xbox-shadow: 2px 2px 12px rgba(0,0,0,.4);
+        border-radius: 2px 2px 0 0;
+    }
+
+    .errors:before {
+        content: "\00d7";
+        display: block; /* reduce the damage in FF3.0 */
+        position: absolute;
+        margin-top: 1px;
+        left: 6px;
+        font-weight: 900;
+    }
+
+    .errors:after {
+        content: "";
+        display: block; /* reduce the damage in FF3.0 */
+        position: absolute;
+        bottom: -3px;
+        left: 8px;
+        width: 0;
+        border-width: 3px 3px 0;
+        border-style: solid;
+        border-color: @state-danger-text transparent;
+    }
 }
