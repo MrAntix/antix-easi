@@ -38,8 +38,7 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -90,6 +89,7 @@
     <Compile Include="Data\Projections\IProjectionProvider.cs" />
     <Compile Include="Data\Projections\ProjectionBase.cs" />
     <Compile Include="Data\Projections\ProjectionProvider.cs" />
+    <Compile Include="Http\CreatedServiceResponse.cs" />
     <Compile Include="Http\Dispatcher\ServiceHttpControllerActivator.cs" />
     <Compile Include="Http\Filters\FilterServiceBase.cs" />
     <Compile Include="Http\Filters\FilterServiceResolver.cs" />
@@ -101,9 +101,7 @@
     <Compile Include="Http\Filters\Logging\LogActionFilter.cs" />
     <Compile Include="Http\Filters\ServiceFilterProvider.cs" />
     <Compile Include="Http\HttpRequestMessageExtensions.cs" />
-    <Compile Include="Http\CreatedServiceResponse.cs" />
     <Compile Include="Http\HttpResponseExtenstions.cs" />
-    <Compile Include="Http\ICreatedResponse.cs" />
     <Compile Include="Http\ICreatedServiceResponse.cs" />
     <Compile Include="Http\Services\Filters\ServiceResponseGlobalFilter.cs" />
     <Compile Include="Http\Services\ServiceModelExtensions.cs" />
@@ -151,6 +149,7 @@
       <DependentUpon>NumberPredicates.tt</DependentUpon>
     </Compile>
     <Compile Include="Services\Validation\Predicates\StandardValidationPredicates.cs" />
+    <Compile Include="Services\Validation\Predicates\StringEmptyPredicate.cs" />
     <Compile Include="Services\Validation\Predicates\StringLengthPredicate.cs" />
     <Compile Include="Services\Validation\Predicates\StringMaxLengthPredicate.cs" />
     <Compile Include="Services\Validation\Predicates\StringMinLengthPredicate.cs" />
@@ -159,7 +158,6 @@
     <Compile Include="Services\Validation\Predicates\StringNotNullOrWhiteSpacePredicate.cs" />
     <Compile Include="Services\Validation\Predicates\StringNullOrEmptyPredicate.cs" />
     <Compile Include="Services\Validation\Predicates\StringNullOrWhiteSpacePredicate.cs" />
-    <Compile Include="Services\Validation\Predicates\StringEmptyPredicate.cs" />
     <Compile Include="Services\Validation\Predicates\ValidationPredicateBase.cs" />
     <Compile Include="Services\Validation\Predicates\ValidationPredicateCache.cs" />
     <Compile Include="Services\Validation\Services\ValidatingServiceBase.cs" />
