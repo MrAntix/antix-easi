@@ -127,12 +127,30 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="client\app.js" />
+    <Content Include="client\examinations\create\examinations-create.js" />
+    <Content Include="client\examinations\edit\examinations-edit.js" />
+    <Content Include="client\examinations\index\examinations-index.js" />
+    <Content Include="client\examinations\list\examinations-list.css">
+      <DependentUpon>examinations-list.less</DependentUpon>
+    </Content>
+    <Content Include="client\examinations\list\examinations-list.min.css">
+      <DependentUpon>examinations-list.css</DependentUpon>
+    </Content>
+    <Content Include="client\examinations\list\examinations-list-directive.js" />
+    <Content Include="client\examinations\examinations-api.js" />
+    <Content Include="client\examinations\examinations.js" />
     <Content Include="client\examiners\create\examiners-create.js" />
     <Content Include="client\examiners\edit\examiners-edit.js" />
     <Content Include="client\examiners\examiners-api.js" />
     <Content Include="client\examiners\examiners.js" />
     <Content Include="client\examiners\index\examiners-index.js" />
     <Content Include="client\examiners\list\examiners-list-directive.js" />
+    <Content Include="client\examiners\list\examiners-list.css">
+      <DependentUpon>examiners-list.less</DependentUpon>
+    </Content>
+    <Content Include="client\examiners\list\examiners-list.min.css">
+      <DependentUpon>examiners-list.css</DependentUpon>
+    </Content>
     <Content Include="client\examiners\select\examiners-select.js" />
     <Content Include="client\home\home.js" />
     <Content Include="client\patients\create\patients-create.js" />
@@ -326,6 +344,18 @@
     <Content Include="client\patients\list\patients-list.css.map" />
     <Content Include="client\patients\list\patients-list.less" />
     <Content Include="client\patients\select\patients-select.cshtml" />
+    <Content Include="client\examinations\create\examinations-create.cshtml" />
+    <Content Include="client\examinations\edit\examinations-edit.cshtml" />
+    <Content Include="client\examinations\index\examinations-index.cshtml" />
+    <Content Include="client\examinations\list\examinations-list-item.cshtml" />
+    <Content Include="client\examinations\list\examinations-list.cshtml" />
+    <Content Include="client\examinations\list\examinations-list.less" />
+    <Content Include="client\examinations\list\examinations-list.css.map">
+      <DependentUpon>examinations-list.css</DependentUpon>
+    </Content>
+    <Content Include="client\examiners\list\examiners-list.css.map">
+      <DependentUpon>examiners-list.css</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <Content Include="Scripts\antix\cell-layout\readme.md" />
     <Content Include="Scripts\antix\cell-layout\cell-layout.less" />
@@ -1157,9 +1187,7 @@
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="client\examinations\create\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
