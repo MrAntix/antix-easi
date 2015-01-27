@@ -130,6 +130,7 @@
     <Content Include="client\examiners\create\examiners-create.js" />
     <Content Include="client\examiners\edit\examiners-edit.js" />
     <Content Include="client\examiners\examiners-api.js" />
+    <Content Include="client\examiners\examiners.js" />
     <Content Include="client\examiners\index\examiners-index.js" />
     <Content Include="client\examiners\list\examiners-list-directive.js" />
     <Content Include="client\examiners\select\examiners-select.js" />
@@ -1156,7 +1157,9 @@
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="client\examinations\create\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
