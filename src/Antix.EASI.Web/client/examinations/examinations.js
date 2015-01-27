@@ -3,7 +3,6 @@
 angular.module('antix.easi.examinations', [
         'antix.easi.examinations.api',
         'antix.easi.examinations.index',
-        'antix.easi.examinations.select',
         'antix.easi.examinations.create',
         'antix.easi.examinations.edit'
     ])
