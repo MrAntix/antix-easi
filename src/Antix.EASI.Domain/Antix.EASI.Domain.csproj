@@ -41,7 +41,7 @@
   <ItemGroup>
     <Compile Include="Examinations\Models\CreateExaminationModel.cs" />
     <Compile Include="Examinations\Validation\CreateExaminationValidator.cs" />
-    <Compile Include="Examinations\Validation\ICreatePatientValidator.cs" />
+    <Compile Include="Examinations\Validation\ICreateExaminationValidator.cs" />
     <Compile Include="People\Examiners\ICreateExaminerService.cs" />
     <Compile Include="People\Examiners\IDeleteExaminerService.cs" />
     <Compile Include="People\Examiners\ILookupExaminersService.cs" />
