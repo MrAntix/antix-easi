@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Antix.EASI.Api.People.Models;
-using Antix.EASI.Domain.People.Clincians.Models;
+using Antix.EASI.Domain.People.Examiners.Models;
 
 namespace Antix.EASI.Api.People.Examiners.Models
 {

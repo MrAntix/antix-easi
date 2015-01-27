@@ -1,8 +1,8 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 
-namespace Antix.EASI.Data.EF.Scores.Models
+namespace Antix.EASI.Data.EF.Examinations.Models
 {
-    public class ScoreRegionData
+    public class ExaminationRegionScoresData
     {
         public int Erthema { get; set; }
         public int EdemaPapulation { get; set; }
@@ -11,7 +11,7 @@ namespace Antix.EASI.Data.EF.Scores.Models
         public int Region { get; set; }
 
         public class Configuration :
-            ComplexTypeConfiguration<ScoreRegionData>
+            ComplexTypeConfiguration<ExaminationRegionScoresData>
         {
         }
     }

@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 using Antix.Data.Projections;
 using Antix.EASI.Data.EF.People.Examiners.Models;
 using Antix.EASI.Data.EF.People.Models;
-using Antix.EASI.Domain.People.Clincians.Models;
+using Antix.EASI.Domain.People.Examiners.Models;
 using Antix.EASI.Domain.People.Models;
 using LinqKit;
 

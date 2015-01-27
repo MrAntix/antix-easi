@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Antix.EASI.Domain.People.Clincians;
-using Antix.EASI.Domain.People.Clincians.Models;
+using Antix.EASI.Domain.People.Examiners;
+using Antix.EASI.Domain.People.Examiners.Models;
 using Antix.Services.Models;
 using Antix.Services.Validation;
 using Antix.Services.Validation.Services;

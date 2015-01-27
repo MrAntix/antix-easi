@@ -2,7 +2,7 @@
 using System.Linq.Expressions;
 using Antix.Data.Projections;
 using Antix.EASI.Data.EF.People.Patients.Models;
-using Antix.EASI.Domain.People.Clincians.Models;
+using Antix.EASI.Domain.People.Patients.Models;
 
 namespace Antix.EASI.Data.EF.People.Patients.Projections
 {

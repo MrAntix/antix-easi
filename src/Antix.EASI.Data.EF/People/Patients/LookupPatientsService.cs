@@ -6,8 +6,8 @@ using Antix.Data.Keywords.EF;
 using Antix.Data.Keywords.Processing;
 using Antix.Data.Projections;
 using Antix.EASI.Data.EF.People.Patients.Models;
-using Antix.EASI.Domain.People.Clincians;
-using Antix.EASI.Domain.People.Clincians.Models;
+using Antix.EASI.Domain.People.Patients;
+using Antix.EASI.Domain.People.Patients.Models;
 using Antix.Services.Models;
 using LinqKit;
 

@@ -56,6 +56,10 @@
     <Compile Include="Migrations\201501212004252_init.Designer.cs">
       <DependentUpon>201501212004252_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201501271932567_add-examinations.cs" />
+    <Compile Include="Migrations\201501271932567_add-examinations.Designer.cs">
+      <DependentUpon>201501271932567_add-examinations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="People\Examiners\CreateExaminerDataService.cs" />
     <Compile Include="People\Examiners\DeleteExaminerDataService.cs" />
@@ -66,6 +70,7 @@
     <Compile Include="People\Examiners\Projections\ExaminerProjection.cs" />
     <Compile Include="People\Examiners\ReadExaminerDataService.cs" />
     <Compile Include="People\Examiners\UpdateExaminerDataService.cs" />
+    <Compile Include="People\Examiners\Validation\Predicates\ExaminerExistsPredicate.cs" />
     <Compile Include="People\Models\PersonMappings.cs" />
     <Compile Include="People\Models\PersonData.cs" />
     <Compile Include="People\Patients\CreatePatientDataService.cs" />
@@ -77,10 +82,11 @@
     <Compile Include="People\Patients\Projections\PatientProjection.cs" />
     <Compile Include="People\Patients\ReadPatientDataService.cs" />
     <Compile Include="People\Patients\UpdatePatientDataService.cs" />
+    <Compile Include="People\Patients\Validation\Predicates\ExaminerExistsPredicate.cs" />
     <Compile Include="People\Projections\PersonProjection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scores\Models\ScoreData.cs" />
-    <Compile Include="Scores\Models\ScoreRegionData.cs" />
+    <Compile Include="Examinations\Models\ExaminationData.cs" />
+    <Compile Include="Examinations\Models\ExaminationRegionScoresData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -103,6 +109,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201501212004252_init.resx">
       <DependentUpon>201501212004252_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501271932567_add-examinations.resx">
+      <DependentUpon>201501271932567_add-examinations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

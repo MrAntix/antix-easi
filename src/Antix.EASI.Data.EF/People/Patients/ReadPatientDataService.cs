@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Antix.Data.Projections;
 using Antix.EASI.Application.People.Patients;
 using Antix.EASI.Data.EF.People.Patients.Models;
-using Antix.EASI.Domain.People.Clincians.Models;
+using Antix.EASI.Domain.People.Patients.Models;
 using LinqKit;
 
 namespace Antix.EASI.Data.EF.People.Patients

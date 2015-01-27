@@ -2,16 +2,16 @@
 using System.Threading.Tasks;
 using Antix.Data.Keywords.EF;
 using Antix.Data.Keywords.Processing;
+using Antix.EASI.Data.EF.Examinations.Models;
 using Antix.EASI.Data.EF.People.Examiners.Models;
 using Antix.EASI.Data.EF.People.Models;
 using Antix.EASI.Data.EF.People.Patients.Models;
-using Antix.EASI.Data.EF.Scores.Models;
 
 namespace Antix.EASI.Data.EF
 {
     public class DataContext : DbContext
     {
-        private readonly EFKeywordsManager _keywordsManager;
+        readonly EFKeywordsManager _keywordsManager;
 
         public DataContext(EFKeywordsManager keywordsManager)
         {
@@ -28,12 +28,12 @@ namespace Antix.EASI.Data.EF
         public IDbSet<PatientData> Patients { get; set; }
         public IDbSet<ExaminerData> Examiners { get; set; }
 
-        public IDbSet<ScoreData> Scores { get; set; }
+        public IDbSet<ExaminationData> Examinations { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations
-                .AddFromAssembly(typeof(PersonData).Assembly);
+                .AddFromAssembly(typeof (PersonData).Assembly);
         }
 
         public const int PERSON_IDENTIFIER_LENGTH = 30;
@@ -50,7 +50,7 @@ namespace Antix.EASI.Data.EF
         public override async Task<int> SaveChangesAsync()
         {
             await _keywordsManager.UpdateKeywordsAsync(this);
-            
+
             return await base.SaveChangesAsync();
         }
     }

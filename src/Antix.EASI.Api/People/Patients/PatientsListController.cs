@@ -2,8 +2,8 @@
 using System.Threading.Tasks;
 using System.Web.Http;
 using Antix.EASI.Api.People.Patients.Models;
-using Antix.EASI.Domain.People.Clincians;
-using Antix.EASI.Domain.People.Clincians.Models;
+using Antix.EASI.Domain.People.Patients;
+using Antix.EASI.Domain.People.Patients.Models;
 using Antix.Http;
 using Antix.Services.Models;
 
@@ -50,6 +50,5 @@ namespace Antix.EASI.Api.People.Patients
                     id = response.Data
                 });
         }
-
     }
 }

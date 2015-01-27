@@ -1,10 +1,10 @@
 ﻿using System;
-using Antix.EASI.Domain.People.Clincians.Models;
+using Antix.EASI.Domain.People.Patients.Models;
 using Antix.EASI.Domain.People.Validation;
 using Antix.EASI.Domain.Validation;
 using Antix.Services.Validation;
 
-namespace Antix.EASI.Domain.People.Clincians.Validation
+namespace Antix.EASI.Domain.People.Patients.Validation
 {
     public class UpdatePatientValidator :
         ValidatorBase<UpdatePatientModel, IDomainValidationPredicates>,
@@ -13,7 +13,7 @@ namespace Antix.EASI.Domain.People.Clincians.Validation
         readonly IUpdatePersonValidator _personValidator;
 
         public UpdatePatientValidator(
-            IDomainValidationPredicates @is, 
+            IDomainValidationPredicates @is,
             Func<IValidationRuleBuilder<UpdatePatientModel>> getRulesBuilder, IUpdatePersonValidator personValidator) :
                 base(@is, getRulesBuilder)
         {

@@ -1,7 +1,7 @@
 ﻿using System;
 using Antix.EASI.Domain.People.Models;
 
-namespace Antix.EASI.Domain.People.Clincians.Models
+namespace Antix.EASI.Domain.People.Examiners.Models
 {
     public class UpdateExaminerModel
     {

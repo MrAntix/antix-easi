@@ -1,4 +1,4 @@
-﻿namespace Antix.EASI.Domain.People.Clincians.Models
+﻿namespace Antix.EASI.Domain.People.Examiners.Models
 {
     public class CreateExaminerModel
     {

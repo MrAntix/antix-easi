@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Reflection;
 using System.Web.Http;
 using System.Web.Http.Controllers;
@@ -8,13 +7,11 @@ using System.Web.Http.Filters;
 using Antix.Data.Keywords;
 using Antix.Data.Keywords.EF;
 using Antix.Data.Keywords.Processing;
-using Antix.Data.Keywords.Stemming;
 using Antix.Data.Projections;
 using Antix.EASI.Api;
 using Antix.EASI.Application.People.Examiners;
 using Antix.EASI.Data.EF;
 using Antix.EASI.Data.EF.People.Examiners.Models;
-using Antix.EASI.Data.EF.People.Models;
 using Antix.EASI.Data.EF.People.Patients.Models;
 using Antix.EASI.Domain.Validation;
 using Antix.Http.Dispatcher;
@@ -28,18 +25,17 @@ using Castle.Facilities.TypedFactory;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using Newtonsoft.Json.Converters;
-using Component = Castle.MicroKernel.Registration.Component;
 
 namespace Antix.EASI.Web.Configuration
 {
     public static class WindsorConfig
     {
         static readonly Assembly CoreAssembly = typeof (Log).Assembly;
-        static readonly Assembly DomainAssembly = typeof(DomainValidationPredicates).Assembly;
-        static readonly Assembly ApplicationAssembly = typeof(CreateExaminerService).Assembly;
-        static readonly Assembly DataAssembly = typeof(DataContext).Assembly;
-        static readonly Assembly ApiAssembly = typeof(ApiRoutes).Assembly;
-        static readonly Assembly PortalAssembly = typeof(Global).Assembly;
+        static readonly Assembly DomainAssembly = typeof (DomainValidationPredicates).Assembly;
+        static readonly Assembly ApplicationAssembly = typeof (CreateExaminerService).Assembly;
+        static readonly Assembly DataAssembly = typeof (DataContext).Assembly;
+        static readonly Assembly ApiAssembly = typeof (ApiRoutes).Assembly;
+        static readonly Assembly PortalAssembly = typeof (Global).Assembly;
 
         public static IWindsorContainer Init(
             IWindsorContainer container,
@@ -88,6 +84,7 @@ namespace Antix.EASI.Web.Configuration
                 .Index(entry => entry.Identifier)
                 .Index(entry => entry.Person.Name);
         }
+
         static Log.Delegate RegisterLogging(IWindsorContainer container)
         {
             var log = Log.ToTrace;
@@ -217,7 +214,7 @@ namespace Antix.EASI.Web.Configuration
                 = new SpecialCamelCasePropertyNamesContractResolver();
 
             configuration.Formatters.JsonFormatter.SerializerSettings.Converters.Add(
-                new IsoDateTimeConverter()
+                new IsoDateTimeConverter
                 {
                     DateTimeFormat = "yyyy-MM-ddTHH:mmZ"
                 });
@@ -226,7 +223,6 @@ namespace Antix.EASI.Web.Configuration
             configuration.Formatters.Add(formatter);
 
             configuration.EnsureInitialized();
-
         }
     }
 }

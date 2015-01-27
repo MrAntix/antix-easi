@@ -1,9 +1,9 @@
 ﻿using System;
-using Antix.EASI.Domain.People.Clincians.Models;
+using Antix.EASI.Domain.People.Patients.Models;
 using Antix.EASI.Domain.Validation;
 using Antix.Services.Validation;
 
-namespace Antix.EASI.Domain.People.Clincians.Validation
+namespace Antix.EASI.Domain.People.Patients.Validation
 {
     public class CreatePatientValidator :
         ValidatorBase<CreatePatientModel, IDomainValidationPredicates>,

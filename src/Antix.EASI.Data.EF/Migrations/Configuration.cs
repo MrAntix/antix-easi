@@ -11,7 +11,6 @@ namespace Antix.EASI.Data.EF.Migrations
 
         protected override void Seed(DataContext context)
         {
-            
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 using Antix.EASI.Data.EF.People.Models;
-using Antix.EASI.Domain.People.Clincians.Models;
+using Antix.EASI.Domain.People.Examiners.Models;
 
 namespace Antix.EASI.Data.EF.People.Examiners.Models
 {

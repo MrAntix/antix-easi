@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Antix.EASI.Domain.People.Clincians;
+using Antix.EASI.Domain.People.Examiners;
 using Antix.Services.Models;
 
 namespace Antix.EASI.Application.People.Examiners
