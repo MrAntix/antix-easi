@@ -55,6 +55,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiRoutes.cs" />
+    <Compile Include="Examinations\ExaminationsController.cs" />
+    <Compile Include="Examinations\ExaminationsListController.cs" />
+    <Compile Include="Examinations\Models\CreateExamination.cs" />
+    <Compile Include="Examinations\Models\ExaminationsMapper.cs" />
     <Compile Include="People\Examiners\ExaminersController.cs" />
     <Compile Include="People\Examiners\ExaminersListController.cs" />
     <Compile Include="People\Examiners\Models\CreateExaminer.cs" />

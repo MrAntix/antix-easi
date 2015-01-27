@@ -23,5 +23,15 @@
             public const string UPDATE = "patients/{id}";
             public const string DELETE = "patients/{id}";
         }
+
+        public static class Examinations
+        {
+            public const string LIST = "examinations";
+            public const string CREATE = "examinations";
+            public const string READ = "examinations/{id}";
+            public const string READ_NAME = "examinations:read";
+            public const string UPDATE = "examinations/{id}";
+            public const string DELETE = "examinations/{id}";
+        }
     }
 }

@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Examinations\CreateExaminationService.cs" />
     <Compile Include="People\Examiners\CreateExaminerService.cs" />
     <Compile Include="People\Examiners\DeleteExaminerService.cs" />
     <Compile Include="People\Examiners\ICreateExaminerDataService.cs" />
@@ -49,6 +50,7 @@
     <Compile Include="People\Examiners\UpdateExaminerService.cs" />
     <Compile Include="People\Patients\CreatePatientService.cs" />
     <Compile Include="People\Patients\DeletePatientService.cs" />
+    <Compile Include="Examinations\ICreateExaminationDataService.cs" />
     <Compile Include="People\Patients\ICreatePatientDataService.cs" />
     <Compile Include="People\Patients\IDeletePatientDataService.cs" />
     <Compile Include="People\Patients\IReadPatientDataService.cs" />

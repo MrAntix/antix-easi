@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
+    <Compile Include="Examinations\Models\PatientMappings.cs" />
     <Compile Include="Migrations\201501212004252_init.cs" />
     <Compile Include="Migrations\201501212004252_init.Designer.cs">
       <DependentUpon>201501212004252_init.cs</DependentUpon>
@@ -73,6 +74,7 @@
     <Compile Include="People\Examiners\Validation\Predicates\ExaminerExistsPredicate.cs" />
     <Compile Include="People\Models\PersonMappings.cs" />
     <Compile Include="People\Models\PersonData.cs" />
+    <Compile Include="Examinations\CreateExaminationDataService.cs" />
     <Compile Include="People\Patients\CreatePatientDataService.cs" />
     <Compile Include="People\Patients\DeletePatientDataService.cs" />
     <Compile Include="People\Patients\LookupPatientsService.cs" />

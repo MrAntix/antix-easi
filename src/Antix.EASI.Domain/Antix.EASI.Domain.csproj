@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Examinations\ICreateExaminationService.cs" />
     <Compile Include="Examinations\Models\CreateExaminationModel.cs" />
     <Compile Include="Examinations\Validation\CreateExaminationValidator.cs" />
     <Compile Include="Examinations\Validation\ICreateExaminationValidator.cs" />
