@@ -35,7 +35,7 @@ namespace Antix.EASI.Domain.Examinations.Validation
                 .Assert(_patientExists);
 
             rules.For(m => m.TakenOn)
-                .Assert(Is.Max(DateTimeOffset.UtcNow));
+                .Assert(Is.Range(DateTimeOffset.UtcNow.AddYears(-100), DateTimeOffset.UtcNow));
         }
     }
 }

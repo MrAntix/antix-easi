@@ -21,5 +21,10 @@ namespace Antix.EASI.Data.EF.People.Examiners.Validation.Predicates
                 .Examiners
                 .Any(d => d.Id == model);
         }
+
+        public override string ToString()
+        {
+            return "exists";
+        }
     }
 }

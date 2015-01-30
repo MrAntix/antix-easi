@@ -19,22 +19,28 @@ angular.module('antix.easi.patients.select', [
                     replace: true,
                     templateUrl: 'patients/select/patients-select.cshtml',
                     scope: {
-                        'patient': '='
+                        'patientId': '=ngModel'
                     },
-                    link: function($scope, element, attrs) {
+                    link: function ($scope, element, attrs) {
                         $log.debug('patientsSelect link');
 
-                        $scope.get = function(filter) {
+                        $scope.get = function (filter) {
                             return PatientsApi.lookup({
-                                    filter: filter,
-                                    limitTo: 8
-                                }).$promise
-                                .then(function(data) {
+                                filter: filter,
+                                limitTo: 8
+                            }).$promise
+                                .then(function (data) {
                                     $log.debug('patientsSelect lookup ' + JSON.stringify(data));
 
-                                    return data;
+                                    return $scope.data = data;
                                 });
                         }
+
+                        $scope.format = function (id) {
+                            if (!$scope.data) return;
+                            for (var i = 0; i < $scope.data.length; i++)
+                                if (id === $scope.data[i].id) return $scope.data[i].name;
+                        };
                     }
                 };
             }

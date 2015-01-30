@@ -19,7 +19,7 @@ angular.module('antix.easi.examiners.select', [
                     replace: true,
                     templateUrl: 'examiners/select/examiners-select.cshtml',
                     scope: {
-                        'examiner': '='
+                        'examinerId': '=ngModel'
                     },
                     link: function($scope, element, attrs) {
                         $log.debug('examinersSelect link');
@@ -32,9 +32,15 @@ angular.module('antix.easi.examiners.select', [
                                 .then(function(data) {
                                     $log.debug('examinersSelect lookup ' + JSON.stringify(data));
 
-                                    return data;
+                                    return $scope.data = data;
                                 });
                         }
+
+                        $scope.format = function (id) {
+                            if (!$scope.data) return;
+                            for (var i = 0; i < $scope.data.length; i++)
+                                if (id === $scope.data[i].id) return $scope.data[i].name;
+                        };
                     }
                 };
             }

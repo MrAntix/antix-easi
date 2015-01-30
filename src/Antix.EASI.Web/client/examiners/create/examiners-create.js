@@ -20,7 +20,7 @@ angular.module('antix.easi.examiners.create', [
 
                     ExaminersApi
                         .create($scope.data).$promise
-                        .then(function (data, x, y) {
+                        .then(function (data) {
 
                             $scope.$root.$broadcast(ExaminerEvents.Created, data);
                             $state.go('examiners-edit', { id: data.id });

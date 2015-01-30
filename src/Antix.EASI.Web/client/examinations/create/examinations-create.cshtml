@@ -6,7 +6,7 @@
         <li><a href="#/examinations/create">Create</a></li>
     </ol>
 
-    <form name="form" class="form">
+    <form name="form" class="form" novalidate>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">
@@ -16,29 +16,51 @@
             </div>
             <div class="panel-body">
                 <div class="form-group">
-                    <label class="control-label">Name</label>
-                    <input class="form-control"
-                           name="name"
-                           ng-model="data.name" />
-                    
+                    <label class="control-label">Date and Time</label>
+                    <div class="input-group">
+                        <input class="form-control" placeholder="(date of examination)"
+                               datepicker-popup="medium" is-open="opened"
+                               name="takenOn"
+                               ng-model="data.takenOn"
+                               ng-required="true" />
+                        <span class="input-group-btn">
+                            <a href class="btn btn-default" ng-click="opened=true">
+                                <span class="fa fa-calendar"></span>
+                            </a>
+                        </span>
+                    </div>
+
                     <div class="errors"
-                         ng-messages="form.name.$error"
-                         ng-if="form.name.$invalid">
-                        <div ng-message="not-null">please enter a name</div>
+                         ng-messages="form.takenOn.$errors"
+                         ng-if="form.takenOn.$invalid">
+                        <div ng-message="range">please enter a date</div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Identifier</label>
-                    <input class="form-control"
-                           name="identifier"
-                           ng-model="data.identifier" />
+                    <label class="control-label">Examiner</label>
+                    <div examiners-select 
+                         name="examinerId"
+                         ng-model="data.examinerId"></div>
+
                     <div class="errors"
-                         ng-messages="form.name.$errors"
-                         ng-if="form.identifier.$invalid">
-                        <div ng-message="not-null">please enter an identifier</div>
+                         ng-messages="form.examinerId.$error"
+                         ng-if="form.examinerId.$invalid">
+                        <div ng-message="exists">please choose an examiner</div>
                     </div>
                 </div>
-            </div>
+                <div class="form-group">
+                    <label class="control-label">Patient</label>
+                    <div patients-select
+                         name="patientId"
+                         ng-model="data.patientId"></div>
+
+                    <div class="errors"
+                         ng-messages="form.patientId.$errors"
+                         ng-if="form.patientId.$invalid">
+                        <div ng-message="exists">please choose a patient</div>
+                    </div>
+                </div>
+           </div>
             <div class="panel-footer clearfix">
                 <div class="form-group">
                     <span class="pull-right">
@@ -55,5 +77,6 @@
             </div>
         </div>
     </form>
-
+    
+    {{data|json}}
 </div>

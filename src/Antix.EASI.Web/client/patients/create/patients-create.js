@@ -20,7 +20,7 @@ angular.module('antix.easi.patients.create', [
 
                     PatientsApi
                         .create($scope.data).$promise
-                        .then(function (data, x, y) {
+                        .then(function (data) {
 
                             $scope.$root.$broadcast(PatientEvents.Created, data);
                             $state.go('patients-edit', { id: data.id });
