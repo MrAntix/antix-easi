@@ -1,43 +1,70 @@
 ﻿'use strict';
 
 angular.module('antix.easi.examiners.create', [
-        'antix.easi.examiners.api'
+        'antix.easi.examiners.api',
+        'ui.bootstrap'
 ])
-    .controller(
-        'AntixEASIExaminersCreateController',
-        [
-            '$log', '$scope', '$state',
+    .directive(
+        'createExaminer', [
+            '$log', '$http', '$modal',
             'ExaminersApi', 'ExaminerEvents',
             function (
-                $log, $scope, $state,
+                $log, $http, $modal,
                 ExaminersApi, ExaminerEvents) {
 
-                $log.debug('AntixEASIExaminersCreateController init');
+                $log.debug('createExaminer.init');
 
-                $scope.data = {};
+                var modelContent;
+                $http.get('examiners/create/examiners-create.cshtml')
+                    .success(function (html) {
+                        modelContent = html;
+                    });
 
-                $scope.create = function () {
+                return {
+                    restrict: 'A',
+                    replace: false,
+                    scope: { createExaminer: '&' },
+                    link: function (scope, element) {
 
-                    ExaminersApi
-                        .create($scope.data).$promise
-                        .then(function (data) {
+                        $log.debug('createExaminer.link');
 
-                            $scope.$root.$broadcast(ExaminerEvents.Created, data);
-                            $state.go('examiners-edit', { id: data.id });
-                        })
-                        .catch(function (e) {
-                            $log.debug('AntixEASIExaminersCreateController create invalid ' + JSON.stringify(e.data));
+                        element.on('click', function () {
 
-                            angular.forEach(e.data, function (error) {
-                                var split = error.split(':'),
-                                    key = split[0][0].toLowerCase() + split[0].slice(1),
-                                    validationType = split[1];
-
-                                $log.debug('invalid ' + key + ":" + validationType);
-
-                                $scope.form[key].$setValidity(validationType, false);
+                            var modal = $modal.open({
+                                template: modelContent,
+                                scope: scope
                             });
+
+                            scope.ok = function () {
+
+                                ExaminersApi
+                                    .create($scope.data).$promise
+                                    .then(function (data) {
+
+                                        $scope.$root.$broadcast(ExaminerEvents.Created, data);
+                                        modal.close();
+                                    })
+                                    .catch(function (e) {
+                                        $log.debug('createExaminer.ok() invalid ' + JSON.stringify(e.data));
+
+                                        angular.forEach(e.data, function (error) {
+                                            var split = error.split(':'),
+                                                key = split[0][0].toLowerCase() + split[0].slice(1),
+                                                validationType = split[1];
+
+                                            $log.debug('invalid ' + key + ":" + validationType);
+
+                                            $scope.form[key].$setValidity(validationType, false);
+                                        });
+                                    });
+                            };
+
+                            scope.cancel = function () {
+                                modal.dismiss('cancel');
+                            };
                         });
+
+                    }
                 };
             }
         ]);

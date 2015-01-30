@@ -1,43 +1,70 @@
 ﻿'use strict';
 
 angular.module('antix.easi.patients.create', [
-        'antix.easi.patients.api'
+        'antix.easi.patients.api',
+        'ui.bootstrap'
 ])
-    .controller(
-        'AntixEASIPatientsCreateController',
-        [
-            '$log', '$scope', '$state',
+    .directive(
+        'createPatient', [
+            '$log', '$http', '$modal',
             'PatientsApi', 'PatientEvents',
             function (
-                $log, $scope, $state,
+                $log, $http, $modal,
                 PatientsApi, PatientEvents) {
 
-                $log.debug('AntixEASIPatientsCreateController init');
+                $log.debug('createPatient.init');
 
-                $scope.data = {};
+                var modelContent;
+                $http.get('patients/create/patients-create.cshtml')
+                    .success(function (html) {
+                        modelContent = html;
+                    });
 
-                $scope.create = function () {
+                return {
+                    restrict: 'A',
+                    replace: false,
+                    scope: { createPatient: '&' },
+                    link: function (scope, element) {
 
-                    PatientsApi
-                        .create($scope.data).$promise
-                        .then(function (data) {
+                        $log.debug('createPatient.link');
 
-                            $scope.$root.$broadcast(PatientEvents.Created, data);
-                            $state.go('patients-edit', { id: data.id });
-                        })
-                        .catch(function (e) {
-                            $log.debug('AntixEASIPatientsCreateController create invalid ' + JSON.stringify(e.data));
+                        element.on('click', function () {
 
-                            angular.forEach(e.data, function (error) {
-                                var split = error.split(':'),
-                                    key = split[0][0].toLowerCase() + split[0].slice(1),
-                                    validationType = split[1];
-
-                                $log.debug('invalid ' + key + ":" + validationType);
-
-                                $scope.form[key].$setValidity(validationType, false);
+                            var modal = $modal.open({
+                                template: modelContent,
+                                scope: scope
                             });
+
+                            scope.ok = function () {
+
+                                PatientsApi
+                                    .create($scope.data).$promise
+                                    .then(function (data) {
+
+                                        $scope.$root.$broadcast(PatientEvents.Created, data);
+                                        modal.close();
+                                    })
+                                    .catch(function (e) {
+                                        $log.debug('createPatient.ok() invalid ' + JSON.stringify(e.data));
+
+                                        angular.forEach(e.data, function (error) {
+                                            var split = error.split(':'),
+                                                key = split[0][0].toLowerCase() + split[0].slice(1),
+                                                validationType = split[1];
+
+                                            $log.debug('invalid ' + key + ":" + validationType);
+
+                                            $scope.form[key].$setValidity(validationType, false);
+                                        });
+                                    });
+                            };
+
+                            scope.cancel = function () {
+                                modal.dismiss('cancel');
+                            };
                         });
+
+                    }
                 };
             }
         ]);

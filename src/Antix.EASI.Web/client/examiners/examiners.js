@@ -18,11 +18,6 @@ angular.module('antix.easi.examiners', [
                     templateUrl: '/client/examiners/index/examiners-index.cshtml',
                     controller: 'AntixEASIExaminersIndexController'
                 })
-                .state('examiners-create', {
-                    url: '/examiners/create',
-                    templateUrl: '/client/examiners/create/examiners-create.cshtml',
-                    controller: 'AntixEASIExaminersCreateController'
-                })
                 .state('examiners-edit', {
                     url: '/examiners/{id}/edit',
                     templateUrl: '/client/examiners/edit/examiners-edit.cshtml',

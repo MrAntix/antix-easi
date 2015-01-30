@@ -1,7 +1,8 @@
 ﻿'use strict';
 
 angular.module('antix.easi.examiners.select', [
-        'antix.easi.examiners.api'
+        'antix.easi.examiners.api',
+        'antix.easi.examiners.create'
 ])
     .directive(
         'examinersSelect',
