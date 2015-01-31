@@ -72,17 +72,6 @@ namespace Antix.EASI.Web.Configuration
                 Component.For<IKeywordsIndexer, EFKeywordsManager>()
                     .LifestyleSingleton()
                 );
-
-            var indexer = container.Resolve<IKeywordsIndexer>();
-
-            indexer
-                .Entity<ExaminerData>()
-                .Index(entry => entry.Identifier)
-                .Index(entry => entry.Person.Name);
-            indexer
-                .Entity<PatientData>()
-                .Index(entry => entry.Identifier)
-                .Index(entry => entry.Person.Name);
         }
 
         static Log.Delegate RegisterLogging(IWindsorContainer container)

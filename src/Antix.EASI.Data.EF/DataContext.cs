@@ -11,18 +11,24 @@ namespace Antix.EASI.Data.EF
 {
     public class DataContext : DbContext
     {
-        readonly EFKeywordsManager _keywordsManager;
+        public const int PERSON_IDENTIFIER_LENGTH = 30;
+        public const int NAME_LENGTH = 50;
+        public const int NOTES_LENGTH = 500;
 
-        public DataContext(EFKeywordsManager keywordsManager)
-        {
-            _keywordsManager = keywordsManager;
-        }
+        readonly EFKeywordsManager _keywordsManager;
 
         // Required by migrations
         public DataContext()
             : this(new EFKeywordsManager(
                 new KeywordsBuilderProvider(WordSplitKeywordProcessor.Create())))
         {
+        }
+
+        public DataContext(EFKeywordsManager keywordsManager)
+        {
+            _keywordsManager = keywordsManager;
+
+            InitializeKeywordIndexing();
         }
 
         public IDbSet<PatientData> Patients { get; set; }
@@ -36,9 +42,17 @@ namespace Antix.EASI.Data.EF
                 .AddFromAssembly(typeof (PersonData).Assembly);
         }
 
-        public const int PERSON_IDENTIFIER_LENGTH = 30;
-        public const int NAME_LENGTH = 50;
-        public const int NOTES_LENGTH = 500;
+        void InitializeKeywordIndexing()
+        {
+            _keywordsManager
+                .Entity<ExaminerData>()
+                .Index(entry => entry.Identifier)
+                .Index(entry => entry.Person.Name);
+            _keywordsManager
+                .Entity<PatientData>()
+                .Index(entry => entry.Identifier)
+                .Index(entry => entry.Person.Name);
+        }
 
         public override int SaveChanges()
         {
