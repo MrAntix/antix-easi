@@ -53,7 +53,9 @@
   <ItemGroup>
     <Compile Include="DataContext.cs" />
     <Compile Include="DataKeywordsIndexer.cs" />
+    <Compile Include="Examinations\LookupExaminersService.cs" />
     <Compile Include="Examinations\Models\PatientMappings.cs" />
+    <Compile Include="Examinations\Projections\ExaminerInfoProjection.cs" />
     <Compile Include="Migrations\201501212004252_init.cs" />
     <Compile Include="Migrations\201501212004252_init.Designer.cs">
       <DependentUpon>201501212004252_init.cs</DependentUpon>
