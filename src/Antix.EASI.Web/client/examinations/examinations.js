@@ -36,9 +36,15 @@ angular.module('antix.easi.examinations', [
         Deleted: 'examination-event:deleted'
     })
     .filter('examinationTitle', [
-        function () {
+        '$filter',
+        function (
+            $filter) {
+
             return function (examination) {
-                return examination.patient.name + ' (' + examination.takenOn + ')';
+                return examination.patient.name
+                    + ' ('
+                    + $filter('date')(examination.takenOn, 'mediumDate')
+                    + ')';
             };
         }
     ]);
