@@ -41,7 +41,7 @@ angular.module('antix.easi.examiners.edit', [
                         .then(function () {
 
                             $scope.$root.$broadcast(ExaminerEvents.Deleted, $scope.data);
-                            $state.go('home');
+                            $state.go('examiners-index');
                         });
 
                 };

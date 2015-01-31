@@ -17,7 +17,7 @@ namespace Antix.EASI.Data.EF.People.Examiners
             _dataContext = dataContext;
         }
 
-        public async Task<Guid> ExecuteAsync(CreateExaminerModel model)
+        public async Task<ExaminerInfoModel> ExecuteAsync(CreateExaminerModel model)
         {
             if (model == null) throw new ArgumentNullException("model");
 
@@ -26,7 +26,7 @@ namespace Antix.EASI.Data.EF.People.Examiners
             _dataContext.Examiners.Add(data);
             await _dataContext.SaveChangesAsync();
 
-            return data.Id;
+            return data.ToInfoModel();
         }
     }
 }

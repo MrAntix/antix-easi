@@ -9,7 +9,8 @@ using Antix.Services.Validation.Services;
 namespace Antix.EASI.Application.People.Examiners
 {
     public class CreateExaminerService :
-        ValidatingServiceBase<CreateExaminerModel, Guid>, ICreateExaminerService
+        ValidatingServiceBase<CreateExaminerModel, ExaminerInfoModel>, 
+        ICreateExaminerService
     {
         readonly ICreateExaminerDataService _dataService;
 
@@ -21,7 +22,7 @@ namespace Antix.EASI.Application.People.Examiners
             _dataService = dataService;
         }
 
-        protected override async Task<IServiceResponse<Guid>> ThenAsync(
+        protected override async Task<IServiceResponse<ExaminerInfoModel>> ThenAsync(
             CreateExaminerModel model)
         {
             if (model == null) throw new ArgumentNullException("model");

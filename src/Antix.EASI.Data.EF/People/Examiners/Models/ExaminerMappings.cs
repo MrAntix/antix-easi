@@ -22,6 +22,19 @@ namespace Antix.EASI.Data.EF.People.Examiners.Models
             };
         }
 
+        public static ExaminerInfoModel ToInfoModel(
+            this ExaminerData data)
+        {
+            if (data == null) return null;
+
+            return new ExaminerInfoModel
+            {
+                Id = data.Id,
+                Identifier = data.Identifier,
+                Name = data.Person.Name
+            };
+        }
+
         public static void Map(
             this ExaminerData data, UpdateExaminerModel model)
         {

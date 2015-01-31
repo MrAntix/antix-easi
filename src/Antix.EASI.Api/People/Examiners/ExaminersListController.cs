@@ -45,10 +45,8 @@ namespace Antix.EASI.Api.People.Examiners
 
             return response.Created(
                 ApiRoutes.Examiners.READ_NAME,
-                new
-                {
-                    id = response.Data
-                });
+                response.Data
+                );
         }
     }
 }

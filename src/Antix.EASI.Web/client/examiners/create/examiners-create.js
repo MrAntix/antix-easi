@@ -30,19 +30,23 @@ angular.module('antix.easi.examiners.create', [
 
                         element.on('click', function () {
 
+                            scope.data = {};
+
                             var modal = $modal.open({
                                 template: modelContent,
                                 scope: scope
                             });
 
-                            scope.ok = function () {
+                            scope.create = function () {
 
                                 ExaminersApi
-                                    .create($scope.data).$promise
+                                    .create(scope.data).$promise
                                     .then(function (data) {
 
-                                        $scope.$root.$broadcast(ExaminerEvents.Created, data);
+                                        scope.$root.$broadcast(ExaminerEvents.Created, data);
                                         modal.close();
+
+                                        if (scope.createExaminer) scope.createExaminer({ data: data });
                                     })
                                     .catch(function (e) {
                                         $log.debug('createExaminer.ok() invalid ' + JSON.stringify(e.data));
@@ -54,7 +58,7 @@ angular.module('antix.easi.examiners.create', [
 
                                             $log.debug('invalid ' + key + ":" + validationType);
 
-                                            $scope.form[key].$setValidity(validationType, false);
+                                            scope.form[key].$setValidity(validationType, false);
                                         });
                                     });
                             };

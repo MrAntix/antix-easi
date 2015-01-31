@@ -6,7 +6,7 @@
             var columns,
                 cellElements = [];
 
-            var positionElement = function(cellElement) {
+            var positionElement = function (cellElement) {
                 $log.debug('cellLayoutContainer.positionElement()');
 
                 cellElement.css({ marginTop: 0, marginBottom: 0 });
@@ -36,24 +36,24 @@
                 cellElements.splice(index, 1);
             };
 
-            var resize = this.resize = function() {
-                    $log.debug('cellLayoutContainer.resize(' + cellElements.length + ')');
+            var resize = this.resize = function () {
+                $log.debug('cellLayoutContainer.resize(' + cellElements.length + ')');
 
-                    columns = {};
-                    $scope.$evalAsync(function() {
-                        angular.forEach(cellElements, positionElement);
-                    });
-                },
+                columns = {};
+                $scope.$evalAsync(function () {
+                    angular.forEach(cellElements, positionElement);
+                });
+            },
                 getSize = function () {
                     var size = $element[0].offsetWidth;
-                    angular.forEach(cellElements, function(cellElement) {
+                    angular.forEach(cellElements, function (cellElement) {
                         size += cellElement[0].offsetHeight;
                     });
-                   return size;
+                    return size;
                 };
 
             $scope.$watch(getSize, resize);
-            angular.element($window).on('resize', function() { $scope.$apply(); });
+            angular.element($window).on('resize', function () { $scope.$apply(); });
         }
     ])
     .directive('cellLayoutContainer', [
@@ -64,7 +64,7 @@
 
             return {
                 restrict: 'AE',
-                link: function($scope, element) {
+                link: function ($scope, element) {
                     $log.debug('cellLayoutContainer.link()');
                     element.addClass('cell-layout-container');
                 },
@@ -73,18 +73,18 @@
         }
     ])
     .directive('cellLayoutCell', [
-        function() {
+        function () {
 
             return {
                 restrict: 'AE',
                 require: '^cellLayoutContainer',
-                link: function(
+                link: function (
                     $scope,
                     element,
                     attributes,
                     cellsContainer) {
                     element.addClass('cell-layout-cell');
-                    
+
                     cellsContainer.addElement(element);
 
                     $scope.$on('$destroy', function () {

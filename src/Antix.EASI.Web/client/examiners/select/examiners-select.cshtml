@@ -4,13 +4,13 @@
                ng-model="examinerId"
                ng-model-options="{debounce:500}"
                typeahead="i.id as i.name for i in get($viewValue) | filter:$viewValue | limitTo:8"
-               typeahead-input-formatter="format($model)" />
+               typeahead-input-formatter="format($model)" typeahead-editable="false" />
         <div class="input-group-btn">
             <a href="#/examiners/{{examinerId}}/edit" class="btn btn-default"
                ng-disabled="!examinerId">
                 <span class="fa fa-pencil"></span>
             </a>
-            <button create-examiner
+            <button create-examiner="select(data)"
                     class="btn btn-default">
                 <span class="fa fa-plus"></span>
             </button>

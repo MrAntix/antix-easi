@@ -22,9 +22,9 @@ namespace Antix.EASI.Data.EF.People.Patients.Validation.Predicates
                 .Any(d => d.Id == model);
         }
 
-        public override string ToString()
+        public string Name
         {
-            return "exists";
+            get { return "exists"; }
         }
     }
 }

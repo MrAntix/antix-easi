@@ -6,7 +6,7 @@ using Antix.Services.Models;
 namespace Antix.EASI.Domain.People.Examiners
 {
     public interface ICreateExaminerService :
-        IServiceInOut<CreateExaminerModel, IServiceResponse<Guid>>
+        IServiceInOut<CreateExaminerModel, IServiceResponse<ExaminerInfoModel>>
     {
     }
 }

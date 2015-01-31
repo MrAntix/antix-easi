@@ -35,13 +35,13 @@ angular.module('antix.easi.patients.create', [
                                 scope: scope
                             });
 
-                            scope.ok = function () {
+                            scope.create = function () {
 
                                 PatientsApi
-                                    .create($scope.data).$promise
+                                    .create(scope.data).$promise
                                     .then(function (data) {
 
-                                        $scope.$root.$broadcast(PatientEvents.Created, data);
+                                        scope.$root.$broadcast(PatientEvents.Created, data);
                                         modal.close();
                                     })
                                     .catch(function (e) {
@@ -54,7 +54,7 @@ angular.module('antix.easi.patients.create', [
 
                                             $log.debug('invalid ' + key + ":" + validationType);
 
-                                            $scope.form[key].$setValidity(validationType, false);
+                                            scope.form[key].$setValidity(validationType, false);
                                         });
                                     });
                             };
