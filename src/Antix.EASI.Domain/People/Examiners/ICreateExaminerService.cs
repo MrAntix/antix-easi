@@ -1,5 +1,4 @@
-﻿using System;
-using Antix.EASI.Domain.People.Examiners.Models;
+﻿using Antix.EASI.Domain.People.Examiners.Models;
 using Antix.Services;
 using Antix.Services.Models;
 

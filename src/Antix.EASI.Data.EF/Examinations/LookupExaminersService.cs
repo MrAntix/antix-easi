@@ -2,14 +2,11 @@ using System;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
-using Antix.Data.Keywords.EF;
 using Antix.Data.Keywords.Processing;
 using Antix.Data.Projections;
 using Antix.EASI.Data.EF.Examinations.Models;
-using Antix.EASI.Data.EF.People.Examiners.Models;
 using Antix.EASI.Domain.Examinations;
 using Antix.EASI.Domain.Examinations.Models;
-using Antix.EASI.Domain.People.Examiners.Models;
 using Antix.Services.Models;
 using LinqKit;
 

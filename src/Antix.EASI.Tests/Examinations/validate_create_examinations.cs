@@ -13,8 +13,8 @@ namespace Antix.EASI.Tests.Examinations
 {
     public class validate_create_examinations
     {
-        readonly static Guid ExaminerId = new Guid("D6C024EA-0756-430C-93C0-BC536422F3F7");
-        readonly static Guid PatientId = new Guid("E6D93C84-91B5-4035-B212-6A9D72618030");
+        static readonly Guid ExaminerId = new Guid("D6C024EA-0756-430C-93C0-BC536422F3F7");
+        static readonly Guid PatientId = new Guid("E6D93C84-91B5-4035-B212-6A9D72618030");
 
         [Fact]
         public void happy_path()

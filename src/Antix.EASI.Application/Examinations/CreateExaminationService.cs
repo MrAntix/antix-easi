@@ -9,14 +9,14 @@ using Antix.Services.Validation.Services;
 namespace Antix.EASI.Application.Examinations
 {
     public class CreateExaminationService :
-       ValidatingServiceBase<CreateExaminationModel, Guid>, ICreateExaminationService
+        ValidatingServiceBase<CreateExaminationModel, Guid>, ICreateExaminationService
     {
         readonly ICreateExaminationDataService _dataService;
 
         public CreateExaminationService(
             IValidator<CreateExaminationModel> validator,
             ICreateExaminationDataService dataService) :
-            base(validator)
+                base(validator)
         {
             _dataService = dataService;
         }

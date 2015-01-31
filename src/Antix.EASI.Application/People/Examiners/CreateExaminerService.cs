@@ -9,7 +9,7 @@ using Antix.Services.Validation.Services;
 namespace Antix.EASI.Application.People.Examiners
 {
     public class CreateExaminerService :
-        ValidatingServiceBase<CreateExaminerModel, ExaminerInfoModel>, 
+        ValidatingServiceBase<CreateExaminerModel, ExaminerInfoModel>,
         ICreateExaminerService
     {
         readonly ICreateExaminerDataService _dataService;

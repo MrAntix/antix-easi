@@ -4,7 +4,6 @@ using System.Web.Http;
 using Antix.EASI.Api.Examinations.Models;
 using Antix.EASI.Domain.Examinations;
 using Antix.EASI.Domain.Examinations.Models;
-using Antix.EASI.Domain.People.Examiners;
 using Antix.Http;
 using Antix.Services.Models;
 
