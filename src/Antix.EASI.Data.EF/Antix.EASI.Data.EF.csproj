@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
+    <Compile Include="DataKeywordsIndexer.cs" />
     <Compile Include="Examinations\Models\PatientMappings.cs" />
     <Compile Include="Migrations\201501212004252_init.cs" />
     <Compile Include="Migrations\201501212004252_init.Designer.cs">

@@ -60,9 +60,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Keywords\EF\DbKeywordsIndexer.cs" />
     <Compile Include="Data\Keywords\EF\EFEntityState.cs" />
     <Compile Include="Data\Keywords\EF\EFKeywordsLinqExtensions.cs" />
-    <Compile Include="Data\Keywords\EF\EFKeywordsManager.cs" />
     <Compile Include="Data\Keywords\EF\Entities\IndexedEntity.cs" />
     <Compile Include="Data\Keywords\EF\Entities\IndexedEntityKeyword.cs" />
     <Compile Include="Data\Keywords\EF\Entities\Keyword.cs" />

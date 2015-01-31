@@ -69,7 +69,7 @@ namespace Antix.EASI.Web.Configuration
                     .LifestyleSingleton()
                 );
             container.Register(
-                Component.For<IKeywordsIndexer, EFKeywordsManager>()
+                Component.For<IKeywordsIndexer, DataKeywordsIndexer>()
                     .LifestyleSingleton()
                 );
         }
