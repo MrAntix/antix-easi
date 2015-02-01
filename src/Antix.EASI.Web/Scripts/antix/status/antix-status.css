@@ -4,12 +4,16 @@
   max-width: 80%;
   top: 47px;
   right: 10%;
-  padding-right: 35px;
+  padding: 5px 30px 5px 15px;
+  border: solid 1px;
+  border-radius: 2px;
+  overflow: auto;
 }
 .a-status .close {
   position: absolute;
-  top: 7px;
-  right: 10px;
+  top: 5px;
+  right: 8px;
+  color: inherit;
 }
 .a-status.ng-hide-add,
 .a-status.ng-hide-remove {
@@ -24,5 +28,15 @@
 .a-status.ng-hide-remove.ng-hide-remove-active {
   -webkit-animation: fadeInDown 0.5s both ease-in;
   animation: fadeInDown 0.5s both ease-in;
+}
+.a-status-info {
+  background-color: #66c;
+  color: #eef;
+  border-color: #66c;
+}
+.a-status-error {
+  background-color: #c66;
+  color: #fee;
+  border-color: #c66;
 }
 /*# sourceMappingURL=antix-status.css.map */

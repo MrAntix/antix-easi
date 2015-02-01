@@ -82,12 +82,12 @@ app
 
                                 break;
                             case 403:
-                                $rootScope.$broadcast(AntixStatusEvents.Status, { type: 'permission-denied' });
+                                $rootScope.$broadcast(AntixStatusEvents.Status, { type: 'error', message: 'permission denied' });
                                 break;
                             case 404:
                             case 406:
                             case 500:
-                                $rootScope.$broadcast(AntixStatusEvents.Status, { type: 'error' });
+                                $rootScope.$broadcast(AntixStatusEvents.Status, { type: 'error', message: 'an error occurred' });
                                 break;
                         }
                     }
