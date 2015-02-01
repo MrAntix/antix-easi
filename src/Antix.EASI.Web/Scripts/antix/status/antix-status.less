@@ -1,48 +1,50 @@
-﻿
-.a-status {
-    position: fixed;
-    z-index: 1040;
-    max-width: 80%;
-    top: 47px;
-    right: 10%;
-    padding: 5px 30px 5px 15px;
-    border: solid 1px;
-    border-radius: 2px;
-    overflow:auto;
+﻿.a-status-container {
+    position: relative;
 
-    .close {
+    .a-status {
         position: absolute;
-        top: 5px;
-        right: 8px;
-        color: inherit;
+        top: -5px;
+        right: 5px;
+        z-index: 1040;
+        padding: 5px 30px 5px 15px;
+        border: solid 1px;
+        border-radius: 2px;
+        overflow: auto;
+
+        .close {
+            position: absolute;
+            top: 5px;
+            right: 8px;
+            color: inherit;
+        }
     }
-}
 
-.a-status.ng-hide-add,
-.a-status.ng-hide-remove {
-    display: block !important;
-}
+    .a-status.ng-hide-add,
+    .a-status.ng-hide-remove {
+        display: block !important;
+    }
 
-.a-status.ng-hide-add.ng-hide-add-active,
-.a-status.ng-hide-remove {
-    -webkit-animation: fadeOutUp .25s both ease-in;
-    animation: fadeOutUp .25s both ease-in;
-}
+    .a-status.ng-hide-add.ng-hide-add-active,
+    .a-status.ng-hide-remove {
+        -webkit-animation: fadeOutUp .25s both ease-in;
+        animation: fadeOutUp .25s both ease-in;
+    }
 
-.a-status.ng-hide-add,
-.a-status.ng-hide-remove.ng-hide-remove-active {
-    -webkit-animation: fadeInDown .5s both ease-in;
-    animation: fadeInDown .5s both ease-in;
-}
+    .a-status.ng-hide-add,
+    .a-status.ng-hide-remove.ng-hide-remove-active {
+        -webkit-animation: fadeInDown .5s both ease-in;
+        animation: fadeInDown .5s both ease-in;
+    }
 
-.a-status-info {
-    background-color: #66c;
-    color: #eef;
-    border-color: #66c;
-}
+    .a-status-info {
+        background-color: #369;
+        color: #eef;
+        border-color: #369;
+    }
 
-.a-status-error {
-    background-color: #c66;
-    color: #fee;
-    border-color: #c66;
+    .a-status-error {
+        background-color: #c66;
+        color: #fee;
+        border-color: #c66;
+    }
 }

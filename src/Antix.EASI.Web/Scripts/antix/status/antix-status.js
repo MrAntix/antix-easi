@@ -7,7 +7,7 @@ angular.module('antix.status', [
         function() {
 
             return {
-                restrict: 'E',
+                restrict: 'EA',
                 replace: true,
                 templateUrl: '/Scripts/antix/status/antix-status.cshtml',
                 controller: 'AntixStatusController'
@@ -88,7 +88,7 @@ angular.module('antix.status', [
 
                 var scope = statusScope || $scope;
 
-                scope.status = status;
+                if (status) scope.status = status;
                 scope.show = status && !statusScope;
 
                 if (status && status.duration) {
@@ -107,7 +107,6 @@ angular.module('antix.status', [
 
                 var scope = statusScope || $scope;
 
-                scope.status = null;
                 scope.show = false;
                 statusCurrent = null;
             }
