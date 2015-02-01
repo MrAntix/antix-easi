@@ -53,9 +53,12 @@
   <ItemGroup>
     <Compile Include="DataContext.cs" />
     <Compile Include="DataKeywordsIndexer.cs" />
-    <Compile Include="Examinations\LookupExaminersService.cs" />
-    <Compile Include="Examinations\Models\PatientMappings.cs" />
-    <Compile Include="Examinations\Projections\ExaminerInfoProjection.cs" />
+    <Compile Include="Examinations\DeleteExaminationDataService.cs" />
+    <Compile Include="Examinations\Projections\ExaminationProjection.cs" />
+    <Compile Include="Examinations\ReadExaminationDataService.cs" />
+    <Compile Include="Examinations\LookupExaminationsService.cs" />
+    <Compile Include="Examinations\Models\ExaminationMappings.cs" />
+    <Compile Include="Examinations\Projections\ExaminationInfoProjection.cs" />
     <Compile Include="Migrations\201501212004252_init.cs" />
     <Compile Include="Migrations\201501212004252_init.Designer.cs">
       <DependentUpon>201501212004252_init.cs</DependentUpon>
@@ -87,7 +90,7 @@
     <Compile Include="People\Patients\Projections\PatientProjection.cs" />
     <Compile Include="People\Patients\ReadPatientDataService.cs" />
     <Compile Include="People\Patients\UpdatePatientDataService.cs" />
-    <Compile Include="People\Patients\Validation\Predicates\ExaminerExistsPredicate.cs" />
+    <Compile Include="People\Patients\Validation\Predicates\PatientExistsPredicate.cs" />
     <Compile Include="People\Projections\PersonProjection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Examinations\Models\ExaminationData.cs" />

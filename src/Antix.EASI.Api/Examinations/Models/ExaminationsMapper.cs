@@ -30,6 +30,19 @@ namespace Antix.EASI.Api.Examinations.Models
             return models.Select(m => m.ToContract()).ToArray();
         }
 
+        public static Examination ToContract(
+            this ExaminationModel model)
+        {
+            if (model == null) return null;
+
+            return new Examination
+            {
+                Id = model.Id,
+                TakenOn = model.TakenOn,
+                Examiner = model.Examiner.ToContract(),
+                Patient = model.Patient.ToContract()
+            };
+        }
 
         public static LookupExaminationsModel ToModel(
             this LookupExaminations contract)
@@ -53,6 +66,18 @@ namespace Antix.EASI.Api.Examinations.Models
             {
                 ExaminerId = contract.ExaminerId,
                 PatientId = contract.PatientId,
+                TakenOn = contract.TakenOn
+            };
+        }
+
+        public static UpdateExaminationModel ToModel(
+            this UpdateExamination contract)
+        {
+            if (contract == null) return null;
+
+            return new UpdateExaminationModel
+            {
+                Id = contract.Id,
                 TakenOn = contract.TakenOn
             };
         }

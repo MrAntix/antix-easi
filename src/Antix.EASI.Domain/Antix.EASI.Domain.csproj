@@ -40,12 +40,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Examinations\ICreateExaminationService.cs" />
+    <Compile Include="Examinations\IDeleteExaminationService.cs" />
     <Compile Include="Examinations\ILookupExaminationsService.cs" />
+    <Compile Include="Examinations\IReadExaminationService.cs" />
+    <Compile Include="Examinations\IUpdateExaminationService.cs" />
     <Compile Include="Examinations\Models\CreateExaminationModel.cs" />
     <Compile Include="Examinations\Models\ExaminationInfoModel.cs" />
+    <Compile Include="Examinations\Models\ExaminationModel.cs" />
     <Compile Include="Examinations\Models\LookupExaminationsModel.cs" />
+    <Compile Include="Examinations\Models\UpdateExaminationModel.cs" />
     <Compile Include="Examinations\Validation\CreateExaminationValidator.cs" />
     <Compile Include="Examinations\Validation\ICreateExaminationValidator.cs" />
+    <Compile Include="Examinations\Validation\IUpdateExaminationValidator.cs" />
+    <Compile Include="Examinations\Validation\UpdateExaminationValidator.cs" />
     <Compile Include="People\Examiners\ICreateExaminerService.cs" />
     <Compile Include="People\Examiners\IDeleteExaminerService.cs" />
     <Compile Include="People\Examiners\ILookupExaminersService.cs" />

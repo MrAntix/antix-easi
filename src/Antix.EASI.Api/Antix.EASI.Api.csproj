@@ -59,8 +59,10 @@
     <Compile Include="Examinations\ExaminationsListController.cs" />
     <Compile Include="Examinations\Models\CreateExamination.cs" />
     <Compile Include="Examinations\Models\ExaminationsMapper.cs" />
-    <Compile Include="Examinations\Models\ExaminerInfo.cs" />
-    <Compile Include="Examinations\Models\LookupExaminers.cs" />
+    <Compile Include="Examinations\Models\ExaminationInfo.cs" />
+    <Compile Include="Examinations\Models\Examination.cs" />
+    <Compile Include="Examinations\Models\LookupExaminations.cs" />
+    <Compile Include="Examinations\Models\UpdateExamination.cs" />
     <Compile Include="People\Examiners\ExaminersController.cs" />
     <Compile Include="People\Examiners\ExaminersListController.cs" />
     <Compile Include="People\Examiners\Models\CreateExaminer.cs" />

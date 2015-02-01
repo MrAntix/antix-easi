@@ -6,12 +6,12 @@ using Antix.Services.Models;
 
 namespace Antix.EASI.Application.People.Examiners
 {
-    public class ReadClincianService :
+    public class ReadExaminerService :
         IReadExaminerService
     {
         readonly IReadExaminerDataService _dataService;
 
-        public ReadClincianService(IReadExaminerDataService dataService)
+        public ReadExaminerService(IReadExaminerDataService dataService)
         {
             _dataService = dataService;
         }
