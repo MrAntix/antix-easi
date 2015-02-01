@@ -72,7 +72,6 @@
   clear: both;
 }
 .form {
-  max-width: 400px;
   margin: 0 auto;
 }
 .ng-submitted .ng-invalid {

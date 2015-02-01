@@ -3,39 +3,61 @@
     <ol class="breadcrumb row">
         <li><a href="#/">Home</a></li>
         <li><a href="#/examinations/">Examinations</a></li>
-        <li><a href="#/examinations/{{data.id}}/edit">Edit</a></li>
+        <li><a href="#/examinations/edit">Edit</a></li>
     </ol>
 
-    <form name="form">
-        <h3>
+    <form name="form" class="form" novalidate>
+        <h3 class="panel-title">
             <span class="fa fa-clipboard"></span>
             Edit Examination
         </h3>
-        <hr />
+
         <div class="form-group">
-            <label class="control-label">Name</label>
-            <input class="form-control"
-                   name="name"
-                   ng-model="data.person.name" />
+            <label class="control-label">Date and Time</label>
+            <div class="input-group">
+                <input class="form-control" placeholder="(date of examination)"
+                       datepicker-popup="medium" is-open="opened"
+                       name="takenOn"
+                       ng-model="data.takenOn"
+                       ng-required="true" />
+                <span class="input-group-btn">
+                    <a href class="btn btn-default" ng-click="opened=true">
+                        <span class="fa fa-calendar"></span>
+                    </a>
+                </span>
+            </div>
 
             <div class="errors"
-                 ng-messages="form.name.$error"
-                 ng-if="form.name.$invalid">
-                <div ng-message="not-null">please enter a name</div>
+                 ng-messages="form.takenOn.$errors"
+                 ng-if="form.takenOn.$invalid">
+                <div ng-message="range">please enter a date</div>
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label">Identifier</label>
-            <input class="form-control"
-                   name="identifier"
-                   ng-model="data.identifier" />
+            <label class="control-label">Examiner</label>
+            <div examiners-select
+                 name="examinerId"
+                 ng-model="data.examinerId"></div>
+
             <div class="errors"
-                 ng-messages="form.name.$errors"
-                 ng-if="form.identifier.$invalid">
-                <div ng-message="not-null">please enter an identifier</div>
+                 ng-messages="form.examinerId.$error"
+                 ng-if="form.examinerId.$invalid">
+                <div ng-message="exists">please choose an examiner</div>
             </div>
         </div>
-        <hr/>
+        <div class="form-group">
+            <label class="control-label">Patient</label>
+            <div patients-select
+                 name="patientId"
+                 ng-model="data.patientId"></div>
+
+            <div class="errors"
+                 ng-messages="form.patientId.$errors"
+                 ng-if="form.patientId.$invalid">
+                <div ng-message="exists">please choose a patient</div>
+            </div>
+        </div>
+        <hr />
         <div class="form-group">
             <span class="pull-right">
                 <button class="btn btn-primary"
@@ -43,10 +65,10 @@
                     Update
                 </button>
             </span>
-            <button class="btn btn-warning"
+            <button class="btn btn-warning" type="button"
                     a-confirm="delete()"
                     a-confirm-ok="Delete"
-                    a-confirm-message="Delete the examination '{{data.person.name}}'?">
+                    a-confirm-message="Delete the patient '{{data.person.name}}'?">
                 Delete
             </button>
         </div>
