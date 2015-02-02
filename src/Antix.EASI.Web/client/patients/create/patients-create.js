@@ -39,10 +39,12 @@ angular.module('antix.easi.patients.create', [
 
                                 PatientsApi
                                     .create(scope.data).$promise
-                                    .then(function (data) {
+                                    .then(function (model) {
 
-                                        scope.$root.$broadcast(PatientEvents.Created, data);
+                                        scope.$root.$broadcast(PatientEvents.Created, model);
                                         modal.close();
+
+                                        if (scope.createPatient) scope.createExaminer({ model: model });
                                     })
                                     .catch(function (e) {
                                         $log.debug('createPatient.ok() invalid ' + JSON.stringify(e.data));

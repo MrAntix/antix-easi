@@ -157,8 +157,12 @@
     <Content Include="client\patients\edit\patients-edit.js" />
     <Content Include="client\patients\index\patients-index.js" />
     <Content Include="client\patients\list\patients-list-directive.js" />
-    <Content Include="client\patients\list\patients-list.css" />
-    <Content Include="client\patients\list\patients-list.min.css" />
+    <Content Include="client\patients\list\patients-list.css">
+      <DependentUpon>patients-list.less</DependentUpon>
+    </Content>
+    <Content Include="client\patients\list\patients-list.min.css">
+      <DependentUpon>patients-list.css</DependentUpon>
+    </Content>
     <Content Include="client\patients\patients-api.js" />
     <Content Include="client\patients\patients.js" />
     <Content Include="client\patients\select\patients-select.js" />
@@ -341,7 +345,6 @@
     <Content Include="client\patients\index\patients-index.cshtml" />
     <Content Include="client\patients\list\patients-list-item.cshtml" />
     <Content Include="client\patients\list\patients-list.cshtml" />
-    <Content Include="client\patients\list\patients-list.css.map" />
     <Content Include="client\patients\list\patients-list.less" />
     <Content Include="client\patients\select\patients-select.cshtml" />
     <Content Include="client\examinations\create\examinations-create.cshtml" />
@@ -355,6 +358,9 @@
     </Content>
     <Content Include="client\examiners\list\examiners-list.css.map">
       <DependentUpon>examiners-list.css</DependentUpon>
+    </Content>
+    <Content Include="client\patients\list\patients-list.css.map">
+      <DependentUpon>patients-list.css</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <Content Include="Scripts\antix\form\clear-button\antix-form-clear-button.less" />

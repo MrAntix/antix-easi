@@ -1,16 +1,15 @@
 ﻿<div>
     <div class="input-group">
         <input class="form-control" placeholder="(search)"
-               ng-model="patientId"
+               ng-model="selected"
                ng-model-options="{debounce:500}"
-               typeahead="i.id as i.name for i in get($viewValue) | filter:$viewValue | limitTo:8"
-               typeahead-input-formatter="format($model)" />
+               typeahead="i as i.name for i in get($viewValue) | filter:$viewValue | limitTo:8" />
         <div class="input-group-btn">
-            <a href="#/patients/{{patientId}}/edit" class="btn btn-default"
-               ng-disabled="!patientId">
+            <a href="#/patients/{{selected.id}}/edit" class="btn btn-default"
+               ng-disabled="!selected">
                 <span class="fa fa-pencil"></span>
             </a>
-            <button create-patient
+            <button create-patient="select(model)"
                     class="btn btn-default">
                 <span class="fa fa-plus"></span>
             </button>

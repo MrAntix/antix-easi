@@ -74,33 +74,26 @@
 .form {
   margin: 0 auto;
 }
-.ng-submitted .ng-invalid {
-  border-color: #ebccd1;
+.ng-submitted .ng-invalid,
+.ng-submitted .ng-invalid:focus,
+.ng-submitted .ng-invalid input,
+.ng-submitted .ng-invalid input:focus {
+  border-color: #a94442;
 }
-.form-group {
+.ng-submitted .form-group {
   position: relative;
 }
-.form-group .errors {
+.ng-submitted .form-group .errors {
   position: absolute;
   left: 0;
-  top: -1px;
+  top: 1px;
   margin-top: -2px;
-  padding: 3px 20px 4px;
+  padding: 3px 8px 4px;
   color: #f2dede;
   background-color: #a94442;
-  xbox-shadow: 2px 2px 12px rgba(0, 0, 0, 0.4);
   border-radius: 2px 2px 0 0;
 }
-.form-group .errors:before {
-  content: "\00d7";
-  display: block;
-  /* reduce the damage in FF3.0 */
-  position: absolute;
-  margin-top: 1px;
-  left: 6px;
-  font-weight: 900;
-}
-.form-group .errors:after {
+.ng-submitted .form-group .errors:after {
   content: "";
   display: block;
   /* reduce the damage in FF3.0 */

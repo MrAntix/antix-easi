@@ -21,7 +21,11 @@ angular.module('antix.easi.examinations.create', [
                 $scope.create = function () {
 
                     ExaminationsApi
-                        .create($scope.data).$promise
+                        .create({
+                            takenOn: $scope.data.takenOn,
+                            patientId: $scope.data.patient && $scope.data.patient.id,
+                            examinerId: $scope.data.examiner && $scope.data.examiner.id
+                        }).$promise
                         .then(function (data) {
 
                             $scope.$root.$broadcast(ExaminationEvents.Created, data);
@@ -29,6 +33,9 @@ angular.module('antix.easi.examinations.create', [
                         })
                         .catch(function (e) {
                             $log.debug('AntixEASIExaminationsCreateController create invalid ' + JSON.stringify(e.data));
+
+                            $scope.form.$setSubmitted();
+                            $scope.form.$setValidity();
 
                             angular.forEach(e.data, function (error) {
                                 var split = error.split(/[\[:]/),

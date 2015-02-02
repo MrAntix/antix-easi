@@ -20,7 +20,7 @@ angular.module('antix.easi.examiners.select', [
                     replace: true,
                     templateUrl: 'examiners/select/examiners-select.cshtml',
                     scope: {
-                        'examinerId': '=ngModel'
+                        'selected': '=ngModel'
                     },
                     link: function ($scope, element, attrs) {
                         $log.debug('examinersSelect link');
@@ -37,19 +37,10 @@ angular.module('antix.easi.examiners.select', [
                                 });
                         };
 
-                        $scope.select = function (data) {
-                            $log.debug('examinersSelect.select(' + JSON.stringify(data) + ')');
+                        $scope.select = function (model) {
+                            $log.debug('examinersSelect.select(' + JSON.stringify(model) + ')');
                             
-                            $scope.data = [data];
-                            $scope.examinerId = data.id;
-                        };
-
-                        $scope.format = function (id) {
-                            $log.debug('examinersSelect.format(' + id + ')');
-
-                            if (!$scope.data) return;
-                            for (var i = 0; i < $scope.data.length; i++)
-                                if (id === $scope.data[i].id) return $scope.data[i].name;
+                            $scope.selected = model;
                         };
                     }
                 };
