@@ -2,6 +2,7 @@
 
 angular.module('antix.easi.examinations.edit', [
         'antix.easi.examinations.api',
+        'antix.easi.examinations.regionScore',
         'antix.form.confirm'
 ])
     .controller(

@@ -11,5 +11,12 @@ namespace Antix.EASI.Domain.Examinations.Models
         public DateTimeOffset TakenOn { get; set; }
         public ExaminerInfoModel Examiner { get; set; }
         public PatientInfoModel Patient { get; set; }
+
+        public ExaminationRegionScoresModel HeadNeck { get; set; }
+        public ExaminationRegionScoresModel Trunk { get; set; }
+        public ExaminationRegionScoresModel UpperExtremities { get; set; }
+        public ExaminationRegionScoresModel LowerExtremities { get; set; }
+
+        public string Notes { get; set; }
     }
 }

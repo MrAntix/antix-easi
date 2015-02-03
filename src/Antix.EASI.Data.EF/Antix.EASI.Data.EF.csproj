@@ -55,10 +55,12 @@
     <Compile Include="DataKeywordsIndexer.cs" />
     <Compile Include="Examinations\DeleteExaminationDataService.cs" />
     <Compile Include="Examinations\Projections\ExaminationProjection.cs" />
+    <Compile Include="Examinations\Projections\ExaminationRegionScoresProjection.cs" />
     <Compile Include="Examinations\ReadExaminationDataService.cs" />
     <Compile Include="Examinations\LookupExaminationsService.cs" />
     <Compile Include="Examinations\Models\ExaminationMappings.cs" />
     <Compile Include="Examinations\Projections\ExaminationInfoProjection.cs" />
+    <Compile Include="Examinations\UpdateExaminationDataService.cs" />
     <Compile Include="Migrations\201501212004252_init.cs" />
     <Compile Include="Migrations\201501212004252_init.Designer.cs">
       <DependentUpon>201501212004252_init.cs</DependentUpon>
@@ -66,6 +68,10 @@
     <Compile Include="Migrations\201501271932567_add-examinations.cs" />
     <Compile Include="Migrations\201501271932567_add-examinations.Designer.cs">
       <DependentUpon>201501271932567_add-examinations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502032013441_examinationRegionScore.Region-to-Area.cs" />
+    <Compile Include="Migrations\201502032013441_examinationRegionScore.Region-to-Area.Designer.cs">
+      <DependentUpon>201502032013441_examinationRegionScore.Region-to-Area.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="People\Examiners\CreateExaminerDataService.cs" />
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201501271932567_add-examinations.resx">
       <DependentUpon>201501271932567_add-examinations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502032013441_examinationRegionScore.Region-to-Area.resx">
+      <DependentUpon>201502032013441_examinationRegionScore.Region-to-Area.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

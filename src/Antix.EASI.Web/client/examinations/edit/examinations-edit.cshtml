@@ -58,6 +58,39 @@
             </div>
         </div>
         <hr />
+        <div class="row">
+            <div class="col-sm-5">
+
+            </div>
+            <div class="col-sm-7">
+                <h4>Head &amp; Neck</h4>
+                <div examination-region-score
+                     ng-model="data.headNeck"></div>
+                <hr />
+
+                <h4>Trunk</h4>
+                <div examination-region-score
+                     ng-model="data.trunk"></div>
+                <hr />
+
+                <h4>Upper Extremities</h4>
+                <div examination-region-score
+                     ng-model="data.upperExtremities"></div>
+                <hr />
+
+                <h4>Lower Extremities</h4>
+                <div examination-region-score
+                     ng-model="data.lowerExtremities"></div>
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            <label class="control-label">Notes</label>
+            <textarea class="form-control"
+                      name="notes" rows="10"
+                      ng-model="data.notes"></textarea>
+        </div>
+        <hr />
         <div class="form-group">
             <span class="pull-right">
                 <button class="btn btn-primary"

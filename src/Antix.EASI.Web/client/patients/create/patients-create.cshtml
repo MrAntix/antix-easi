@@ -4,11 +4,11 @@
         Create a new Patient
     </h3>
 </div>
-<div class="modal-body">
+<form name="form" class="modal-body">
     <div class="form-group">
         <label class="control-label">Name</label>
         <input class="form-control"
-               name="name"
+               name="name" type="text" autocapitalize="on"
                ng-model="data.name" />
 
         <div class="errors"
@@ -28,16 +28,17 @@
             <div ng-message="not-null">please enter an identifier</div>
         </div>
     </div>
-</div>
-<div class="modal-footer clearfix">
-    <div class="form-group">
+</form>
+<div class="modal-footer">
+    <div class="form-group clearfix">
         <span class="pull-right">
             <a class="btn btn-default"
                ng-click="cancel()">
                 Cancel
             </a>
-            <button class="btn btn-primary"
-                    ng-click="create()">
+            <button class="btn btn-primary" type="submit"
+                    ng-disabled="!data"
+                    ng-click="create(form, data)">
                 Create
             </button>
         </span>

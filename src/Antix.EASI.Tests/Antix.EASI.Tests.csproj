@@ -47,6 +47,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Examinations\data_mapping.cs" />
     <Compile Include="Examinations\validate_create_examinations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -57,6 +58,10 @@
     <ProjectReference Include="..\Antix.EASI.Application\Antix.EASI.Application.csproj">
       <Project>{D4BD4519-5C4D-47FC-8743-4511E16BF90F}</Project>
       <Name>Antix.EASI.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Antix.EASI.Data.EF\Antix.EASI.Data.EF.csproj">
+      <Project>{84CD90A1-81A7-4FC6-A2D2-BFEDC4FBE86E}</Project>
+      <Name>Antix.EASI.Data.EF</Name>
     </ProjectReference>
     <ProjectReference Include="..\Antix.EASI.Domain\Antix.EASI.Domain.csproj">
       <Project>{54BDDF5E-8E46-4DCE-A134-E235F56E4E08}</Project>

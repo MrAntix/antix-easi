@@ -9,19 +9,24 @@ using Antix.Services.Validation.Services;
 namespace Antix.EASI.Application.Examinations
 {
     public class UpdateExaminationService :
-        ValidatingServiceBase<UpdateExaminationModel>, IUpdateExaminationService
+        ValidatingServiceBase<ExaminationModel>, IUpdateExaminationService
     {
+        readonly IUpdateExaminationDataService _updateService;
+
         public UpdateExaminationService(
-            IValidator<UpdateExaminationModel> validator) :
+            IUpdateExaminationDataService updateService,
+            IValidator<ExaminationModel> validator) :
                 base(validator)
         {
+            _updateService = updateService;
         }
 
         protected override async Task<IServiceResponse> ThenAsync(
-            UpdateExaminationModel model)
+            ExaminationModel model)
         {
             if (model == null) throw new ArgumentNullException("model");
 
+            await _updateService.ExecuteAsync(model);
 
             return ServiceResponse.Empty;
         }

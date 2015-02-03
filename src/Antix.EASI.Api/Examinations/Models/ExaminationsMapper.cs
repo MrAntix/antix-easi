@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Antix.EASI.Api.People.Examiners.Models;
 using Antix.EASI.Api.People.Patients.Models;
@@ -40,7 +41,27 @@ namespace Antix.EASI.Api.Examinations.Models
                 Id = model.Id,
                 TakenOn = model.TakenOn,
                 Examiner = model.Examiner.ToContract(),
-                Patient = model.Patient.ToContract()
+                Patient = model.Patient.ToContract(),
+                HeadNeck = model.HeadNeck.ToContract(),
+                Trunk = model.Trunk.ToContract(),
+                UpperExtremities = model.UpperExtremities.ToContract(),
+                LowerExtremities = model.LowerExtremities.ToContract(),
+                Notes = model.Notes
+            };
+        }
+
+        public static ExaminationRegionScores ToContract(
+            this ExaminationRegionScoresModel model)
+        {
+            if (model == null) return null;
+
+            return new ExaminationRegionScores
+            {
+                Erthema = model.Erthema,
+                EdemaPapulation = model.EdemaPapulation,
+                Excoriation = model.Excoriation,
+                Lichenification = model.Lichenification,
+                Area = model.Area
             };
         }
 
@@ -70,15 +91,36 @@ namespace Antix.EASI.Api.Examinations.Models
             };
         }
 
-        public static UpdateExaminationModel ToModel(
-            this UpdateExamination contract)
+        public static ExaminationModel ToModel(
+            this Examination contract)
         {
             if (contract == null) return null;
 
-            return new UpdateExaminationModel
+            return new ExaminationModel
             {
                 Id = contract.Id,
-                TakenOn = contract.TakenOn
+                TakenOn = contract.TakenOn,
+                HeadNeck = contract.HeadNeck.ToModel(),
+                Trunk = contract.Trunk.ToModel(),
+                UpperExtremities = contract.UpperExtremities.ToModel(),
+                LowerExtremities = contract.LowerExtremities.ToModel(),
+                Notes = contract.Notes
+            };
+        }
+
+
+        public static ExaminationRegionScoresModel ToModel(
+            this ExaminationRegionScores contract)
+        {
+            if (contract == null) return null;
+
+            return new ExaminationRegionScoresModel
+            {
+                Erthema = contract.Erthema,
+                EdemaPapulation = contract.EdemaPapulation,
+                Excoriation = contract.Excoriation,
+                Lichenification = contract.Lichenification,
+                Area = contract.Area
             };
         }
     }

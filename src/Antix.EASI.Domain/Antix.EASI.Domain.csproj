@@ -47,8 +47,8 @@
     <Compile Include="Examinations\Models\CreateExaminationModel.cs" />
     <Compile Include="Examinations\Models\ExaminationInfoModel.cs" />
     <Compile Include="Examinations\Models\ExaminationModel.cs" />
+    <Compile Include="Examinations\Models\ExaminationRegionScoresModel.cs" />
     <Compile Include="Examinations\Models\LookupExaminationsModel.cs" />
-    <Compile Include="Examinations\Models\UpdateExaminationModel.cs" />
     <Compile Include="Examinations\Validation\CreateExaminationValidator.cs" />
     <Compile Include="Examinations\Validation\ICreateExaminationValidator.cs" />
     <Compile Include="Examinations\Validation\IUpdateExaminationValidator.cs" />
@@ -86,6 +86,7 @@
     <Compile Include="People\Validation\IUpdatePersonValidator.cs" />
     <Compile Include="People\Models\UpdatePersonModel.cs" />
     <Compile Include="People\Validation\UpdatePersonValidator.cs" />
+    <Compile Include="ReflectionExtensions.cs" />
     <Compile Include="Validation\DomainValidationConstants.cs" />
     <Compile Include="Validation\IDomainValidationPredicates.cs" />
     <Compile Include="Validation\DomainValidationPredicates.cs" />

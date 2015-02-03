@@ -38,7 +38,7 @@ namespace Antix.EASI.Api.Examinations
 
         [Route(ApiRoutes.Examinations.UPDATE)]
         public async Task<IServiceResponse> Put(
-            UpdateExamination contract)
+            Examination contract)
         {
             var response = await _updateService.ExecuteAsync(
                 contract.ToModel()

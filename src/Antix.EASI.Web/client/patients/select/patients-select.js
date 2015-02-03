@@ -1,7 +1,8 @@
 ﻿'use strict';
 
 angular.module('antix.easi.patients.select', [
-        'antix.easi.patients.api'
+        'antix.easi.patients.api',
+        'antix.easi.patients.create'
 ])
     .directive(
         'patientsSelect',
@@ -34,7 +35,7 @@ angular.module('antix.easi.patients.select', [
 
                                     return $scope.data = data;
                                 });
-                        }
+                        };
 
                         $scope.select = function (model) {
                             $log.debug('patientsSelect.select(' + JSON.stringify(model) + ')');

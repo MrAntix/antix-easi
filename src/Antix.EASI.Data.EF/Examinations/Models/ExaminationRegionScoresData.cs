@@ -8,7 +8,7 @@ namespace Antix.EASI.Data.EF.Examinations.Models
         public int EdemaPapulation { get; set; }
         public int Excoriation { get; set; }
         public int Lichenification { get; set; }
-        public int Region { get; set; }
+        public int Area { get; set; }
 
         public class Configuration :
             ComplexTypeConfiguration<ExaminationRegionScoresData>

@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Examinations\IUpdateExaminationDataService.cs" />
     <Compile Include="Examinations\UpdateExaminationService.cs" />
     <Compile Include="Examinations\CreateExaminationService.cs" />
     <Compile Include="Examinations\DeleteExaminationService.cs" />
