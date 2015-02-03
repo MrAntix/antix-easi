@@ -1,0 +1,79 @@
+﻿@import (reference) "../../Content/bootstrap.variables.less";
+@import (reference) "../../Content/bootstrap/mixins.less";
+
+.examination-row {
+    .make-row();
+    .clearfix;
+    padding-top: 15px;
+
+    > .form-group {
+        .make-sm-column(12);
+    }
+
+    .examination-scores-canvas {
+        .make-sm-column(4);
+    }
+
+    .examination-regions {
+        .make-sm-column(8);
+
+        .nav-tabs > li > a {
+            @media (min-width:@screen-sm-min) {
+                height: 50px;
+                font-size: .8em;
+            }
+        }
+    }
+}
+
+.examination-region-score {
+    .clearfix;
+    padding-top: 15px;
+
+
+    .examination-severity-score-row {
+        .make-row();
+
+        > label {
+            .make-sm-column(3);
+
+            @media (min-width:@screen-sm-min) {
+                height: 45px;
+                display: flex;
+                justify-content: center;
+                -ms-flex-direction: column;
+                flex-direction: column;
+            }
+        }
+
+        > div {
+            .make-sm-column(9);
+        }
+    }
+
+    .examination-area-score-row {
+        .make-row();
+
+        > label {
+            .make-sm-column(12);
+        }
+
+        > div {
+            .make-sm-column(12);
+        }
+    }
+
+    label {
+        font-weight: 100;
+        font-size: .8em;
+    }
+
+    .btn {
+        font-size: .75em;
+        padding: 14px;
+    }
+}
+
+.examination-severity-score {
+    padding-bottom: 5px;
+}

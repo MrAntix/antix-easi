@@ -139,11 +139,11 @@
     <Content Include="client\examinations\list\examinations-list-directive.js" />
     <Content Include="client\examinations\examinations-api.js" />
     <Content Include="client\examinations\examinations.js" />
-    <Content Include="client\examinations\region-score\examination-region-score.css">
-      <DependentUpon>examination-region-score.less</DependentUpon>
+    <Content Include="client\examinations\examinations.css">
+      <DependentUpon>examinations.less</DependentUpon>
     </Content>
-    <Content Include="client\examinations\region-score\examination-region-score.min.css">
-      <DependentUpon>examination-region-score.css</DependentUpon>
+    <Content Include="client\examinations\examinations.min.css">
+      <DependentUpon>examinations.css</DependentUpon>
     </Content>
     <Content Include="client\examinations\region-score\examination-severity-score.js" />
     <Content Include="client\examinations\region-score\examination-region-score.cshtml" />
@@ -372,9 +372,9 @@
       <DependentUpon>patients-list.css</DependentUpon>
     </Content>
     <Content Include="client\examinations\region-score\examination-severity-score.cshtml" />
-    <Content Include="client\examinations\region-score\examination-region-score.less" />
-    <Content Include="client\examinations\region-score\examination-region-score.css.map">
-      <DependentUpon>examination-region-score.css</DependentUpon>
+    <Content Include="client\examinations\examinations.less" />
+    <Content Include="client\examinations\examinations.css.map">
+      <DependentUpon>examinations.css</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <Content Include="Scripts\antix\form\clear-button\antix-form-clear-button.less" />
