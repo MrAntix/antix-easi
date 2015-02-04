@@ -13,52 +13,57 @@
         </h3>
 
         <div class="examination-row">
-            <div class="form-group">
-                <label class="control-label">Date and Time</label>
-                <div class="input-group">
-                    <input class="form-control" placeholder="(date of examination)"
-                           datepicker-popup="medium" is-open="opened"
-                           name="takenOn"
-                           ng-model="data.takenOn"
-                           ng-required="true" />
-                    <span class="input-group-btn">
-                        <a href class="btn btn-default" ng-click="opened=true">
-                            <span class="fa fa-calendar"></span>
-                        </a>
-                    </span>
-                </div>
+            <div class="examination-people">
+                <div class="form-group">
+                    <label class="control-label">Patient</label>
+                    <div patients-select
+                         name="patient"
+                         ng-model="data.patient"></div>
 
-                <div class="errors"
-                     ng-messages="form.takenOn.$errors"
-                     ng-if="form.takenOn.$invalid">
-                    <div ng-message="range">please enter a date</div>
+                    <div class="errors"
+                         ng-messages="form.patient.$errors"
+                         ng-if="form.patient.$invalid">
+                        <div ng-message="exists">please choose a patient</div>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label">Patient</label>
-                <div patients-select
-                     name="patient"
-                     ng-model="data.patient"></div>
+                <div class="form-group">
+                    <label class="control-label">Examiner</label>
+                    <div examiners-select
+                         name="examiner"
+                         ng-model="data.examiner"></div>
 
-                <div class="errors"
-                     ng-messages="form.patient.$errors"
-                     ng-if="form.patient.$invalid">
-                    <div ng-message="exists">please choose a patient</div>
+                    <div class="errors"
+                         ng-messages="form.examiner.$error"
+                         ng-if="form.examiner.$invalid">
+                        <div ng-message="exists">please choose an examiner</div>
+                    </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="control-label">Examiner</label>
-                <div examiners-select
-                     name="examiner"
-                     ng-model="data.examiner"></div>
+            <div class="examination-date">
+                <div class="form-group">
+                    <label class="control-label">Date and Time</label>
+                    <div class="input-group">
+                        <input class="form-control" placeholder="(date of examination)"
+                               datepicker-popup="medium" is-open="opened"
+                               name="takenOn"
+                               ng-model="data.takenOn"
+                               ng-required="true" />
+                        <span class="input-group-btn">
+                            <a href class="btn btn-default" ng-click="opened=true">
+                                <span class="fa fa-calendar"></span>
+                            </a>
+                        </span>
+                    </div>
 
-                <div class="errors"
-                     ng-messages="form.examiner.$error"
-                     ng-if="form.examiner.$invalid">
-                    <div ng-message="exists">please choose an examiner</div>
+                    <div class="errors"
+                         ng-messages="form.takenOn.$errors"
+                         ng-if="form.takenOn.$invalid">
+                        <div ng-message="range">please enter a date</div>
+                    </div>
                 </div>
             </div>
         </div>
+
         <div class="examination-row">
             <div class="examination-scores-canvas">
 
@@ -85,29 +90,32 @@
             </div>
         </div>
         <div class="examination-row">
-            <div class="form-group">
-                <label class="control-label">Notes</label>
-                <textarea class="form-control"
-                          name="notes" rows="10"
-                          ng-model="data.notes"></textarea>
+            <div class="examination-notes">
+                <div class="form-group">
+                    <label class="control-label">Notes</label>
+                    <textarea class="form-control"
+                              name="notes" rows="6"
+                              ng-model="data.notes"></textarea>
+                </div>
             </div>
         </div>
         <div class="examination-row">
-            <div class="form-group">
-                <span class="pull-right">
-                    <button class="btn btn-primary"
-                            ng-click="update()">
-                        Update
+            <div class="examination-actions">
+                <div class="form-group">
+                    <span class="pull-right">
+                        <button class="btn btn-primary"
+                                ng-click="update()">
+                            Update
+                        </button>
+                    </span>
+                    <button class="btn btn-warning" type="button"
+                            a-confirm="delete()"
+                            a-confirm-ok="Delete"
+                            a-confirm-message="Delete the patient '{{data.person.name}}'?">
+                        Delete
                     </button>
-                </span>
-                <button class="btn btn-warning" type="button"
-                        a-confirm="delete()"
-                        a-confirm-ok="Delete"
-                        a-confirm-message="Delete the patient '{{data.person.name}}'?">
-                    Delete
-                </button>
+                </div>
             </div>
         </div>
     </form>
-
 </div>

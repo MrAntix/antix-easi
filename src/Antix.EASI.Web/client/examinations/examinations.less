@@ -6,8 +6,12 @@
     .clearfix;
     padding-top: 15px;
 
-    > .form-group {
-        .make-sm-column(12);
+    .examination-date {
+        .make-sm-column(5);
+    }
+
+    .examination-people {
+        .make-sm-column(7);
     }
 
     .examination-scores-canvas {
@@ -18,14 +22,17 @@
         .make-sm-column(8);
 
         .tabs {
-            padding-bottom:15px;
+            padding-bottom: 15px;
             border-bottom: solid 1px @nav-tabs-border-color;
 
             .nav-tabs > li {
                 &.active > a {
                     #gradient.vertical(#fff,#f9f9f9);
-                    background-color: inherit;                   
-                    border-bottom-color: #f9f9f9;
+                    background-color: inherit;
+
+                    @media (min-width:@screen-sm-min) {
+                        border-bottom-color: #f9f9f9;
+                    }
                 }
 
                 > a {
@@ -37,6 +44,11 @@
                 }
             }
         }
+    }
+
+    .examination-notes,
+    .examination-actions {
+        .make-sm-column(12);
     }
 }
 

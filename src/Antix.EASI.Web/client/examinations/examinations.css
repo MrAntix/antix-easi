@@ -11,16 +11,28 @@
 .examination-row:after {
   clear: both;
 }
-.examination-row > .form-group {
+.examination-row .examination-date {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  .examination-row > .form-group {
+  .examination-row .examination-date {
     float: left;
-    width: 100%;
+    width: 41.66666667%;
+  }
+}
+.examination-row .examination-people {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .examination-row .examination-people {
+    float: left;
+    width: 58.33333333%;
   }
 }
 .examination-row .examination-scores-canvas {
@@ -58,12 +70,30 @@
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff9f9f9', GradientType=0);
   background-color: inherit;
-  border-bottom-color: #f9f9f9;
+}
+@media (min-width: 768px) {
+  .examination-row .examination-regions .tabs .nav-tabs > li.active > a {
+    border-bottom-color: #f9f9f9;
+  }
 }
 @media (min-width: 768px) {
   .examination-row .examination-regions .tabs .nav-tabs > li > a {
     height: 50px;
     font-size: .8em;
+  }
+}
+.examination-row .examination-notes,
+.examination-row .examination-actions {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .examination-row .examination-notes,
+  .examination-row .examination-actions {
+    float: left;
+    width: 100%;
   }
 }
 .examination-region-score {
