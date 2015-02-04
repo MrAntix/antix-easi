@@ -47,8 +47,16 @@
     width: 66.66666667%;
   }
 }
+.examination-row .examination-regions .tabs {
+  padding-bottom: 15px;
+  border-bottom: solid 1px #dddddd;
+}
+.examination-row .examination-regions .tabs .nav-tabs > li.active > a {
+  background-color: inherit;
+  border-bottom-color: #f9f9f9;
+}
 @media (min-width: 768px) {
-  .examination-row .examination-regions .nav-tabs > li > a {
+  .examination-row .examination-regions .tabs .nav-tabs > li > a {
     height: 50px;
     font-size: .8em;
   }
@@ -73,6 +81,7 @@
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+  text-align: right;
 }
 @media (min-width: 768px) {
   .examination-region-score .examination-severity-score-row > label {

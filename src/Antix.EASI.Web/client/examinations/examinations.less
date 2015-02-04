@@ -17,10 +17,23 @@
     .examination-regions {
         .make-sm-column(8);
 
-        .nav-tabs > li > a {
-            @media (min-width:@screen-sm-min) {
-                height: 50px;
-                font-size: .8em;
+        .tabs {
+            padding-bottom:15px;
+            border-bottom: solid 1px @nav-tabs-border-color;
+
+            .nav-tabs > li {
+                &.active > a {
+                    background-color: inherit;
+                    border-bottom-color: #f9f9f9;
+                }
+
+                > a {
+
+                    @media (min-width:@screen-sm-min) {
+                        height: 50px;
+                        font-size: .8em;
+                    }
+                }
             }
         }
     }
@@ -36,6 +49,7 @@
 
         > label {
             .make-sm-column(3);
+            text-align: right;
 
             @media (min-width:@screen-sm-min) {
                 height: 45px;
