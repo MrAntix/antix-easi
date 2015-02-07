@@ -1,6 +1,20 @@
 ﻿@import (reference) "../../Content/bootstrap.variables.less";
 @import (reference) "../../Content/bootstrap/mixins.less";
+@import (reference) "../../Content/bootstrap/mixins/panels.less";
 @import (reference) "../../Content/site/variables.less";
+
+.examinations-list {
+    .panel.examination-panel {
+        background-color:  @page-content-color;
+
+        .panel-heading {
+        }
+
+        .panel-footer {
+            background-color: none;
+        }
+    }
+}
 
 .examination-row {
     .make-row();
@@ -106,16 +120,17 @@
     padding-bottom: 5px;
 }
 
-.examinations-list-item{
-    .panel-body{
-    min-height:160px;
+.examinations-list-item {
+    .panel-body {
+        min-height: 160px;
     }
 
-    .examination-eric{
-        position:absolute;
-        width:80px;
+    .examination-eric {
+        position: absolute;
+        width: 80px;
     }
-    .examinations-list-item-details{
-        padding-left:120px;
+
+    .examinations-list-item-details {
+        padding-left: 120px;
     }
 }

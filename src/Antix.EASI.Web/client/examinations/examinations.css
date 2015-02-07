@@ -1,4 +1,10 @@
-﻿.examination-row {
+﻿.examinations-list .panel.examination-panel {
+  background-color: #e8f1fb;
+}
+.examinations-list .panel.examination-panel .panel-footer {
+  background-color: none;
+}
+.examination-row {
   margin-left: -15px;
   margin-right: -15px;
   padding-top: 15px;
