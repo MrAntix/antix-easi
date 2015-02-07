@@ -11,11 +11,11 @@
 .examination-eric svg .legs,
 .examination-eric svg .arms {
   fill: #ccc;
-  stroke: #aaf;
+  stroke: #ccc;
+  stroke-width: 1px;
 }
 .examination-eric svg .active {
   stroke: #444;
-  stroke-width: 1px;
 }
 .examination-eric svg .score0 {
   fill: #fafafa;
