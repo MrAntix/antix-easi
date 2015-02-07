@@ -1,5 +1,6 @@
 ﻿@import (reference) "../../Content/bootstrap.variables.less";
 @import (reference) "../../Content/bootstrap/mixins.less";
+@import (reference) "../../Content/site/variables.less";
 
 .examination-row {
     .make-row();
@@ -27,11 +28,11 @@
 
             .nav-tabs > li {
                 &.active > a {
-                    #gradient.vertical(#fff,#f9f9f9);
+                    #gradient.vertical(#fff,@page-content-color);
                     background-color: inherit;
 
                     @media (min-width:@screen-sm-min) {
-                        border-bottom-color: #f9f9f9;
+                        border-bottom-color: @page-content-color;
                     }
                 }
 

@@ -68,16 +68,16 @@ angular.module('antix.easi.examinations.edit', [
 
                 $scope.eric = {
                     head: function () {
-                        return $scope.score = calcRegionScore($scope.data.headNeck);
+                        return $scope.data == null ? 0 : calcRegionScore($scope.data.headNeck);
                     },
                     trunk: function () {
-                        return $scope.score = calcRegionScore($scope.data.trunk);
+                        return $scope.data == null ? 0 : calcRegionScore($scope.data.trunk);
                     },
                     arms: function () {
-                        return $scope.score = calcRegionScore($scope.data.upperExtremities);
+                        return $scope.data == null ? 0 : calcRegionScore($scope.data.upperExtremities);
                     },
                     legs: function () {
-                        return $scope.score = calcRegionScore($scope.data.lowerExtremities);
+                        return $scope.data == null ? 0 : calcRegionScore($scope.data.lowerExtremities);
                     }
                 };
             }

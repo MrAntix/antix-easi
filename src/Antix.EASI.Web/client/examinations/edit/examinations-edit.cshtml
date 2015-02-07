@@ -1,12 +1,16 @@
-﻿<div id="page-home" class="page-content container">
+﻿<div id="breadcrumb" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div id="page-home" class="container">
+        <ol class="breadcrumb">
+            <li><a href="#/">Home</a></li>
+            <li><a href="#/examinations/">Examinations</a></li>
+            <li><a href="#/examinations/edit">Edit</a></li>
+        </ol>
+    </div>
+</div>
 
-    <ol class="breadcrumb row">
-        <li><a href="#/">Home</a></li>
-        <li><a href="#/examinations/">Examinations</a></li>
-        <li><a href="#/examinations/edit">Edit</a></li>
-    </ol>
+<div id="page-examinations-edit" class="page-content container">
 
-    <form name="form" class="form" novalidate>
+    <form name="form" class="form" novalidate ng-show="data">
         <h3>
             <span class="fa fa-clipboard"></span>
             Edit Examination
