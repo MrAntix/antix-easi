@@ -1,27 +1,27 @@
 ﻿'use strict';
 
-angular.module('antix.easi.examinations.regionScore', [
-    'antix.easi.examinations.severityScore'
+angular.module('antix.easi.examinations.eric', [
 ])
     .directive(
-        'examinationRegionScore',
+        'examinationEric',
         [
             '$log',
             function (
                 $log) {
 
-                $log.debug('examinationRegionScore init');
+                $log.debug('examinationEric init');
 
                 return {
                     restrict: 'EA',
-                    replace: true,
-                    templateUrl: 'examinations/region-score/examination-region-score.cshtml',
+                    replace: false,
+                    templateUrl: 'examinations/edit/examinations-eric.svg',
                     scope: {
                         'model': '=ngModel'
                     },
                     link: function ($scope, element, attrs) {
-                        $log.debug('examinationRegionScore link');
+                        $log.debug('examinationEric link');
 
+                        $scope.model.active = 'head';
                     }
                 };
             }

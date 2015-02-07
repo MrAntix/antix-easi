@@ -1,0 +1,21 @@
+﻿.examination-eric {
+  margin: 0 auto;
+  width: 220px;
+  overflow: visible;
+}
+.examination-eric svg {
+  padding: 10px;
+}
+.examination-eric svg .head,
+.examination-eric svg .trunk,
+.examination-eric svg .legs,
+.examination-eric svg .arms {
+  fill: transparent;
+  stroke: #666;
+  stroke-dasharray: 4,4;
+}
+.examination-eric svg .active {
+  stroke: #333;
+  stroke-dasharray: none;
+}
+/*# sourceMappingURL=examinations-eric.css.map */

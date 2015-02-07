@@ -128,7 +128,14 @@
   <ItemGroup>
     <Content Include="client\app.js" />
     <Content Include="client\examinations\create\examinations-create.js" />
+    <Content Include="client\examinations\edit\examinations-eric.css">
+      <DependentUpon>examinations-eric.less</DependentUpon>
+    </Content>
+    <Content Include="client\examinations\edit\examinations-eric.js" />
     <Content Include="client\examinations\edit\examinations-edit.js" />
+    <Content Include="client\examinations\edit\examinations-eric.min.css">
+      <DependentUpon>examinations-eric.css</DependentUpon>
+    </Content>
     <Content Include="client\examinations\index\examinations-index.js" />
     <Content Include="client\examinations\list\examinations-list.css">
       <DependentUpon>examinations-list.less</DependentUpon>
@@ -375,6 +382,11 @@
     <Content Include="client\examinations\examinations.less" />
     <Content Include="client\examinations\examinations.css.map">
       <DependentUpon>examinations.css</DependentUpon>
+    </Content>
+    <Content Include="client\examinations\edit\examinations-eric.svg" />
+    <Content Include="client\examinations\edit\examinations-eric.less" />
+    <Content Include="client\examinations\edit\examinations-eric.css.map">
+      <DependentUpon>examinations-eric.css</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <Content Include="Scripts\antix\form\clear-button\antix-form-clear-button.less" />

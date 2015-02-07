@@ -3,6 +3,7 @@
 angular.module('antix.easi.examinations.edit', [
         'antix.easi.examinations.api',
         'antix.easi.examinations.regionScore',
+        'antix.easi.examinations.eric',
         'antix.form.confirm'
 ])
     .controller(
@@ -15,7 +16,7 @@ angular.module('antix.easi.examinations.edit', [
                 ExaminationsApi, ExaminationEvents) {
 
                 $log.debug('AntixEASIExaminationsEditController init ' + $stateParams.id);
-
+                
                 ExaminationsApi
                     .read({ id: $stateParams.id }).$promise
                     .then(function (data) {
@@ -44,7 +45,11 @@ angular.module('antix.easi.examinations.edit', [
                             $scope.$root.$broadcast(ExaminationEvents.Deleted, $scope.data);
                             $state.go('home');
                         });
-
                 };
+
+                $scope.region = function(selectedName) {
+                    $scope.eric.active = selectedName;
+                };
+                $scope.eric = {};
             }
         ]);

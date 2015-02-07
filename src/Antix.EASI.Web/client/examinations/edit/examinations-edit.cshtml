@@ -66,23 +66,23 @@
 
         <div class="examination-row">
             <div class="examination-scores-canvas">
-
+                <div examination-eric ng-model="eric" class="examination-eric"></div>
             </div>
             <div class="examination-regions">
                 <div tabset justified="true" class="tabs">
-                    <div tab heading="Head and Neck">
+                    <div tab heading="Head and Neck" select="region('head')">
                         <div examination-region-score
                              ng-model="data.headNeck"></div>
                     </div>
-                    <div tab heading="Trunk">
+                    <div tab heading="Trunk" select="region('trunk')">
                         <div examination-region-score
                              ng-model="data.trunk"></div>
                     </div>
-                    <div tab heading="Upper Extremities">
+                    <div tab heading="Upper Extremities" select="region('arms')">
                         <div examination-region-score
                              ng-model="data.upperExtremities"></div>
                     </div>
-                    <div tab heading="Lower Extremities">
+                    <div tab heading="Lower Extremities" select="region('legs')">
                         <div examination-region-score
                              ng-model="data.lowerExtremities"></div>
                     </div>
@@ -111,7 +111,7 @@
                     <button class="btn btn-warning" type="button"
                             a-confirm="delete()"
                             a-confirm-ok="Delete"
-                            a-confirm-message="Delete the patient '{{data.person.name}}'?">
+                            a-confirm-message="Delete the examination?">
                         Delete
                     </button>
                 </div>
