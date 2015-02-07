@@ -14,6 +14,10 @@
   stroke: #ccc;
   stroke-width: 1px;
 }
+.examination-eric svg .total-score {
+  font-size: 60px;
+  fill: #444;
+}
 .examination-eric svg .active {
   stroke: #444;
 }

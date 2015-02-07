@@ -1,5 +1,6 @@
 ﻿<svg xmlns="http://www.w3.org/2000/svg"
      viewBox="0 0 320 480">
+    <text class="total-score" y="48" x="246">{{model.totalScore()}}</text>
     <path class="head score{{model.head()}}" ng-class="{active:model.active=='head'}"
           d=" m160.40741,0c-21.817886,0 -38.40741,19.656494 -38.40741,49.90567c0,21.004333 7.99826,37.944519 20.192123,46.33902l-4.066666,21.69809c22.592606,4.32489 22.592606,4.32489 45.185196,0l-4.659729,-21.711639c12.179611,-8.400543 20.163895,-25.335693 20.163895,-46.32547c0,-30.249176 -16.589539,-49.90567 -38.40741,-49.90567z" />
     <path class="trunk score{{model.trunk()}}" ng-class="{active:model.active=='trunk'}"

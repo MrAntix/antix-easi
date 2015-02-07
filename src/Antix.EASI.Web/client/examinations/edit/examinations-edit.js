@@ -51,33 +51,54 @@ angular.module('antix.easi.examinations.edit', [
                     $scope.eric.active = selectedName;
                 };
 
-                var calcRegionScore = function (region) {
-                    if (region.erthema === null
-                        || region.edemaPapulation === null
-                        || region.excoriation === null
-                        || region.lichenification === null
-                        || region.area === null) return null;
-
-                    return Math.round(
-                        (region.erthema
+                var regionIsValid = function(region) {
+                        return (region.erthema !== null
+                            && region.edemaPapulation !== null
+                            && region.excoriation !== null
+                            && region.lichenification !== null
+                            && region.area !== null);
+                    },
+                    regionsAreValid = function(data) {
+                        return data
+                            && regionIsValid(data.headNeck)
+                            && regionIsValid(data.trunk)
+                            && regionIsValid(data.upperExtremities)
+                            && regionIsValid(data.lowerExtremities);
+                    },
+                    calcRegionScore = function(region) {
+                        return (region.erthema
                             + region.edemaPapulation
                             + region.excoriation
-                            + region.lichenification) * region.area
-                        / 7.2);
-                }
+                            + region.lichenification) * region.area;
+                    },
+                    calcRegionScorePercent = function(data, regionName) {
+
+                        return data && regionIsValid(data[regionName])
+                            ? Math.round(calcRegionScore(data[regionName]) / 7.2)
+                            : null;
+                    };
 
                 $scope.eric = {
                     head: function () {
-                        return $scope.data == null ? 0 : calcRegionScore($scope.data.headNeck);
+                        return calcRegionScorePercent($scope.data,'headNeck');
                     },
                     trunk: function () {
-                        return $scope.data == null ? 0 : calcRegionScore($scope.data.trunk);
+                        return calcRegionScorePercent($scope.data, 'trunk');
                     },
                     arms: function () {
-                        return $scope.data == null ? 0 : calcRegionScore($scope.data.upperExtremities);
+                        return calcRegionScorePercent($scope.data, 'upperExtremities');
                     },
                     legs: function () {
-                        return $scope.data == null ? 0 : calcRegionScore($scope.data.lowerExtremities);
+                        return calcRegionScorePercent($scope.data, 'lowerExtremities');
+                    },
+                    totalScore: function () {
+                        return regionsAreValid($scope.data) ?
+                            Math.round(
+                                calcRegionScore($scope.data.headNeck) * .1
+                                + calcRegionScore($scope.data.trunk) * .3
+                                + calcRegionScore($scope.data.upperExtremities) * .2
+                                + calcRegionScore($scope.data.lowerExtremities) * .4)
+                            : null;
                     }
                 };
             }
