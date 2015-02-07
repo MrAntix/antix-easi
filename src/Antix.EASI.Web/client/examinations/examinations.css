@@ -44,7 +44,7 @@
 @media (min-width: 768px) {
   .examination-row .examination-scores-canvas {
     float: left;
-    width: 33.33333333%;
+    width: 41.66666667%;
   }
 }
 .examination-row .examination-regions {
@@ -56,7 +56,7 @@
 @media (min-width: 768px) {
   .examination-row .examination-regions {
     float: left;
-    width: 66.66666667%;
+    width: 58.33333333%;
   }
 }
 .examination-row .examination-regions .tabs {

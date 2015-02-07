@@ -17,6 +17,29 @@
         </h3>
 
         <div class="examination-row">
+            <div class="examination-date">
+                <div class="form-group">
+                    <label class="control-label">Date and Time</label>
+                    <div class="input-group">
+                        <input class="form-control" placeholder="(date of examination)"
+                               datepicker-popup="medium" is-open="opened"
+                               name="takenOn"
+                               ng-model="data.takenOn"
+                               ng-required="true" />
+                        <span class="input-group-btn">
+                            <a href class="btn btn-default" ng-click="opened=true">
+                                <span class="fa fa-calendar"></span>
+                            </a>
+                        </span>
+                    </div>
+
+                    <div class="errors"
+                         ng-messages="form.takenOn.$errors"
+                         ng-if="form.takenOn.$invalid">
+                        <div ng-message="range">please enter a date</div>
+                    </div>
+                </div>
+            </div>
             <div class="examination-people">
                 <div class="form-group">
                     <label class="control-label">Patient</label>
@@ -43,30 +66,7 @@
                     </div>
                 </div>
             </div>
-            <div class="examination-date">
-                <div class="form-group">
-                    <label class="control-label">Date and Time</label>
-                    <div class="input-group">
-                        <input class="form-control" placeholder="(date of examination)"
-                               datepicker-popup="medium" is-open="opened"
-                               name="takenOn"
-                               ng-model="data.takenOn"
-                               ng-required="true" />
-                        <span class="input-group-btn">
-                            <a href class="btn btn-default" ng-click="opened=true">
-                                <span class="fa fa-calendar"></span>
-                            </a>
-                        </span>
-                    </div>
-
-                    <div class="errors"
-                         ng-messages="form.takenOn.$errors"
-                         ng-if="form.takenOn.$invalid">
-                        <div ng-message="range">please enter a date</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+       </div>
 
         <div class="examination-row">
             <div class="examination-scores-canvas">
