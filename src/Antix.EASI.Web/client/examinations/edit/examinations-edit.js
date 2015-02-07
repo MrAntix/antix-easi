@@ -16,7 +16,7 @@ angular.module('antix.easi.examinations.edit', [
                 ExaminationsApi, ExaminationEvents) {
 
                 $log.debug('AntixEASIExaminationsEditController init ' + $stateParams.id);
-                
+
                 ExaminationsApi
                     .read({ id: $stateParams.id }).$promise
                     .then(function (data) {
@@ -47,9 +47,38 @@ angular.module('antix.easi.examinations.edit', [
                         });
                 };
 
-                $scope.region = function(selectedName) {
+                $scope.region = function (selectedName) {
                     $scope.eric.active = selectedName;
                 };
-                $scope.eric = {};
+
+                var calcRegionScore = function (region) {
+                    if (region.erthema === null
+                        || region.edemaPapulation === null
+                        || region.excoriation === null
+                        || region.lichenification === null
+                        || region.area === null) return null;
+
+                    return Math.round(
+                        (region.erthema
+                            + region.edemaPapulation
+                            + region.excoriation
+                            + region.lichenification) * region.area
+                        / 7.2);
+                }
+
+                $scope.eric = {
+                    head: function () {
+                        return $scope.score = calcRegionScore($scope.data.headNeck);
+                    },
+                    trunk: function () {
+                        return $scope.score = calcRegionScore($scope.data.trunk);
+                    },
+                    arms: function () {
+                        return $scope.score = calcRegionScore($scope.data.upperExtremities);
+                    },
+                    legs: function () {
+                        return $scope.score = calcRegionScore($scope.data.lowerExtremities);
+                    }
+                };
             }
         ]);
