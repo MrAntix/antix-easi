@@ -3,13 +3,13 @@
         <div class="panel-heading">
             <div class="btn-group">
                 <a class="editButton btn btn-default"
-                   href="#/examinations/{{::item.id}}/edit">
+                   href="#/examinations/{{::model.id}}/edit">
                     <span class="fa fa-pencil"></span>
                 </a>
             </div>
             <h4 class="panel-title">
                 <span class="fa fa-clipboard"></span>
-                {{item | examinationTitle}}
+                {{model | examinationTitle}}
             </h4>
         </div>
         <div class="panel-body">
@@ -20,11 +20,11 @@
             <div class="examinations-list-item-details">
                 <div class="row">
                     <label class="col-sm-4">Patient</label>
-                    <span class="col-sm-8">{{item.patient | patientName}}</span>
+                    <span class="col-sm-8">{{model.patient | patientName}}</span>
                 </div>
                 <div class="row">
                     <label class="col-sm-4">Examiner</label>
-                    <span class="col-sm-8">{{item.examiner | examinerName}}</span>
+                    <span class="col-sm-8">{{model.examiner | examinerName}}</span>
                 </div>
             </div>
         </div>

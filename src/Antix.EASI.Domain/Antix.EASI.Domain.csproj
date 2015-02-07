@@ -48,6 +48,9 @@
     <Compile Include="Examinations\Models\ExaminationInfoModel.cs" />
     <Compile Include="Examinations\Models\ExaminationModel.cs" />
     <Compile Include="Examinations\Models\ExaminationRegionScoresModel.cs" />
+    <Compile Include="Examinations\Models\ExaminationScoresModel.cs" />
+    <Compile Include="Examinations\Models\ExaminationScoringExtensions.cs" />
+    <Compile Include="Examinations\Models\IExaminationScoringModel.cs" />
     <Compile Include="Examinations\Models\LookupExaminationsModel.cs" />
     <Compile Include="Examinations\Validation\CreateExaminationValidator.cs" />
     <Compile Include="Examinations\Validation\ICreateExaminationValidator.cs" />

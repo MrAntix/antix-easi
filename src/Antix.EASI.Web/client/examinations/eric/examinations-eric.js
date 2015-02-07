@@ -21,7 +21,6 @@ angular.module('antix.easi.examinations.eric', [
                     link: function ($scope, element, attrs) {
                         $log.debug('examinationEric link');
 
-                        $scope.model.active = 'head';
                     }
                 };
             }

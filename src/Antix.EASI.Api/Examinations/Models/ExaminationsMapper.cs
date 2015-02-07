@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Antix.EASI.Api.People.Examiners.Models;
 using Antix.EASI.Api.People.Patients.Models;
@@ -19,7 +18,12 @@ namespace Antix.EASI.Api.Examinations.Models
                 Id = model.Id,
                 TakenOn = model.TakenOn,
                 Examiner = model.Examiner.ToContract(),
-                Patient = model.Patient.ToContract()
+                Patient = model.Patient.ToContract(),
+                HeadNeckScore = model.Scores.HeadNeckScore,
+                TrunkScore = model.Scores.TrunkScore,
+                UpperExtremitiesScore = model.Scores.UpperExtremitiesScore,
+                LowerExtremitiesScore = model.Scores.LowerExtremitiesScore,
+                TotalScore = model.Scores.TotalScore
             };
         }
 

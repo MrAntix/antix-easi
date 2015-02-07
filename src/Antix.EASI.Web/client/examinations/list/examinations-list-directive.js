@@ -37,7 +37,27 @@ angular.module('antix.easi.examinations.list', [
                     replace: true,
                     templateUrl: 'examinations/list/examinations-list-item.cshtml',
                     scope: {
-                        'item': '=examinationsListItem'
+                        'model': '=examinationsListItem'
+                    }, link: function ($scope) {
+
+                        $scope.eric = {
+                            head: function () {
+                                return $scope.model.headNeckScore;
+                            },
+                            trunk: function () {
+                                return $scope.model.trunkScore;
+                            },
+                            arms: function () {
+                                return $scope.model.upperExtremitiesScore;
+                            },
+                            legs: function () {
+                                return $scope.model.lowerExtremitiesScore;
+                            },
+                            totalScore: function () {
+                                return $scope.model.totalScore;
+                            }
+                        };
+
                     }
                 };
             }

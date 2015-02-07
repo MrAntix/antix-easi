@@ -28,13 +28,20 @@ namespace Antix.EASI.Data.EF.Examinations.Projections
                 .Get<ExaminerData, ExaminerInfoModel>();
             var projectPatient = _projectionProvider
                 .Get<PatientData, PatientInfoModel>();
+            var projectRegionScores = _projectionProvider
+                .Get<ExaminationRegionScoresData, ExaminationRegionScoresModel>();
 
             return d => new ExaminationInfoModel
             {
                 Id = d.Id,
                 TakenOn = d.TakenOn,
                 Examiner = projectExaminer.Invoke(d.Examiner),
-                Patient = projectPatient.Invoke(d.Patient)
+                Patient = projectPatient.Invoke(d.Patient),
+                HeadNeck = projectRegionScores.Invoke(d.HeadNeck),
+                Trunk = projectRegionScores.Invoke(d.Trunk),
+                UpperExtremities = projectRegionScores.Invoke(d.UpperExtremities),
+                LowerExtremities = projectRegionScores.Invoke(d.LowerExtremities),
+
             };
         }
     }

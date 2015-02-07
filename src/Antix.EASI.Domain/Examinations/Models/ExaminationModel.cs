@@ -4,7 +4,7 @@ using Antix.EASI.Domain.People.Patients.Models;
 
 namespace Antix.EASI.Domain.Examinations.Models
 {
-    public class ExaminationModel
+    public class ExaminationModel : IExaminationScoringModel
     {
         public Guid Id { get; set; }
 
@@ -16,6 +16,8 @@ namespace Antix.EASI.Domain.Examinations.Models
         public ExaminationRegionScoresModel Trunk { get; set; }
         public ExaminationRegionScoresModel UpperExtremities { get; set; }
         public ExaminationRegionScoresModel LowerExtremities { get; set; }
+
+        public ExaminationScoresModel Scores { get { return this.GetScores(); } }
 
         public string Notes { get; set; }
     }
