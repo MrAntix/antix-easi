@@ -8,6 +8,7 @@ html {
 
 body {
     background-color: @body-color;
+    overflow-y: scroll;
 }
 
 .footer {
@@ -18,6 +19,25 @@ body {
 .page-nav {
     background-color: @page-body-color;
     border: none;
+
+    .navbar-brand {
+        color: #fff;
+        font-weight: 700;
+    }
+}
+
+.modal {
+    background-color: rgba(0,0,0,.1);
+
+    .modal-dialog {
+        .modal-content {
+            background-color: @page-content-color;
+        }
+    }
+}
+
+.dropdown-menu {
+    border: none;
 }
 
 input {
@@ -25,9 +45,10 @@ input {
 }
 
 .page-body {
-    #gradient.vertical(@page-body-color, darken(@page-body-color,25%));
+    #gradient.vertical(darken(@page-body-color,10%), @page-body-color);
     padding-top: 90px;
     padding-bottom: 10px;
+    min-height: 500px;
 
     #breadcrumb {
         #gradient.horizontal(@page-content-color, darken(@page-content-color,10%));
@@ -53,6 +74,22 @@ input {
 
         > form > .panel {
             margin: -20px -15px 0;
+        }
+    }
+
+    .panel {
+        background-color: @page-content-color;
+
+        .panel-heading {
+            border: none;
+
+            > .btn-group .btn {
+                border: none;
+            }
+        }
+
+        .panel-footer {
+            background-color: none;
         }
     }
 }

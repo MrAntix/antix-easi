@@ -1,0 +1,34 @@
+﻿@import (reference) "../../Content/bootstrap.variables.less";
+@import (reference) "../../Content/bootstrap/mixins.less";
+@import (reference) "../../Content/site/variables.less";
+
+.tabs {
+    padding-bottom: 15px;
+
+    .nav-tabs > li {
+        & > a,
+        & > a:active,
+        & > a:focus,
+        & > a:hover {
+            #gradient.vertical(@page-content-color, darken(@page-content-color,3%));
+        }
+
+        &.active > a,
+        &.active > a:active,
+        &.active > a:focus,
+        &.active > a:hover {
+            #gradient.vertical(lighten(@page-content-color,10%),@page-content-color);
+            background-color: inherit;
+            border: none;
+        }
+
+        > a {
+            border: none;
+
+            @media (min-width:@screen-sm-min) {
+                height: 50px;
+                font-size: .8em;
+            }
+        }
+    }
+}

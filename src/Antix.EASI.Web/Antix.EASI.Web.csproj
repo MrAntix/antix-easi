@@ -206,6 +206,12 @@
     <Content Include="Content\site\panel-buttons.min.css">
       <DependentUpon>panel-buttons.css</DependentUpon>
     </Content>
+    <Content Include="Content\site\tabs.css">
+      <DependentUpon>tabs.less</DependentUpon>
+    </Content>
+    <Content Include="Content\site\tabs.min.css">
+      <DependentUpon>tabs.css</DependentUpon>
+    </Content>
     <Content Include="Content\site\variables.css">
       <DependentUpon>variables.less</DependentUpon>
     </Content>
@@ -397,6 +403,10 @@
     <Content Include="Content\site\variables.less" />
     <Content Include="Content\site\variables.css.map">
       <DependentUpon>variables.css</DependentUpon>
+    </Content>
+    <Content Include="Content\site\tabs.less" />
+    <Content Include="Content\site\tabs.css.map">
+      <DependentUpon>tabs.css</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <Content Include="Scripts\antix\form\clear-button\antix-form-clear-button.less" />

@@ -1,5 +1,5 @@
 ﻿<div class="examinations-list-item" cell-layout-cell>
-    <div class="panel examination-panel">
+    <div class="panel panel-default">
         <div class="panel-heading">
             <div class="btn-group">
                 <a class="editButton btn btn-default"
@@ -29,11 +29,6 @@
                 <label>Notes</label>
                 <div ng-bind-html="model.notes | textToHtml"></div>
             </div>
-        </div>
-        <div class="panel-footer text-right">
-            <a ui-sref="examinations-edit({id:model.id})">
-                go to details &hellip;
-            </a>
         </div>
     </div>
 </div>

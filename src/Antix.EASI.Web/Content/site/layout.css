@@ -6291,6 +6291,7 @@ html {
 }
 body {
   background-color: #3e3e3e;
+  overflow-y: scroll;
 }
 .footer {
   width: 100%;
@@ -6300,17 +6301,31 @@ body {
   background-color: #7f9db9;
   border: none;
 }
+.page-nav .navbar-brand {
+  color: #fff;
+  font-weight: 700;
+}
+.modal {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.modal .modal-dialog .modal-content {
+  background-color: #f3f3f3;
+}
+.dropdown-menu {
+  border: none;
+}
 input {
   box-shadow: none !important;
 }
 .page-body {
-  background-image: -webkit-linear-gradient(top, #7f9db9 0%, #415d77 100%);
-  background-image: -o-linear-gradient(top, #7f9db9 0%, #415d77 100%);
-  background-image: linear-gradient(to bottom, #7f9db9 0%, #415d77 100%);
+  background-image: -webkit-linear-gradient(top, #5e84a7 0%, #7f9db9 100%);
+  background-image: -o-linear-gradient(top, #5e84a7 0%, #7f9db9 100%);
+  background-image: linear-gradient(to bottom, #5e84a7 0%, #7f9db9 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff7f9db9', endColorstr='#ff415d77', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5e84a7', endColorstr='#ff7f9db9', GradientType=0);
   padding-top: 90px;
   padding-bottom: 10px;
+  min-height: 500px;
 }
 .page-body #breadcrumb {
   background-image: -webkit-linear-gradient(left, #f3f3f3 0%, #dadada 100%);
@@ -6337,5 +6352,17 @@ input {
 }
 .page-body .page-content > form > .panel {
   margin: -20px -15px 0;
+}
+.page-body .panel {
+  background-color: #f3f3f3;
+}
+.page-body .panel .panel-heading {
+  border: none;
+}
+.page-body .panel .panel-heading > .btn-group .btn {
+  border: none;
+}
+.page-body .panel .panel-footer {
+  background-color: none;
 }
 /*# sourceMappingURL=layout.css.map */

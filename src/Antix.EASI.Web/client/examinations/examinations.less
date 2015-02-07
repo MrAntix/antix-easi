@@ -4,16 +4,9 @@
 @import (reference) "../../Content/site/variables.less";
 
 .examinations-list {
-    .panel.examination-panel {
-        background-color:  @page-content-color;
+    margin-left: -20px;
+    margin-right: -20px;
 
-        .panel-heading {
-        }
-
-        .panel-footer {
-            background-color: none;
-        }
-    }
 }
 
 .examination-row {
@@ -35,30 +28,6 @@
 
     .examination-regions {
         .make-sm-column(7);
-
-        .tabs {
-            padding-bottom: 15px;
-            border-bottom: solid 1px @nav-tabs-border-color;
-
-            .nav-tabs > li {
-                &.active > a {
-                    #gradient.vertical(#fff,@page-content-color);
-                    background-color: inherit;
-
-                    @media (min-width:@screen-sm-min) {
-                        border-bottom-color: @page-content-color;
-                    }
-                }
-
-                > a {
-
-                    @media (min-width:@screen-sm-min) {
-                        height: 50px;
-                        font-size: .8em;
-                    }
-                }
-            }
-        }
     }
 
     .examination-notes,
