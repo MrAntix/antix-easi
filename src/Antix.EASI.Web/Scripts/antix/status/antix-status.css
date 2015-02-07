@@ -3,8 +3,8 @@
 }
 .a-status-container .a-status {
   position: absolute;
-  top: -5px;
-  right: 5px;
+  top: 49px;
+  right: 0;
   z-index: 1040;
   padding: 5px 30px 5px 15px;
   border: solid 1px;
