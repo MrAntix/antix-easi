@@ -23,7 +23,8 @@ namespace Antix.EASI.Api.Examinations.Models
                 TrunkScorePercent = model.Scores.TrunkScorePercent,
                 UpperExtremitiesScorePercent = model.Scores.UpperExtremitiesScorePercent,
                 LowerExtremitiesScorePercent = model.Scores.LowerExtremitiesScorePercent,
-                TotalScore = model.Scores.TotalScore
+                TotalScore = model.Scores.TotalScore,
+                Notes = model.Notes
             };
         }
 

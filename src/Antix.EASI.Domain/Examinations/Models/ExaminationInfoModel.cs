@@ -17,5 +17,7 @@ namespace Antix.EASI.Domain.Examinations.Models
         public ExaminationRegionScoresModel LowerExtremities { get; set; }
 
         public ExaminationScoresModel Scores { get { return this.GetScores(); } }
+
+        public string Notes { get; set; }
     }
 }

@@ -26,6 +26,8 @@
                     <label class="col-sm-4">Examiner</label>
                     <span class="col-sm-8">{{model.examiner | examinerName}}</span>
                 </div>
+                <label>Notes</label>
+                <div ng-bind-html="model.notes | textToHtml"></div>
             </div>
         </div>
     </div>

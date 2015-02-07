@@ -41,7 +41,7 @@ namespace Antix.EASI.Data.EF.Examinations.Projections
                 Trunk = projectRegionScores.Invoke(d.Trunk),
                 UpperExtremities = projectRegionScores.Invoke(d.UpperExtremities),
                 LowerExtremities = projectRegionScores.Invoke(d.LowerExtremities),
-
+                Notes = d.Notes
             };
         }
     }

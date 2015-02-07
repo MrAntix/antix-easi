@@ -16,5 +16,7 @@ namespace Antix.EASI.Api.Examinations.Models
         public int? UpperExtremitiesScorePercent { get; set; }
         public int? LowerExtremitiesScorePercent { get; set; }
         public int? TotalScore { get; set; }
+
+        public string Notes { get; set; }
     }
 }
