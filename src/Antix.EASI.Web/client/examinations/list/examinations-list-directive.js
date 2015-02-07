@@ -42,16 +42,16 @@ angular.module('antix.easi.examinations.list', [
 
                         $scope.eric = {
                             head: function () {
-                                return $scope.model.headNeckScore;
+                                return $scope.model.headNeckScorePercent;
                             },
                             trunk: function () {
-                                return $scope.model.trunkScore;
+                                return $scope.model.trunkScorePercent;
                             },
                             arms: function () {
-                                return $scope.model.upperExtremitiesScore;
+                                return $scope.model.upperExtremitiesScorePercent;
                             },
                             legs: function () {
-                                return $scope.model.lowerExtremitiesScore;
+                                return $scope.model.lowerExtremitiesScorePercent;
                             },
                             totalScore: function () {
                                 return $scope.model.totalScore;

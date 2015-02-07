@@ -19,6 +19,18 @@ namespace Antix.EASI.Domain.Examinations.Models
                    && model.Area.HasValue;
         }
 
+        public static int? GetRegionScoreBeforeMultiplier(
+            this ExaminationRegionScoresModel model)
+        {
+            return
+                IsRegionValid(model)
+                    ? (model.Erthema.Value
+                       + model.EdemaPapulation.Value
+                       + model.Excoriation.Value
+                       + model.Lichenification.Value)*model.Area.Value
+                    : default(int?);
+        }
+
         public static int? GetRegionScore(
             this ExaminationRegionScoresModel model,
             decimal multiplier)
@@ -26,23 +38,39 @@ namespace Antix.EASI.Domain.Examinations.Models
             return
                 IsRegionValid(model)
                     ? (int) Math.Round(
-                        (model.Erthema.Value
-                         + model.EdemaPapulation.Value
-                         + model.Excoriation.Value
-                         + model.Lichenification.Value)*model.Area.Value*multiplier
-                        )
+                        GetRegionScoreBeforeMultiplier(model).Value*multiplier)
                     : default(int?);
+        }
+
+        public static int? GetRegionScorePercent(
+            this ExaminationRegionScoresModel model)
+        {
+            return
+                IsRegionValid(model)
+                    ? (int) Math.Round(
+                        GetRegionScoreBeforeMultiplier(model).Value/7.2)
+                    : default(int?);
+        }
+
+        public static int? GetTotalScore(
+            this IExaminationScoringModel model)
+        {
+            return model.HeadNeck.GetRegionScore(HEAD_NECK_MULTIPLIER)
+                   + model.Trunk.GetRegionScore(TRUNK_MULTIPLIER)
+                   + model.UpperExtremities.GetRegionScore(UPPER_EXTREMITIES_MULTIPLIER)
+                   + model.LowerExtremities.GetRegionScore(LOWER_EXTREMITIES_MULTIPLIER);
         }
 
         public static ExaminationScoresModel GetScores(
             this IExaminationScoringModel model)
         {
-            return  new ExaminationScoresModel
+            return new ExaminationScoresModel
             {
-                HeadNeckScore = model.HeadNeck.GetRegionScore(HEAD_NECK_MULTIPLIER),
-                TrunkScore = model.Trunk.GetRegionScore(TRUNK_MULTIPLIER),
-                UpperExtremitiesScore = model.UpperExtremities.GetRegionScore(UPPER_EXTREMITIES_MULTIPLIER),
-                LowerExtremitiesScore = model.LowerExtremities.GetRegionScore(LOWER_EXTREMITIES_MULTIPLIER),
+                HeadNeckScorePercent = model.HeadNeck.GetRegionScorePercent(),
+                TrunkScorePercent = model.Trunk.GetRegionScorePercent(),
+                UpperExtremitiesScorePercent = model.UpperExtremities.GetRegionScorePercent(),
+                LowerExtremitiesScorePercent = model.LowerExtremities.GetRegionScorePercent(),
+                TotalScore = model.GetTotalScore()
             };
         }
     }

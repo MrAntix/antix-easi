@@ -19,10 +19,10 @@ namespace Antix.EASI.Api.Examinations.Models
                 TakenOn = model.TakenOn,
                 Examiner = model.Examiner.ToContract(),
                 Patient = model.Patient.ToContract(),
-                HeadNeckScore = model.Scores.HeadNeckScore,
-                TrunkScore = model.Scores.TrunkScore,
-                UpperExtremitiesScore = model.Scores.UpperExtremitiesScore,
-                LowerExtremitiesScore = model.Scores.LowerExtremitiesScore,
+                HeadNeckScorePercent = model.Scores.HeadNeckScorePercent,
+                TrunkScorePercent = model.Scores.TrunkScorePercent,
+                UpperExtremitiesScorePercent = model.Scores.UpperExtremitiesScorePercent,
+                LowerExtremitiesScorePercent = model.Scores.LowerExtremitiesScorePercent,
                 TotalScore = model.Scores.TotalScore
             };
         }

@@ -2,20 +2,11 @@
 {
     public class ExaminationScoresModel
     {
-        public int? HeadNeckScore { get; set; }
-        public int? TrunkScore { get; set; }
-        public int? UpperExtremitiesScore { get; set; }
-        public int? LowerExtremitiesScore { get; set; }
+        public int? HeadNeckScorePercent { get; set; }
+        public int? TrunkScorePercent { get; set; }
+        public int? UpperExtremitiesScorePercent { get; set; }
+        public int? LowerExtremitiesScorePercent { get; set; }
 
-        public int? TotalScore
-        {
-            get
-            {
-                return HeadNeckScore
-                       + TrunkScore
-                       + UpperExtremitiesScore
-                       + LowerExtremitiesScore;
-            }
-        }
+        public int? TotalScore { get; set; }
     }
 }
