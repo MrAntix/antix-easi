@@ -6308,6 +6308,7 @@ body {
   border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   background-color: #e8f1fb;
+  z-index: 100;
 }
 .page-body #breadcrumb .breadcrumb {
   margin: 0;
@@ -6317,7 +6318,7 @@ body {
 .page-body .page-content {
   background-color: #e8f1fb;
   min-height: 300px;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 .page-body .page-content > form > .panel {
   margin: -20px -15px 0;
