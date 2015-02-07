@@ -41,10 +41,7 @@ angular.module('antix.easi.examinations', [
             $filter) {
 
             return function (examination) {
-                return examination.patient.name
-                    + ' ('
-                    + $filter('date')(examination.takenOn, 'mediumDate')
-                    + ')';
+                return $filter('date')(examination.takenOn, 'medium');
             };
         }
     ]);
