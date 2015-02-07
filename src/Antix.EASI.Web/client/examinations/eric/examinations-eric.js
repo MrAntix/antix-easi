@@ -14,7 +14,7 @@ angular.module('antix.easi.examinations.eric', [
                 return {
                     restrict: 'EA',
                     replace: false,
-                    templateUrl: 'examinations/edit/examinations-eric.svg',
+                    templateUrl: 'examinations/eric/examinations-eric.svg',
                     scope: {
                         'model': '=ngModel'
                     },

@@ -13,15 +13,20 @@
             </h4>
         </div>
         <div class="panel-body">
-            <div class="row">
-                <label class="col-sm-4">Patient</label>
-                <span class="col-sm-8">{{item.patient | patientName}}</span>
-            </div>
-            <div class="row">
-                <label class="col-sm-4">Examiner</label>
-                <span class="col-sm-8">{{item.examiner | examinerName}}</span>
+            <div examination-eric
+                 ng-model="eric"
+                 class="examination-eric"></div>
+            
+            <div class="examinations-list-item-details">
+                <div class="row">
+                    <label class="col-sm-4">Patient</label>
+                    <span class="col-sm-8">{{item.patient | patientName}}</span>
+                </div>
+                <div class="row">
+                    <label class="col-sm-4">Examiner</label>
+                    <span class="col-sm-8">{{item.examiner | examinerName}}</span>
+                </div>
             </div>
         </div>
     </div>
-
 </div>

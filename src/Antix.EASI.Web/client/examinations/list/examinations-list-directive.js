@@ -1,6 +1,7 @@
 ﻿'use strict';
 
 angular.module('antix.easi.examinations.list', [
+    'antix.easi.examinations.eric',
     'antix.cellLayout'
 ])
     .directive(
