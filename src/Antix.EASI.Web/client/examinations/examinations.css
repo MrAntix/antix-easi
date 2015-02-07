@@ -1,5 +1,5 @@
 ﻿.examinations-list .panel.examination-panel {
-  background-color: #e8f1fb;
+  background-color: #f3f3f3;
 }
 .examinations-list .panel.examination-panel .panel-footer {
   background-color: none;
@@ -70,16 +70,16 @@
   border-bottom: solid 1px #dddddd;
 }
 .examination-row .examination-regions .tabs .nav-tabs > li.active > a {
-  background-image: -webkit-linear-gradient(top, #ffffff 0%, #e8f1fb 100%);
-  background-image: -o-linear-gradient(top, #ffffff 0%, #e8f1fb 100%);
-  background-image: linear-gradient(to bottom, #ffffff 0%, #e8f1fb 100%);
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #f3f3f3 100%);
+  background-image: -o-linear-gradient(top, #ffffff 0%, #f3f3f3 100%);
+  background-image: linear-gradient(to bottom, #ffffff 0%, #f3f3f3 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe8f1fb', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff3f3f3', GradientType=0);
   background-color: inherit;
 }
 @media (min-width: 768px) {
   .examination-row .examination-regions .tabs .nav-tabs > li.active > a {
-    border-bottom-color: #e8f1fb;
+    border-bottom-color: #f3f3f3;
   }
 }
 @media (min-width: 768px) {

@@ -15,24 +15,33 @@ body {
     height: 50px;
 }
 
+.page-nav {
+    background-color: @page-body-color;
+    border: none;
+}
+
+input {
+    box-shadow: none !important;
+}
+
 .page-body {
+    #gradient.vertical(@page-body-color, darken(@page-body-color,25%));
     padding-top: 90px;
     padding-bottom: 10px;
-    background-color: @page-body-color;
 
     #breadcrumb {
+        #gradient.horizontal(@page-content-color, darken(@page-content-color,10%));
         top: 50px;
-        min-height:0;
-        margin:0;
-        border:none;
-        border-top: 1px solid rgba(0,0,0,.05);
-        background-color: @page-content-color;
-        z-index:100;
+        min-height: 0;
+        margin: 0;
+        border: none;
+        z-index: 100;
 
-        .breadcrumb{
-            margin:0;
-            padding:4px 0;
-            background-color:transparent;
+        .breadcrumb {
+            margin: 0;
+            padding: 4px 0;
+            background-color: transparent;
+            text-transform: lowercase;
         }
     }
 
