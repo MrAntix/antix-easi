@@ -1,4 +1,6 @@
 ﻿.examinations-list-item {
+  float: left;
+  width: 100%;
   position: relative;
   min-height: 1px;
   padding-left: 15px;

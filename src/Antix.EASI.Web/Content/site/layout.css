@@ -6309,7 +6309,7 @@ body {
   background-color: rgba(0, 0, 0, 0.1);
 }
 .modal .modal-dialog .modal-content {
-  background-color: #eeeeee;
+  background-color: #d4dee8;
 }
 .dropdown-menu {
   border: none;
@@ -6328,16 +6328,17 @@ input {
   min-height: 500px;
 }
 .page-body #breadcrumb {
-  background-image: -webkit-linear-gradient(left, #eeeeee 0%, #d5d5d5 100%);
-  background-image: -o-linear-gradient(left, #eeeeee 0%, #d5d5d5 100%);
-  background-image: linear-gradient(to right, #eeeeee 0%, #d5d5d5 100%);
+  background-image: -webkit-linear-gradient(left, #d4dee8 0%, #b3c4d6 100%);
+  background-image: -o-linear-gradient(left, #d4dee8 0%, #b3c4d6 100%);
+  background-image: linear-gradient(to right, #d4dee8 0%, #b3c4d6 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeeeeee', endColorstr='#ffd5d5d5', GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd4dee8', endColorstr='#ffb3c4d6', GradientType=1);
   top: 50px;
   min-height: 0;
   margin: 0;
   border: none;
   z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 .page-body #breadcrumb .breadcrumb {
   margin: 0;
@@ -6346,7 +6347,7 @@ input {
   text-transform: lowercase;
 }
 .page-body .page-content {
-  background-color: #eeeeee;
+  background-color: #d4dee8;
   min-height: 300px;
   padding-top: 10px;
 }
@@ -6354,11 +6355,11 @@ input {
   margin: -20px -15px 0;
 }
 .page-body .panel {
-  background-color: #eeeeee;
+  background-color: #d4dee8;
 }
 .page-body .panel .panel-heading {
   border: none;
-  background-color: #eeeeee;
+  background-color: #d4dee8;
 }
 .page-body .panel .panel-heading > .btn-group .btn {
   border: none;

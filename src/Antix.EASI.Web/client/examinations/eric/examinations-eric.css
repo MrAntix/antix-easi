@@ -11,8 +11,8 @@
 .examination-eric svg .legs,
 .examination-eric svg .arms {
   fill: #ccc;
-  stroke: transparent;
-  stroke-width: 1px;
+  stroke: rgba(0, 0, 0, 0.2);
+  stroke-width: 2px;
 }
 .examination-eric svg .total-score {
   font-size: 60px;
