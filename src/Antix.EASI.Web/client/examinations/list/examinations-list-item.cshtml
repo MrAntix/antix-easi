@@ -13,19 +13,17 @@
             </h4>
         </div>
         <div class="panel-body">
-            <div examination-eric
-                 ng-model="eric"
-                 class="examination-eric"></div>
+            <a ui-sref="examinations-edit({id:model.id})">
+                <span examination-eric
+                     ng-model="eric"
+                     class="examination-eric"></span>
+            </a>
 
             <div class="examinations-list-item-details">
-                <div class="row">
-                    <label class="col-sm-4">Patient</label>
-                    <a ui-sref="patients-edit({id:model.patient.id})" class="col-sm-8">{{model.patient | patientName}}</a>
-                </div>
-                <div class="row">
-                    <label class="col-sm-4">Examiner</label>
-                    <a ui-sref="examiners-edit({id:model.examiner.id})" class="col-sm-8">{{model.examiner | examinerName}}</a>
-                </div>
+                <label>Patient</label>
+                <a ui-sref="patients-edit({id:model.patient.id})">{{model.patient | patientName}}</a>
+                <label>Examiner</label>
+                <a ui-sref="examiners-edit({id:model.examiner.id})">{{model.examiner | examinerName}}</a>
                 <label>Notes</label>
                 <div ng-bind-html="model.notes | textToHtml"></div>
             </div>

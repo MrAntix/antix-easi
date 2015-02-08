@@ -170,9 +170,13 @@
 }
 .examinations-list-item .examination-eric {
   position: absolute;
-  width: 65px;
+  width: 64px;
+  height: 96px;
 }
 .examinations-list-item .examinations-list-item-details {
   padding-left: 100px;
+}
+.examinations-list-item .examinations-list-item-details label {
+  display: block;
 }
 /*# sourceMappingURL=examinations.css.map */
