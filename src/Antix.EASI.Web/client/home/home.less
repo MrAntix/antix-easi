@@ -5,11 +5,45 @@
 #page-home .home {
 
     .calendar {
-        float:left;
+        float: left;
     }
 
     .calendar-entries {
-        position:fixed;
-        margin-left:320px;
+        position: fixed;
+        padding-left: 320px;
+        padding-right: 15px;
+
+        @media (min-width: @screen-sm-min) {
+            width: @container-sm;
+        }
+
+        @media (min-width: @screen-md-min) {
+            width: @container-md;
+        }
+
+        @media (min-width: @screen-lg-min) {
+            width: @container-lg;
+        }
+    }
+
+    @media (max-width: @screen-xs-max) {
+        .calendar {
+            position: relative;
+            z-index: 1;
+            background-color: @page-body-color;
+            margin-left:-300px;
+            box-shadow:0 0 5px rgba(0,0,0,.2);
+        }
+
+        .calendar.active{
+            margin-left:0;
+        }
+
+        .calendar-entries {
+            padding-left: 30px;
+            padding-right: 30px;
+            width: 100%;
+            z-index: 0;
+        }
     }
 }

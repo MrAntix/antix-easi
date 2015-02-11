@@ -9,7 +9,9 @@
 <div id="page-home" class="container">
     
     <div class="home">
-        <div class="calendar" antix-calendar></div>
+        <div class="calendar" antix-calendar
+             ng-class="{active:isActive}"
+             ng-click="isActive=!isActive"></div>
 
         <div class="calendar-entries list-group">
             <a href="#/examinations/" class="list-group-item">

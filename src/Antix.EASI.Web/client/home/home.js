@@ -6,11 +6,10 @@ angular.module('antix.easi.home', [
     .controller(
         'AntixEASIHomeController',
         [
-            '$log', '$scope', '$state',
+            '$log', '$scope', '$state', '$document',
             function(
-                $log, $scope, $state) {
+                $log, $scope, $state, $document) {
 
                 $log.debug('AntixEASIHomeController init');
-
             }
         ]);
