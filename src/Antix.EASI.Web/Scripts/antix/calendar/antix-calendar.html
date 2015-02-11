@@ -1,0 +1,28 @@
+﻿<div class="calendar">
+    <div class="calendar-month"
+         ng-repeat="month in months"
+         ng-class="{alt:month.date.getMonth() % 2}">
+        <div class="month-title">
+            <strong>{{month.date | date:'MMMM'}}</strong>
+            <small>{{month.date | date:'yyyy'}}</small>
+        </div>
+        <div class="calendar-cell"
+             ng-class="{
+                    'calendar-day': cell.date,
+                    'calendar-day-first': cell.isFirst,
+                    'calendar-day-first-day': cell.isFirstDay,
+                    'calendar-day-first-week': cell.isFirstWeek,
+                    'calendar-day-last': cell.isLast,
+                    'calendar-day-last-day': cell.isLastDay,
+                    'calendar-day-last-week': cell.isLastWeek,
+                    'calendar-day-first-monday': cell.isFirstMonday,
+                    'calendar-day-first-sunday': cell.isFirstSunday,
+                    'calendar-day-last-monday': cell.isLastMonday,
+                    'calendar-day-last-sunday': cell.isLastSunday,
+                    'calendar-day-weekend': cell.isWeekend,
+                    'calendar-day-today': cell.isToday }"
+             ng-repeat="cell in month.cells">
+            <div>{{cell.date.getDate()}}</div>
+        </div>
+    </div>
+</div>

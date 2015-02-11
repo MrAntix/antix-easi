@@ -1,0 +1,96 @@
+﻿.calendar {
+  /*overflow: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+        display: none;
+    }*/
+}
+.calendar .calendar-month {
+  pointer-events: none;
+  position: relative;
+  overflow: hidden;
+  width: 320px;
+  margin-bottom: -40px;
+  padding-right: 40px;
+  padding-bottom: 4px;
+}
+.calendar .calendar-month .calendar-cell {
+  float: left;
+  width: 40px;
+  height: 40px;
+}
+.calendar .calendar-month .calendar-day {
+  pointer-events: all;
+  border: 2px solid transparent;
+  color: #777777;
+  background-color: #fcfcfc;
+}
+.calendar .calendar-month .calendar-day > div {
+  line-height: 32px;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 100;
+  cursor: default;
+  border: 2px solid transparent;
+  border-radius: 2px;
+}
+.calendar .calendar-month .calendar-day-first:not(.calendar-day-first-monday) {
+  width: 38px;
+  margin-left: 2px;
+}
+.calendar .calendar-month .calendar-day-last:not(.calendar-day-last-sunday) {
+  width: 38px;
+}
+.calendar .calendar-month .calendar-day-first,
+.calendar .calendar-month .calendar-day-first-monday {
+  border-top-left-radius: 3px;
+}
+.calendar .calendar-month .calendar-day-first-sunday {
+  border-top-right-radius: 3px;
+}
+.calendar .calendar-month .calendar-day-last,
+.calendar .calendar-month .calendar-day-last-sunday {
+  border-bottom-right-radius: 3px;
+}
+.calendar .calendar-month .calendar-day-last-monday {
+  border-bottom-left-radius: 3px;
+}
+.calendar .calendar-month .calendar-day:hover div {
+  background-color: #ffcc66;
+  color: #444444;
+}
+.calendar .calendar-month .calendar-day-today div {
+  border-color: #ffcc66;
+}
+.calendar .calendar-month .calendar-day-weekend {
+  background-color: #f7f7f7;
+}
+.calendar .calendar-month.alt .calendar-day {
+  background-color: #f6f6f6;
+}
+.calendar .calendar-month.alt .calendar-day-weekend {
+  background-color: #f1f1f1;
+}
+.calendar .calendar-month .month-title {
+  color: #ffffff;
+  position: absolute;
+  z-index: 1;
+  top: 13.33333333px;
+  right: -106.66666667px;
+  width: 120px;
+  height: 120px;
+  font-size: 13.33333333px;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-backface-visibility: hidden;
+}
+/*# sourceMappingURL=calendar.css.map */

@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('antix.easi.home', [
-        
+        'antix.calendar'
     ])
     .controller(
         'AntixEASIHomeController',

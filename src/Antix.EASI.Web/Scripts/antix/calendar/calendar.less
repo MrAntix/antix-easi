@@ -1,0 +1,126 @@
+﻿.calendar {
+    @cell-size: 40px;
+    @cell-text-color: #777;
+    @cell-background-color: #fcfcfc;
+    @cell-alt-background-color: #f6f6f6;
+
+    @month-text-color:#fff;
+
+    @cell-outer-radius: 3px;
+    @cell-inner-radius: 2px;
+
+    @highlight-color: #fc6;
+    @highlight-color-text: #444;
+
+    /*overflow: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+        display: none;
+    }*/
+    .calendar-month {
+        pointer-events: none;
+        position: relative;
+        overflow: hidden;
+        width: @cell-size * 8;
+        margin-bottom: -@cell-size;
+        padding-right: @cell-size;
+        padding-bottom: @cell-size * .1;
+
+        .calendar-cell {
+            float: left;
+            width: @cell-size;
+            height: @cell-size;
+        }
+
+        .calendar-day {
+            pointer-events: all;
+            border: ( @cell-size / 20 ) solid transparent;
+            color: @cell-text-color;
+            background-color: @cell-background-color;
+        }
+
+        .calendar-day > div {
+            line-height: @cell-size - ( 2* @cell-size / 10 );
+            text-align: center;
+            font-size: @cell-size / 4;
+            font-weight: 100;
+            cursor: default;
+            border: ( @cell-size / 20 ) solid transparent;
+            border-radius: @cell-inner-radius;
+        }
+
+        .calendar-day-first:not(.calendar-day-first-monday) {
+            width: @cell-size - ( @cell-size / 20 );
+            margin-left: ( @cell-size / 20 );
+        }
+
+        .calendar-day-last:not(.calendar-day-last-sunday) {
+            width: @cell-size - ( @cell-size / 20 );
+        }
+
+        .calendar-day-first,
+        .calendar-day-first-monday {
+            border-top-left-radius: @cell-outer-radius;
+        }
+
+        .calendar-day-first-sunday {
+            border-top-right-radius: @cell-outer-radius;
+        }
+
+        .calendar-day-last,
+        .calendar-day-last-sunday {
+            border-bottom-right-radius: @cell-outer-radius;
+        }
+
+        .calendar-day-last-monday {
+            border-bottom-left-radius: @cell-outer-radius;
+        }
+
+        .calendar-day:hover div {
+            background-color: @highlight-color;
+            color: @highlight-color-text;
+        }
+
+        .calendar-day-today div {
+            border-color: @highlight-color;
+        }
+
+        .calendar-day-weekend {
+            background-color: darken(@cell-background-color, 2%);
+        }
+
+        &.alt {
+
+            .calendar-day {
+                background-color: @cell-alt-background-color;
+            }
+
+            .calendar-day-weekend {
+                background-color: darken(@cell-alt-background-color, 2%);
+            }
+        }
+
+        .month-title {
+            color: @month-text-color;
+            position: absolute;
+            z-index: 1;
+            top: @cell-size/3;
+            right: -@cell-size*3+@cell-size/3;
+            width: @cell-size*3;
+            height: @cell-size*3;
+            font-size: @cell-size / 3;
+            -moz-transform-origin: 0 0;
+            -ms-transform-origin: 0 0;
+            -o-transform-origin: 0 0;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+            -moz-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+            -webkit-backface-visibility: hidden;
+        }
+    }
+}

@@ -168,7 +168,13 @@
       <DependentUpon>examiners-list.css</DependentUpon>
     </Content>
     <Content Include="client\examiners\select\examiners-select.js" />
+    <Content Include="client\home\home.css">
+      <DependentUpon>home.less</DependentUpon>
+    </Content>
     <Content Include="client\home\home.js" />
+    <Content Include="client\home\home.min.css">
+      <DependentUpon>home.css</DependentUpon>
+    </Content>
     <Content Include="client\patients\create\patients-create.js" />
     <Content Include="client\patients\edit\patients-edit.js" />
     <Content Include="client\patients\index\patients-index.js" />
@@ -244,6 +250,15 @@
     <Content Include="Scripts\angular-touch.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\antix\calendar\antix-calendar-services.js" />
+    <Content Include="Scripts\antix\calendar\antix-calendar.html" />
+    <Content Include="Scripts\antix\calendar\antix-calendar.js" />
+    <Content Include="Scripts\antix\calendar\calendar.css">
+      <DependentUpon>calendar.less</DependentUpon>
+    </Content>
+    <Content Include="Scripts\antix\calendar\calendar.min.css">
+      <DependentUpon>calendar.css</DependentUpon>
+    </Content>
     <Content Include="Scripts\antix\cell-layout\cell-layout-icon-32x32.png" />
     <Content Include="Scripts\antix\cell-layout\cell-layout-icon.png" />
     <Content Include="Scripts\antix\cell-layout\cell-layout.css" />
@@ -408,6 +423,11 @@
     <Content Include="Content\site\tabs.css.map">
       <DependentUpon>tabs.css</DependentUpon>
     </Content>
+    <Content Include="client\home\home.less" />
+    <Content Include="client\home\home.css.map">
+      <DependentUpon>home.css</DependentUpon>
+    </Content>
+    <Content Include="fonts\fontawesome-webfont.woff2" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <Content Include="Scripts\antix\form\clear-button\antix-form-clear-button.less" />
     <Content Include="Scripts\antix\form\clear-button\antix-form-clear-button.css.map">
@@ -427,6 +447,10 @@
     <Content Include="Scripts\antix\cell-layout\readme.md" />
     <Content Include="Scripts\antix\cell-layout\cell-layout.less" />
     <Content Include="Scripts\antix\cell-layout\cell-layout.css.map" />
+    <Content Include="Scripts\antix\calendar\calendar.less" />
+    <Content Include="Scripts\antix\calendar\calendar.css.map">
+      <DependentUpon>calendar.css</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-2.1.3.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
@@ -1239,9 +1263,7 @@
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\antix\form\text-to-html\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
