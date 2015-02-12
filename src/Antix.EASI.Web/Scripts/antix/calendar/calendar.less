@@ -12,19 +12,13 @@
     @highlight-color: #fc6;
     @highlight-color-text: #444;
 
-    /*overflow: scroll;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
-    &::-webkit-scrollbar {
-        display: none;
-    }*/
     .calendar-month {
         pointer-events: none;
         position: relative;
         overflow: hidden;
-        width: @cell-size * 8;
+        width: @cell-size * 7.75;
         margin-bottom: -@cell-size;
-        padding-right: @cell-size;
+        padding-right: @cell-size*.75;
         padding-bottom: @cell-size * .1;
 
         .calendar-cell {
@@ -106,7 +100,7 @@
             position: absolute;
             z-index: 1;
             top: @cell-size/3;
-            right: -@cell-size*3+@cell-size/5;
+            right: -@cell-size*2.85;
             width: @cell-size*3;
             height: @cell-size*3;
             font-size: @cell-size / 3;

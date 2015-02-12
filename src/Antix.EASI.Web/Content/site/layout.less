@@ -23,7 +23,9 @@ strong{
     background-color: @page-body-color;
     border: none;
 
-    .navbar-brand {
+    .navbar-brand,
+    .navbar-brand:active,
+    .navbar-brand:focus {
         color: #fff;
         font-weight: 700;
     }
@@ -48,7 +50,7 @@ input {
 }
 
 .page-body {
-    #gradient.vertical(darken(@page-body-color,10%), @page-body-color);
+    background-color: darken(@page-body-color, 5%);
     padding-top: 90px;
     padding-bottom: 10px;
     min-height: 500px;

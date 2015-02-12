@@ -1,6 +1,6 @@
 ﻿<div class="calendar">
     <div class="calendar-month"
-         ng-repeat="month in months"
+         ng-repeat="month in months track by month.date"
          ng-class="{alt:month.date.getMonth() % 2}">
         <div class="month-title">
             <strong>{{month.date | date:'MMMM'}}</strong>

@@ -22,9 +22,9 @@ angular.module('antix.calendar', [
                 templateUrl: '/scripts/antix/calendar/antix-calendar.html',
                 link: function (scope, element) {
 
-                    var container = document.body,
+                    var containerDom = $document.prop('body'),
                         calendar = CalendarService.createCalendar(element, new Date()),
-                        calendarInitialPadding = 5000,
+                        calendarInitialPadding = 2000,
                         calendarTopPadding = 0,
                         calendarBottomPadding = 0,
                         cellHeight = 40,
@@ -40,11 +40,13 @@ angular.module('antix.calendar', [
                             var watchers = scope.$$watchers;
                             scope.$$watchers = [];
 
-                            var scrollTop = container.scrollTop,
-                                containerHeight = container.offsetHeight,
+                            var scrollTop = containerDom.scrollTop,
+                                containerHeight = window.innerHeight,
                                 elementHeight = element[0].offsetHeight - calendarTopPadding;
 
                             while (scrollTop - 300 < calendarTopPadding) {
+                                $log.debug('antixCalendar.min.add()');
+
                                 calendar.min.add();
 
                                 calendarTopPadding -= getMonthHeight(calendar.min.weeks);
@@ -58,6 +60,8 @@ angular.module('antix.calendar', [
                                 - calendarBottomPadding
                                 - 300
                                 < containerHeight) {
+                                $log.debug('antixCalendar.max.add()');
+
                                 calendar.max.add();
 
                                 calendarBottomPadding -=
@@ -65,6 +69,7 @@ angular.module('antix.calendar', [
                             }
 
                             while (scrollTop - 600 > calendarTopPadding) {
+                                $log.debug('antixCalendar.min.remove()');
 
                                 calendarTopPadding += getMonthHeight(calendar.min.weeks);
 
@@ -75,13 +80,13 @@ angular.module('antix.calendar', [
                                 - calendarBottomPadding
                                 - 600
                                 > containerHeight) {
+                                $log.debug('antixCalendar.max.remove()');
 
                                 calendarBottomPadding +=
                                     getMonthHeight(calendar.max.weeks);
 
                                 calendar.max.remove();
                             }
-
 
                             element.css({
                                 'padding-top': calendarTopPadding + 'px',
@@ -96,8 +101,9 @@ angular.module('antix.calendar', [
 
                     var resetId,
                         reset = function () {
+                            $log.debug('antixCalendar.reset()');
 
-                            var offset = container.scrollTop - calendarTopPadding;
+                            var offset = containerDom.scrollTop - calendarTopPadding;
                             calendarTopPadding = calendarInitialPadding;
                             calendarBottomPadding = calendarInitialPadding;
 
@@ -106,24 +112,27 @@ angular.module('antix.calendar', [
                                 'padding-bottom': calendarBottomPadding + 'px'
                             });
 
-                            container.scrollTop = calendarTopPadding + offset;
+                            containerDom.scrollTop = calendarTopPadding + offset;
                         };
 
                     var start = function () {
-                        reset();
+                        $$rAF(reset);
                         $$rAF(load);
                     };
 
                     start();
 
-                    element.on('scroll', function () {
-                        if (resetId) {
-                            $timeout.cancel(resetId);
-                            resetId = null;
-                        }
+                    angular.element(document)
+                        .on('scroll', function () {
+                            if (resetId) {
+                                $timeout.cancel(resetId);
+                                resetId = null;
+                            }
 
-                        resetId = $timeout(reset, 500);
-                    });
+                            resetId = $timeout(function () {
+                                $$rAF(reset);
+                            }, 500);
+                        });
                 }
             }
         }

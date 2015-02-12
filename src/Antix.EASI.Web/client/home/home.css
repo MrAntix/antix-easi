@@ -26,11 +26,11 @@
     position: relative;
     z-index: 1;
     background-color: #7f9db9;
-    margin-left: -300px;
+    margin-left: -296px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   }
   #page-home .home .calendar.active {
-    margin-left: 0;
+    margin-left: -10px;
   }
   #page-home .home .calendar-entries {
     padding-left: 30px;

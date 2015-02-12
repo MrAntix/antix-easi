@@ -6304,7 +6304,9 @@ strong {
   background-color: #7f9db9;
   border: none;
 }
-.page-nav .navbar-brand {
+.page-nav .navbar-brand,
+.page-nav .navbar-brand:active,
+.page-nav .navbar-brand:focus {
   color: #fff;
   font-weight: 700;
 }
@@ -6321,11 +6323,7 @@ input {
   box-shadow: none !important;
 }
 .page-body {
-  background-image: -webkit-linear-gradient(top, #5e84a7 0%, #7f9db9 100%);
-  background-image: -o-linear-gradient(top, #5e84a7 0%, #7f9db9 100%);
-  background-image: linear-gradient(to bottom, #5e84a7 0%, #7f9db9 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5e84a7', endColorstr='#ff7f9db9', GradientType=0);
+  background-color: #6f90b0;
   padding-top: 90px;
   padding-bottom: 10px;
   min-height: 500px;
