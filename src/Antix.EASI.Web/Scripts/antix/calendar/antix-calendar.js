@@ -100,7 +100,7 @@ angular.module('antix.calendar', [
 
                     var resetId;
 
-                    angular.element(window)
+                    $document
                         .on('scroll', function () {
 
                             if (resetId) {
@@ -128,14 +128,22 @@ angular.module('antix.calendar', [
                     };
 
                     element.on('mousedown', function (e) {
-                        var targetElement = angular.element(e.target.parentElement);
+                        var targetElement = angular.element(e.target.parentElement),
+                            targetScope = targetElement.data().$scope;
 
-                        scope.selected = targetElement.data().$scope.cell.date;
+                        if (targetScope && targetScope.cell) {
+                            scope.selected = targetScope.cell.date;
 
-                        raiseSelected();
+                            raiseSelected();
+                        }
                     });
 
                     if (scope.selected) raiseSelected();
+
+                    element.on('$destroy', function () {
+                        element.off('mousedown');
+                        $document.off('scroll');
+                    });
                 }
             }
         }
