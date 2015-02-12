@@ -3,13 +3,17 @@
 angular.module('antix.calendar', [
         'antix.calendar.services'
     ])
+    .constant('AntixCalendarEvents',
+    {
+        Selected: 'antix-calendar-event:selected'
+    })
     .directive('antixCalendar',
     [
         '$log', '$timeout', '$document',
-        'AntixCalendarService',
+        'AntixCalendarService', 'AntixCalendarEvents',
         function(
             $log, $timeout, $document,
-            CalendarService) {
+            CalendarService, CalendarEvents) {
 
             $log.debug('antixCalendar.init');
 
@@ -114,11 +118,21 @@ angular.module('antix.calendar', [
                         containerDom.scrollTop = calendarInitialPadding + 200;
                     });
 
-                    element.on('mousedown', function (e) {
+                    var raiseSelected = function() {
+                        scope.$root.$broadcast(CalendarEvents.Selected, {
+                            dates: [scope.selected]
+                        });
+                    };
+
+                    element.on('mousedown', function(e) {
                         var targetElement = angular.element(e.target.parentElement);
 
                         scope.selected = targetElement.data().$scope.cell.date;
+
+                        raiseSelected();
                     });
+
+                    if (scope.selected) raiseSelected();
                 }
             }
         }

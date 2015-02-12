@@ -4,16 +4,19 @@
 
 #page-home .home {
 
-    .title{
+    .title {
         color: #fff;
     }
 
     .calendar {
         float: left;
+        position:relative;
+        z-index:1;
     }
 
     .calendar-entries {
         position: fixed;
+        z-index:0;
         padding-left: 320px;
         padding-right: 15px;
 
@@ -28,6 +31,11 @@
         @media (min-width: @screen-lg-min) {
             width: @container-lg;
         }
+
+        .examinations-list {
+            margin-left: -5px;
+            margin-right: -5px;
+        }
     }
 
     @media (max-width: @screen-xs-max) {
@@ -35,12 +43,12 @@
             position: relative;
             z-index: 1;
             background-color: @page-body-color;
-            margin-left:-296px;
-            box-shadow:0 0 5px rgba(0,0,0,.2);
+            margin-left: -296px;
+            box-shadow: 0 0 5px rgba(0,0,0,.2);
         }
 
-        .calendar.active{
-            margin-left:-10px;
+        .calendar.active {
+            margin-left: -10px;
         }
 
         .calendar-entries {

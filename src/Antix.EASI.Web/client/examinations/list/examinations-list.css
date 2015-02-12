@@ -10,13 +10,13 @@
 @media (min-width: 768px) {
   .examinations-list-item {
     float: left;
-    width: 50%;
+    width: 100%;
   }
 }
 @media (min-width: 992px) {
   .examinations-list-item {
     float: left;
-    width: 33.33333333%;
+    width: 50%;
   }
 }
 .examinations-list-item .panel {

@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('antix.calendar.services', [
-    ])
+])
     .factory('AntixCalendarService',
     [
         '$log', 
