@@ -23,7 +23,7 @@
   text-align: center;
   font-size: 10px;
   font-weight: 100;
-  cursor: default;
+  cursor: pointer;
   border: 2px solid transparent;
   border-radius: 2px;
 }
@@ -48,12 +48,17 @@
 .calendar .calendar-month .calendar-day-last-monday {
   border-bottom-left-radius: 3px;
 }
-.calendar .calendar-month .calendar-day:hover div {
-  background-color: #ffcc66;
-  color: #444444;
-}
 .calendar .calendar-month .calendar-day-today div {
   border-color: #ffcc66;
+}
+.calendar .calendar-month .calendar-day:hover div {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 100;
+}
+.calendar .calendar-month .calendar-day-selected div {
+  background-color: #ffcc66;
+  color: #444444;
 }
 .calendar .calendar-month .calendar-day-weekend {
   background-color: #f7f7f7;

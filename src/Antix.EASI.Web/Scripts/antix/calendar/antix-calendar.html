@@ -20,7 +20,8 @@
                     'calendar-day-last-monday': cell.isLastMonday,
                     'calendar-day-last-sunday': cell.isLastSunday,
                     'calendar-day-weekend': cell.isWeekend,
-                    'calendar-day-today': cell.isToday }"
+                    'calendar-day-today': cell.isToday,
+                    'calendar-day-selected': cell.is(selected) }"
              ng-repeat="cell in month.cells">
             <div>{{cell.date.getDate()}}</div>
         </div>

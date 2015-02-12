@@ -120,7 +120,7 @@ angular.module('antix.calendar.services', [
                                 date: dayDate,
                                 isFirst: dayOfMonth === 1,
                                 isFirstDay: dayOfWeek === 1,
-                                isFirstWeek : isFirstWeek,
+                                isFirstWeek: isFirstWeek,
                                 isLast: dayOfMonth === lastDate,
                                 isLastDay: dayOfWeek === 0,
                                 isLastWeek: isLastWeek,
@@ -129,7 +129,13 @@ angular.module('antix.calendar.services', [
                                 isFirstSunday: isFirstWeek && dayOfWeek === 0,
                                 isFirstMonday: isFirstWeek && dayOfWeek === 1,
                                 isLastSunday: isLastWeek && dayOfWeek === 0,
-                                isLastMonday: isLastWeek && dayOfWeek === 1
+                                isLastMonday: isLastWeek && dayOfWeek === 1,
+                                is: function (d) {
+                                    
+                                    return this.date.getFullYear() === d.getFullYear()
+                                        && this.date.getMonth() === d.getMonth()
+                                        && this.date.getDate() === d.getDate();
+                                }
                             });
 
                         } else {

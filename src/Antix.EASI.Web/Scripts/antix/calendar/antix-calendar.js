@@ -2,12 +2,12 @@
 
 angular.module('antix.calendar', [
         'antix.calendar.services'
-])
+    ])
     .directive('antixCalendar',
     [
         '$log', '$timeout', '$document',
         'AntixCalendarService',
-        function (
+        function(
             $log, $timeout, $document,
             CalendarService) {
 
@@ -16,20 +16,22 @@ angular.module('antix.calendar', [
             return {
                 restrict: 'AE',
                 replace: true,
-                scope: true,
+                scope: {
+                    selected: '='
+                },
                 templateUrl: '/scripts/antix/calendar/antix-calendar.html',
-                link: function (scope, element) {
+                link: function(scope, element) {
 
                     var containerDom = $document.prop('body'),
                         calendar = CalendarService.createCalendar(element, new Date()),
                         calendarInitialPadding = 2000,
                         cellHeight = 40,
                         monthOffset = -36,
-                        getMonthHeight = function (weeks) { return weeks * cellHeight + monthOffset; };
+                        getMonthHeight = function(weeks) { return weeks * cellHeight + monthOffset; };
 
                     scope.months = calendar.months;
 
-                    var reset = function () {
+                    var reset = function() {
                         $log.debug('antixCalendar.reset()');
 
                         var watchers = scope.$$watchers;
@@ -95,21 +97,27 @@ angular.module('antix.calendar', [
                     var resetId;
 
                     angular.element(window)
-                        .on('scroll', function () {
+                        .on('scroll', function() {
 
                             if (resetId) {
                                 $timeout.cancel(resetId);
                                 resetId = null;
                             }
 
-                            resetId = $timeout(function () {
+                            resetId = $timeout(function() {
                                 scope.$evalAsync(reset);
                             }, 150);
                         });
 
                     scope.$evalAsync(reset);
-                    $timeout(function () {
+                    $timeout(function() {
                         containerDom.scrollTop = calendarInitialPadding + 200;
+                    });
+
+                    element.on('mousedown', function (e) {
+                        var targetElement = angular.element(e.target.parentElement);
+
+                        scope.selected = targetElement.data().$scope.cell.date;
                     });
                 }
             }

@@ -1,4 +1,7 @@
-﻿#page-home .home .calendar {
+﻿#page-home .home .title {
+  color: #fff;
+}
+#page-home .home .calendar {
   float: left;
 }
 #page-home .home .calendar-entries {

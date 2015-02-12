@@ -9,23 +9,28 @@
 <div id="page-home" class="container">
     
     <div class="home">
-        <div class="calendar" antix-calendar
+        <div class="calendar" antix-calendar selected="selectedDate"
              ng-class="{active:isActive}"
              ng-click="isActive=!isActive"></div>
-
-        <div class="calendar-entries list-group">
-            <a href="#/examinations/" class="list-group-item">
-                <span class="fa fa-clipboard"></span>
-                Examinations
-            </a>
-            <a href="#/examiners/" class="list-group-item">
-                <span class="fa fa-user-md"></span>
-                Examiners
-            </a>
-            <a href="#/patients/" class="list-group-item">
-                <span class="fa fa-user"></span>
-                Patients
-            </a>
+        
+        <div class="calendar-entries">
+            
+            <h2 class="title">{{selectedDate | date:'mediumDate'}}</h2>
+            
+            <div class="list-group">
+                <a href="#/examinations/" class="list-group-item">
+                    <span class="fa fa-clipboard"></span>
+                    Examinations
+                </a>
+                <a href="#/examiners/" class="list-group-item">
+                    <span class="fa fa-user-md"></span>
+                    Examiners
+                </a>
+                <a href="#/patients/" class="list-group-item">
+                    <span class="fa fa-user"></span>
+                    Patients
+                </a>
+            </div>
         </div>
     </div>
 </div>

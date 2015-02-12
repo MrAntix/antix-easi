@@ -4,7 +4,7 @@
     @cell-background-color: #fcfcfc;
     @cell-alt-background-color: #f6f6f6;
 
-    @month-text-color:#fff;
+    @month-text-color: #fff;
 
     @cell-outer-radius: 3px;
     @cell-inner-radius: 2px;
@@ -39,7 +39,7 @@
             text-align: center;
             font-size: @cell-size / 4;
             font-weight: 100;
-            cursor: default;
+            cursor: pointer;
             border: ( @cell-size / 20 ) solid transparent;
             border-radius: @cell-inner-radius;
         }
@@ -71,13 +71,19 @@
             border-bottom-left-radius: @cell-outer-radius;
         }
 
-        .calendar-day:hover div {
-            background-color: @highlight-color;
-            color: @highlight-color-text;
-        }
-
         .calendar-day-today div {
             border-color: @highlight-color;
+        }
+
+        .calendar-day:hover div {
+            box-shadow: 0 0 10px rgba(0,0,0,.4);
+            position:relative;
+            z-index:100;
+        }
+
+        .calendar-day-selected div {
+            background-color: @highlight-color;
+            color: @highlight-color-text;
         }
 
         .calendar-day-weekend {

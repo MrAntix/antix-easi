@@ -11,5 +11,7 @@ angular.module('antix.easi.home', [
                 $log, $scope, $state, $document) {
 
                 $log.debug('AntixEASIHomeController init');
+
+                $scope.selectedDate = new Date();
             }
         ]);
