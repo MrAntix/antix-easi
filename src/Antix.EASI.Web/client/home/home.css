@@ -1,6 +1,9 @@
 ﻿#page-home .home .title {
   color: #fff;
 }
+#page-home .home .title small {
+  color: #eee;
+}
 #page-home .home .calendar {
   float: left;
   position: relative;
@@ -8,7 +11,12 @@
 }
 #page-home .home .calendar-entries {
   position: fixed;
+  top: 75px;
+  bottom: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
   z-index: 0;
+  padding-top: 15px;
   padding-left: 320px;
   padding-right: 15px;
 }

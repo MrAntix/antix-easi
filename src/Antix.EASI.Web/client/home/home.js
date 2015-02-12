@@ -8,11 +8,11 @@ angular.module('antix.easi.home', [
     .controller(
         'AntixEASIHomeController',
         [
-            '$log', '$scope', '$state',
+            '$log', '$scope', '$state', '$filter',
             'ExaminationsApi', 'SearchBoxEvents',
             'AntixCalendarEvents',
             function (
-                $log, $scope, $state,
+                $log, $scope, $state, $filter,
                 ExaminationsApi, SearchBoxEvents,
                 AntixCalendarEvents) {
 
@@ -30,8 +30,20 @@ angular.module('antix.easi.home', [
                     }).$promise
                         .then(function (data) {
                             $scope.examinations = data;
-                        });
 
+                            if (criteria.dateFrom) {
+                                $scope.searchTitle = "From " + $filter('date')(criteria.dateFrom, 'mediumDate');
+
+                                if (criteria.dateTo) {
+                                    $scope.searchTitle = " to " + $filter('date')(criteria.dateTo, 'mediumDate');
+
+                                }
+                            } else if (criteria.text) {
+                                $scope.searchTitle = "Searched for '" + criteria.text + "'";
+                            }
+
+                            $scope.searchTitle = $scope.searchTitle + " <small>found " + data.length + "</found>";
+                        });
                 };
 
                 $scope.$root.$on(SearchBoxEvents.Search, search);
