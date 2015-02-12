@@ -13,26 +13,26 @@ namespace Antix.EASI.Api.Examinations
     public class ExaminationsListController :
         ApiController
     {
-        readonly ILookupExaminationsService _lookupService;
+        readonly ISearchExaminationsService _searchService;
         readonly ICreateExaminationService _createService;
 
         public ExaminationsListController(
-            ILookupExaminationsService lookupService,
+            ISearchExaminationsService searchService,
             ICreateExaminationService createService)
         {
-            _lookupService = lookupService;
+            _searchService = searchService;
             _createService = createService;
         }
 
         [Route(ApiRoutes.Examinations.LIST)]
-        public async Task<IServiceResponse<IEnumerable<ExaminationInfo>>> Get(
-            [FromUri] LookupExaminations contract)
+        public async Task<IServiceResponse<SearchExaminationsResult>> Get(
+            [FromUri] SearchExaminations contract)
         {
-            var response = await _lookupService.ExecuteAsync(
-                contract.ToModel() ?? LookupExaminationsModel.Default
+            var response = await _searchService.ExecuteAsync(
+                contract.ToModel() ?? SearchExaminationsModel.Default
                 );
 
-            return response.Map(m => m.ToContract());
+            return response.Map(m=>m.ToContract());
         }
 
         [Route(ApiRoutes.Examinations.CREATE)]

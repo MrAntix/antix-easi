@@ -23,13 +23,14 @@ angular.module('antix.easi.home', [
                     criteria = criteria || {};
                     $log.debug('AntixEASIHomeController search(' + JSON.stringify(criteria) + ")");
 
-                    ExaminationsApi.lookup({
+                    ExaminationsApi.search({
                         text: criteria.text,
                         dateFrom: criteria.dateFrom,
-                        dateTo: criteria.dateTo
+                        dateTo: criteria.dateTo,
+                        count: 10
                     }).$promise
-                        .then(function (data) {
-                            $scope.examinations = data;
+                        .then(function (response) {
+                            $scope.examinations = response.items;
 
                             if (criteria.dateFrom) {
                                 $scope.searchTitle = "From " + $filter('date')(criteria.dateFrom, 'mediumDate');
@@ -42,7 +43,7 @@ angular.module('antix.easi.home', [
                                 $scope.searchTitle = "Searched for '" + criteria.text + "'";
                             }
 
-                            $scope.searchTitle = $scope.searchTitle + " <small>found " + data.length + "</found>";
+                            $scope.searchTitle = $scope.searchTitle + " <small>found " + response.totalCount + "</found>";
                         });
                 };
 

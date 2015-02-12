@@ -2,7 +2,7 @@
 
 namespace Antix.EASI.Api.Examinations.Models
 {
-    public class LookupExaminations
+    public class SearchExaminations
     {
         public string Text { get; set; }
         public DateTimeOffset? DateFrom { get; set; }

@@ -36,6 +36,18 @@ namespace Antix.EASI.Api.Examinations.Models
             return models.Select(m => m.ToContract()).ToArray();
         }
 
+        public static SearchExaminationsResult ToContract(
+            this SearchExaminationsResultModel model)
+        {
+            if (model == null) return null;
+
+            return new SearchExaminationsResult
+            {
+                TotalCount = model.TotalCount,
+                Items = model.Items.ToContract()
+            };
+        }
+
         public static Examination ToContract(
             this ExaminationModel model)
         {
@@ -70,12 +82,12 @@ namespace Antix.EASI.Api.Examinations.Models
             };
         }
 
-        public static LookupExaminationsModel ToModel(
-            this LookupExaminations contract)
+        public static SearchExaminationsModel ToModel(
+            this SearchExaminations contract)
         {
             if (contract == null) return null;
 
-            return new LookupExaminationsModel
+            return new SearchExaminationsModel
             {
                 Text = contract.Text,
                 DateFrom = contract.DateFrom,

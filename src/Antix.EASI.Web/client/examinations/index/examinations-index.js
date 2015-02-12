@@ -20,7 +20,7 @@ angular.module('antix.easi.examinations.index', [
                     criteria = criteria || {};
                     $log.debug('AntixEASIExaminationsIndexController search(' + JSON.stringify(criteria) + ")");
 
-                    ExaminationsApi.lookup({
+                    ExaminationsApi.search({
                             text: criteria.text
                         }).$promise
                         .then(function(data) {

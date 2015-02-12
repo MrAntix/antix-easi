@@ -12,14 +12,14 @@ using LinqKit;
 
 namespace Antix.EASI.Data.EF.Examinations
 {
-    public class LookupExaminationsService :
-        ILookupExaminationsService
+    public class SearchExaminationsService :
+        ISearchExaminationsService
     {
         readonly DataContext _dataContext;
         readonly IProjectionProvider _projectionProvider;
         readonly IKeywordProcessor _keywordProcessor;
 
-        public LookupExaminationsService(
+        public SearchExaminationsService(
             DataContext dataContext,
             IProjectionProvider projectionProvider,
             IKeywordProcessor keywordProcessor)
@@ -29,8 +29,8 @@ namespace Antix.EASI.Data.EF.Examinations
             _keywordProcessor = keywordProcessor;
         }
 
-        public async Task<IServiceResponse<ExaminationInfoModel[]>> ExecuteAsync(
-            LookupExaminationsModel model)
+        public async Task<IServiceResponse<SearchExaminationsResultModel>> ExecuteAsync(
+            SearchExaminationsModel model)
         {
             if (model == null) throw new ArgumentNullException("model");
 
@@ -59,14 +59,18 @@ namespace Antix.EASI.Data.EF.Examinations
                     .Where(d => d.TakenOn < model.DateTo);
             }
 
+            var result = new SearchExaminationsResultModel
+            {
+                TotalCount = await query.CountAsync()
+            };
+
             var projected = query
                 .Select(d => projectInfo.Invoke(d));
 
             projected = projected.OrderBy(d => d.TakenOn)
                 .Skip(model.Index).Take(model.Count);
 
-            var result = await projected
-                .ToArrayAsync();
+            result.Items = await projected.ToArrayAsync();
 
             return ServiceResponse.Empty
                 .WithData(result);

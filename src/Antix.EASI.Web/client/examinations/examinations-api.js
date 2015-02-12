@@ -11,10 +11,9 @@ angular.module('antix.easi.examinations.api', [
                 $resource) {
 
                 return $resource('/api/examinations/', {}, {
-                    lookup: {
+                    search: {
                         method: 'GET',
-                        url: '/api/examinations/',
-                        isArray: true
+                        url: '/api/examinations/'
                     },
                     create: {
                         method: 'POST',

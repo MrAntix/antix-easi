@@ -4,8 +4,8 @@ using Antix.Services.Models;
 
 namespace Antix.EASI.Domain.Examinations
 {
-    public interface ILookupExaminationsService :
-        IServiceInOut<LookupExaminationsModel, IServiceResponse<ExaminationInfoModel[]>>
+    public interface ISearchExaminationsService :
+        IServiceInOut<SearchExaminationsModel, IServiceResponse<SearchExaminationsResultModel>>
     {
     }
 }

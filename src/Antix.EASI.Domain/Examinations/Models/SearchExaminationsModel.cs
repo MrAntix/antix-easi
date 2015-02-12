@@ -2,7 +2,7 @@
 
 namespace Antix.EASI.Domain.Examinations.Models
 {
-    public class LookupExaminationsModel
+    public class SearchExaminationsModel
     {
         int _count;
 
@@ -18,8 +18,8 @@ namespace Antix.EASI.Domain.Examinations.Models
             set { _count = value; }
         }
 
-        public static readonly LookupExaminationsModel Default
-            = new LookupExaminationsModel
+        public static readonly SearchExaminationsModel Default
+            = new SearchExaminationsModel
             {
                 Text = null,
                 Index = 0,

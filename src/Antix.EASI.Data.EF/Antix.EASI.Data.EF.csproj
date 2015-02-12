@@ -57,7 +57,7 @@
     <Compile Include="Examinations\Projections\ExaminationProjection.cs" />
     <Compile Include="Examinations\Projections\ExaminationRegionScoresProjection.cs" />
     <Compile Include="Examinations\ReadExaminationDataService.cs" />
-    <Compile Include="Examinations\LookupExaminationsService.cs" />
+    <Compile Include="Examinations\SearchExaminationsService.cs" />
     <Compile Include="Examinations\Models\ExaminationMappings.cs" />
     <Compile Include="Examinations\Projections\ExaminationInfoProjection.cs" />
     <Compile Include="Examinations\UpdateExaminationDataService.cs" />
