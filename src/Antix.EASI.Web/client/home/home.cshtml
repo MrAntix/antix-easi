@@ -7,18 +7,13 @@
 </div>
 
 <div id="page-home" class="container">
-    
+
     <div class="home">
         <div class="calendar" antix-calendar selected="selectedDate"
              ng-class="{active:isActive}"
              ng-click="isActive=!isActive"></div>
-        
+
         <div class="calendar-entries">
-            
-            <h2 class="title">{{selectedDate | date:'mediumDate'}}</h2>
-            <div class="">
-                <div examinations-list="examinations">List of Examinations</div>
-            </div>
 
             <div class="list-group">
                 <a href="#/examinations/" class="list-group-item">
@@ -33,6 +28,11 @@
                     <span class="fa fa-user"></span>
                     Patients
                 </a>
+            </div>
+
+            <h4 class="title">{{searchTitle}}</h4>
+            <div class="">
+                <div examinations-list="examinations">List of Examinations</div>
             </div>
         </div>
     </div>

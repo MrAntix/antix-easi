@@ -78,6 +78,8 @@ namespace Antix.EASI.Api.Examinations.Models
             return new LookupExaminationsModel
             {
                 Text = contract.Text,
+                DateFrom = contract.DateFrom,
+                DateTo = contract.DateTo,
                 Index = contract.Index,
                 Count = contract.Count
             };

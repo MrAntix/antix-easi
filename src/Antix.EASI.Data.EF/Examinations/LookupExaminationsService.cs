@@ -47,10 +47,22 @@ namespace Antix.EASI.Data.EF.Examinations
                 //    .Match(model.Text, _keywordProcessor);
             }
 
+            if (model.DateFrom.HasValue)
+            {
+                query = query
+                    .Where(d => d.TakenOn >= model.DateFrom);
+            }
+
+            if (model.DateTo.HasValue)
+            {
+                query = query
+                    .Where(d => d.TakenOn < model.DateTo);
+            }
+
             var projected = query
                 .Select(d => projectInfo.Invoke(d));
 
-            projected = projected.OrderByDescending(d => d.TakenOn)
+            projected = projected.OrderBy(d => d.TakenOn)
                 .Skip(model.Index).Take(model.Count);
 
             var result = await projected

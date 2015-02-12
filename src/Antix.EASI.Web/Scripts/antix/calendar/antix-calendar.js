@@ -2,7 +2,7 @@
 
 angular.module('antix.calendar', [
         'antix.calendar.services'
-    ])
+])
     .constant('AntixCalendarEvents',
     {
         Selected: 'antix-calendar-event:selected'
@@ -11,7 +11,7 @@ angular.module('antix.calendar', [
     [
         '$log', '$timeout', '$document',
         'AntixCalendarService', 'AntixCalendarEvents',
-        function(
+        function (
             $log, $timeout, $document,
             CalendarService, CalendarEvents) {
 
@@ -24,18 +24,18 @@ angular.module('antix.calendar', [
                     selected: '='
                 },
                 templateUrl: '/scripts/antix/calendar/antix-calendar.html',
-                link: function(scope, element) {
+                link: function (scope, element) {
 
                     var containerDom = $document.prop('body'),
                         calendar = CalendarService.createCalendar(element, new Date()),
                         calendarInitialPadding = 2000,
                         cellHeight = 40,
                         monthOffset = -36,
-                        getMonthHeight = function(weeks) { return weeks * cellHeight + monthOffset; };
+                        getMonthHeight = function (weeks) { return weeks * cellHeight + monthOffset; };
 
                     scope.months = calendar.months;
 
-                    var reset = function() {
+                    var reset = function () {
                         $log.debug('antixCalendar.reset()');
 
                         var watchers = scope.$$watchers;
@@ -101,30 +101,33 @@ angular.module('antix.calendar', [
                     var resetId;
 
                     angular.element(window)
-                        .on('scroll', function() {
+                        .on('scroll', function () {
 
                             if (resetId) {
                                 $timeout.cancel(resetId);
                                 resetId = null;
                             }
 
-                            resetId = $timeout(function() {
+                            resetId = $timeout(function () {
                                 scope.$evalAsync(reset);
                             }, 150);
                         });
 
                     scope.$evalAsync(reset);
-                    $timeout(function() {
+                    $timeout(function () {
                         containerDom.scrollTop = calendarInitialPadding + 200;
                     });
 
-                    var raiseSelected = function() {
+                    var raiseSelected = function () {
+                        var dateTo = CalendarService.addDays(scope.selected, 1);
+
                         scope.$root.$broadcast(CalendarEvents.Selected, {
-                            dates: [scope.selected]
+                            dateFrom: scope.selected,
+                            dateTo: dateTo
                         });
                     };
 
-                    element.on('mousedown', function(e) {
+                    element.on('mousedown', function (e) {
                         var targetElement = angular.element(e.target.parentElement);
 
                         scope.selected = targetElement.data().$scope.cell.date;

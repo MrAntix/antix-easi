@@ -1,10 +1,14 @@
-﻿namespace Antix.EASI.Domain.Examinations.Models
+﻿using System;
+
+namespace Antix.EASI.Domain.Examinations.Models
 {
     public class LookupExaminationsModel
     {
         int _count;
 
         public string Text { get; set; }
+        public DateTimeOffset? DateFrom { get; set; }
+        public DateTimeOffset? DateTo { get; set; }
 
         public int Index { get; set; }
 
