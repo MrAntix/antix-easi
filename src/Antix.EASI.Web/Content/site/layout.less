@@ -86,9 +86,11 @@ input {
         background-color: @page-content-color;
 
         .panel-heading {
-            border: none;
-            background-color: @page-content-color;
-
+            #gradient.horizontal(@page-content-color, darken(@page-content-color,5%));
+        
+            a:hover{
+                text-decoration:none;
+            }    
             > .btn-group .btn {
                 border: none;
             }

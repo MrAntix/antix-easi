@@ -8,15 +8,17 @@
                 </a>
             </div>
             <h4 class="panel-title">
-                <span class="fa fa-clipboard"></span>
-                {{model | examinationTitle}}
+                <a ui-sref="examinations-edit({id:model.id})">
+                    <span class="fa fa-clipboard"></span>
+                    {{model | examinationTitle}}
+                </a>
             </h4>
         </div>
         <div class="panel-body">
             <a ui-sref="examinations-edit({id:model.id})">
                 <span examination-eric
-                     ng-model="eric"
-                     class="examination-eric"></span>
+                      ng-model="eric"
+                      class="examination-eric"></span>
             </a>
 
             <div class="examinations-list-item-details">
