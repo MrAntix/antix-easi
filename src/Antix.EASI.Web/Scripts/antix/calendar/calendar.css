@@ -1,4 +1,13 @@
-﻿.calendar .calendar-month {
+﻿.calendar {
+  overflow: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overflow: -moz-scrollbars-none;
+}
+.calendar::-webkit-scrollbar {
+  display: none;
+}
+.calendar .calendar-month {
   pointer-events: none;
   position: relative;
   overflow: hidden;

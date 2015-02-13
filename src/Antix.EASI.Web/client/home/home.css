@@ -5,17 +5,12 @@
   color: #eee;
 }
 #page-home .home .calendar {
-  float: left;
-  position: relative;
-  z-index: 1;
-}
-#page-home .home .calendar-entries {
   position: fixed;
   top: 79px;
   bottom: 0;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  z-index: 0;
+  z-index: 1;
+}
+#page-home .home .calendar-entries {
   padding-top: 10px;
   padding-left: 320px;
   padding-right: 15px;

@@ -12,6 +12,15 @@
     @highlight-color: #fc6;
     @highlight-color-text: #444;
 
+    overflow: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overflow: -moz-scrollbars-none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
     .calendar-month {
         pointer-events: none;
         position: relative;
@@ -77,8 +86,8 @@
 
         .calendar-day:hover div {
             box-shadow: 0 0 10px rgba(0,0,0,.4);
-            position:relative;
-            z-index:100;
+            position: relative;
+            z-index: 100;
         }
 
         .calendar-day-selected div {

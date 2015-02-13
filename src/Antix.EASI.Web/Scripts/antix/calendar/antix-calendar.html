@@ -1,13 +1,14 @@
 ﻿<div class="calendar">
-    <div class="calendar-month"
-         ng-repeat="month in months track by month.date"
-         ng-class="{alt:month.date.getMonth() % 2}">
-        <div class="month-title">
-            <strong>{{month.date | date:'MMMM'}}</strong>
-            <small>{{month.date | date:'yyyy'}}</small>
-        </div>
-        <div class="calendar-cell"
-             ng-class="{
+    <div class="calendar-inner">
+        <div class="calendar-month"
+             ng-repeat="month in months track by month.date"
+             ng-class="{alt:month.date.getMonth() % 2}">
+            <div class="month-title">
+                <strong>{{month.date | date:'MMMM'}}</strong>
+                <small>{{month.date | date:'yyyy'}}</small>
+            </div>
+            <div class="calendar-cell"
+                 ng-class="{
                     'calendar-day': cell.date,
                     'calendar-day-first': cell.isFirst,
                     'calendar-day-first-day': cell.isFirstDay,
@@ -22,8 +23,9 @@
                     'calendar-day-weekend': cell.isWeekend,
                     'calendar-day-today': cell.isToday,
                     'calendar-day-selected': cell.is(selected) }"
-             ng-repeat="cell in month.cells">
-            <div>{{cell.date.getDate()}}</div>
+                 ng-repeat="cell in month.cells">
+                <div>{{cell.date.getDate()}}</div>
+            </div>
         </div>
     </div>
 </div>
