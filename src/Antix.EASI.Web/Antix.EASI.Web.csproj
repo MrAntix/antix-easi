@@ -274,6 +274,8 @@
     </Content>
     <Content Include="Scripts\antix\form\confirm\antix-form-confirm.html" />
     <Content Include="Scripts\antix\form\confirm\antix-form-confirm.js" />
+    <Content Include="Scripts\antix\form\datetime\antix-form-datetime.html" />
+    <Content Include="Scripts\antix\form\datetime\antix-form-datetime.js" />
     <Content Include="Scripts\antix\status\antix-status.css" />
     <Content Include="Scripts\antix\status\antix-status.js" />
     <Content Include="Scripts\antix\status\antix-status.min.css" />

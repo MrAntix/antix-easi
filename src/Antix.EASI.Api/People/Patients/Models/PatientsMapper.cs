@@ -16,7 +16,9 @@ namespace Antix.EASI.Api.People.Patients.Models
             {
                 Id = model.Id,
                 Name = model.Name,
-                Identifier = model.Identifier
+                Identifier = model.Identifier,
+                DateOfBirth = model.DateOfBirth,
+                Gender = model.Gender
             };
         }
 
@@ -37,7 +39,9 @@ namespace Antix.EASI.Api.People.Patients.Models
             {
                 Id = model.Id,
                 Identifier = model.Identifier,
-                Person = model.Person.ToContract()
+                Person = model.Person.ToContract(),
+                DateOfBirth = model.DateOfBirth,
+                Gender = model.Gender
             };
         }
 
@@ -62,7 +66,9 @@ namespace Antix.EASI.Api.People.Patients.Models
             return new CreatePatientModel
             {
                 Identifier = contract.Identifier,
-                Name = contract.Name
+                Name = contract.Name,
+                DateOfBirth = contract.DateOfBirth,
+                Gender = contract.Gender
             };
         }
 
@@ -75,7 +81,9 @@ namespace Antix.EASI.Api.People.Patients.Models
             {
                 Id = contract.Id,
                 Identifier = contract.Identifier,
-                Person = contract.Person.ToModel()
+                Person = contract.Person.ToModel(),
+                DateOfBirth = contract.DateOfBirth,
+                Gender = contract.Gender
             };
         }
     }

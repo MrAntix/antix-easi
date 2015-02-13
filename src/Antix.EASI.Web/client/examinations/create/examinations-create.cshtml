@@ -21,17 +21,10 @@
             <div class="examination-date">
                 <div class="form-group">
                     <label class="control-label">Date and Time</label>
-                    <div class="input-group">
-                        <input class="form-control" placeholder="(date of examination)"
-                               datepicker-popup="medium" is-open="opened"
-                               name="takenOn"
-                               ng-model="data.takenOn"
-                               ng-required="true" />
-                        <span class="input-group-btn">
-                            <a href class="btn btn-default" ng-click="opened=true">
-                                <span class="fa fa-calendar"></span>
-                            </a>
-                        </span>
+                    <div a-datetime
+                         name="takenOn"
+                         ng-model="data.takenOn"
+                         ng-required="true">
                     </div>
 
                     <div class="errors"
@@ -81,5 +74,4 @@
             </div>
         </div>
     </form>
-
 </div>

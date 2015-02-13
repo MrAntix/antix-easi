@@ -18,7 +18,9 @@ namespace Antix.EASI.Data.EF.People.Patients.Models
                 Person = new PersonData
                 {
                     Name = model.Name
-                }
+                },
+                DateOfBirth = model.DateOfBirth,
+                Gender = model.Gender
             };
         }
 
@@ -27,6 +29,8 @@ namespace Antix.EASI.Data.EF.People.Patients.Models
         {
             data.Identifier = model.Identifier;
             data.Person.Map(model.Person);
+            data.DateOfBirth = model.DateOfBirth;
+            data.Gender = model.Gender;
         }
     }
 }

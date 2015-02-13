@@ -13,5 +13,7 @@ namespace Antix.EASI.Domain.People.Patients.Models
         public Guid Id { get; set; }
         public string Identifier { get; set; }
         public UpdatePersonModel Person { get; set; }
+        public DateTimeOffset DateOfBirth { get; set; }
+        public Genders Gender { get; set; }
     }
 }

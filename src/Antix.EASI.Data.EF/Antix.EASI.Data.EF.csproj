@@ -65,6 +65,10 @@
     <Compile Include="Migrations\201502032039118_init.Designer.cs">
       <DependentUpon>201502032039118_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201502131448245_Add_Patient_DoB_And_Gender.cs" />
+    <Compile Include="Migrations\201502131448245_Add_Patient_DoB_And_Gender.Designer.cs">
+      <DependentUpon>201502131448245_Add_Patient_DoB_And_Gender.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="People\Examiners\CreateExaminerDataService.cs" />
     <Compile Include="People\Examiners\DeleteExaminerDataService.cs" />
@@ -115,6 +119,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201502032039118_init.resx">
       <DependentUpon>201502032039118_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502131448245_Add_Patient_DoB_And_Gender.resx">
+      <DependentUpon>201502131448245_Add_Patient_DoB_And_Gender.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

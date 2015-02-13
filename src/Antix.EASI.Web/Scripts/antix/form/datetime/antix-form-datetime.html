@@ -1,0 +1,13 @@
+﻿<div class="input-group">
+    <input class="form-control" type="text"
+           datepicker-popup="{{format||'medium'}}" datepicker-options="options" is-open="opened"
+           show-button-bar='false'
+           ng-model="model"
+           ng-required="{{required}}" />
+    <span class="input-group-btn">
+        <a href class="btn btn-default"
+           ng-click="toggle($event)">
+            <span class="fa fa-calendar"></span>
+        </a>
+    </span>
+</div>

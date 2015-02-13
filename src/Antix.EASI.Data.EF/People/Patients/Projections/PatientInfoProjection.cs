@@ -15,7 +15,9 @@ namespace Antix.EASI.Data.EF.People.Patients.Projections
             {
                 Id = d.Id,
                 Name = d.Person.Name,
-                Identifier = d.Identifier
+                Identifier = d.Identifier,
+                DateOfBirth = d.DateOfBirth,
+                Gender = d.Gender
             };
         }
     }

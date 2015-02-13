@@ -4,6 +4,7 @@ using System.Data.Entity.ModelConfiguration;
 using Antix.Data.Keywords.EF.Entities;
 using Antix.EASI.Data.EF.Examinations.Models;
 using Antix.EASI.Data.EF.People.Models;
+using Antix.EASI.Domain.People.Models;
 
 namespace Antix.EASI.Data.EF.People.Patients.Models
 {
@@ -17,6 +18,8 @@ namespace Antix.EASI.Data.EF.People.Patients.Models
         public Guid Id { get; set; }
         public string Identifier { get; set; }
         public PersonData Person { get; set; }
+        public DateTimeOffset DateOfBirth { get; set; }
+        public Genders Gender { get; set; }
 
         public ICollection<ExaminationData> Examinations { get; set; }
 

@@ -2,6 +2,7 @@
 
 angular.module('antix.form', [
     'ui.bootstrap',
+    'antix.form.datetime',
     'antix.form.confirm',
     'antix.form.clearButton',
     'ngSanitize'

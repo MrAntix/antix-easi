@@ -23,9 +23,34 @@
                name="identifier"
                ng-model="data.identifier" />
         <div class="errors"
-             ng-messages="form.name.$errors"
+             ng-messages="form.identifier.$errors"
              ng-if="form.identifier.$invalid">
             <div ng-message="not-null">please enter an identifier</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Date of Birth</label>
+        <div a-datetime format="mediumDate"
+             name="dateOfBirth"
+             ng-model="data.dateOfBirth"></div>
+        <div class="errors"
+             ng-messages="form.dateOfBirth.$errors"
+             ng-if="form.dateOfBirth.$invalid">
+            <div ng-message="not-null">please enter a date of birth</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Gender</label>
+        <div>
+            <div class="btn-group">
+                <label class="btn btn-default" ng-model="data.gender" btn-radio="0">Male</label>
+                <label class="btn btn-default" ng-model="data.gender" btn-radio="1">Female</label>
+            </div>
+        </div>
+        <div class="errors"
+             ng-messages="form.gender.$errors"
+             ng-if="form.gender.$invalid">
+            <div ng-message="not-null">please choose a gender</div>
         </div>
     </div>
 </form>

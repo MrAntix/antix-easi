@@ -105,4 +105,15 @@
   border-style: solid;
   border-color: #a94442 transparent;
 }
+[datepicker-popup-wrap] {
+  left: auto!important;
+  right: 0;
+}
+[datepicker-popup-wrap] .active .text-info {
+  color: #fff;
+}
+[datepicker-popup-wrap]:focus,
+[datepicker-popup-wrap] table {
+  outline: none;
+}
 /*# sourceMappingURL=form.css.map */
