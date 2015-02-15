@@ -5,7 +5,8 @@ angular.module('antix.easi.patients', [
         'antix.easi.patients.index',
         'antix.easi.patients.select',
         'antix.easi.patients.create',
-        'antix.easi.patients.edit'
+        'antix.easi.patients.edit',
+        'antix.easi.patients.info'
     ])
     .config([
         '$stateProvider',
@@ -37,8 +38,8 @@ angular.module('antix.easi.patients', [
         Deleted: 'patient-event:deleted'
     })
     .filter('patientName', [
-        function() {
-            return function(patient) {
+        function () {
+            return function (patient) {
                 return patient.name + ' (' + patient.identifier + ')';
             };
         }

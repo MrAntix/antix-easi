@@ -1,0 +1,12 @@
+﻿<div>
+    <p>
+        <a ui-sref="patients-edit({id:model.patient.id})">
+            <span class="fa fa-user"></span>
+            {{model | patientName}}
+        </a>
+    </p>
+    <p>
+        {{model.gender===0?'Male':'Female'}} 
+        {{model | personAge}}
+    </p>
+</div>

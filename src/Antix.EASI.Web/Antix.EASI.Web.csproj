@@ -178,6 +178,8 @@
     <Content Include="client\patients\create\patients-create.js" />
     <Content Include="client\patients\edit\patients-edit.js" />
     <Content Include="client\patients\index\patients-index.js" />
+    <Content Include="client\patients\info\patients-info.html" />
+    <Content Include="client\patients\info\patients-info.js" />
     <Content Include="client\patients\list\patients-list-directive.js" />
     <Content Include="client\patients\list\patients-list.css">
       <DependentUpon>patients-list.less</DependentUpon>

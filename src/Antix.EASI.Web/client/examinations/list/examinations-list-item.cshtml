@@ -22,10 +22,13 @@
             </a>
 
             <div class="examinations-list-item-details">
-                <label>Patient</label>
-                <a ui-sref="patients-edit({id:model.patient.id})">{{model.patient | patientName}}</a>
-                <label>Examiner</label>
-                <a ui-sref="examiners-edit({id:model.examiner.id})">{{model.examiner | examinerName}}</a>
+                <p patient-info="model.patient"></p>
+                <p>
+                    <a ui-sref="examiners-edit({id:model.examiner.id})">
+                        <span class="fa fa-user-md"></span>
+                        {{model.examiner | examinerName}}
+                    </a>
+                </p>
                 <label>Notes</label>
                 <div ng-bind-html="model.notes | textToHtml"></div>
             </div>

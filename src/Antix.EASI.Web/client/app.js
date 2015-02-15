@@ -102,4 +102,11 @@ app
 
             $httpProvider.interceptors.push('appHttpInterceptor');
         }
+    ])
+    .filter('personAge', [
+        function () {
+            return function (model) {
+                return new Date().getFullYear() - new Date(model.dateOfBirth).getFullYear();
+            };
+        }
     ]);
