@@ -3,17 +3,24 @@
         <div class="panel-heading">
             <div class="btn-group">
                 <a class="editButton btn btn-default"
-                   href="#/patients/{{::item.id}}/edit">
+                   href="#/patients/{{::model.id}}/edit>
                     <span class="fa fa-ellipsis-h"></span>
                 </a>
             </div>
             <h4 class="panel-title">
                 <span class="fa fa-user"></span>
-                {{item | patientName}}
+                {{model | patientName}}
             </h4>
         </div>
         <div class="panel-body">
-
+            <p>
+                {{model.gender===0?'Male':'Female'}}
+                {{model | personAge}}
+            </p>
+            <p>
+                <label>Date of Birth</label>
+                <span>{{model.dateOfBirth | mediumDate}}</span>
+            </p>
         </div>
     </div>
 

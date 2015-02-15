@@ -17,7 +17,7 @@ angular.module('antix.easi.patients.list', [
                     replace: true,
                     templateUrl: 'patients/list/patients-list.cshtml',
                     scope: {
-                        'items': '=patientsList'
+                        'models': '=patientsList'
                     }
                 };
             }
@@ -36,7 +36,7 @@ angular.module('antix.easi.patients.list', [
                     replace: true,
                     templateUrl: 'patients/list/patients-list-item.cshtml',
                     scope: {
-                        'item': '=patientsListItem'
+                        'model': '=patientsListItem'
                     }
                 };
             }
