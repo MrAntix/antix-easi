@@ -18,7 +18,7 @@ angular.module('antix.easi.examinations.list', [
                     replace: true,
                     templateUrl: 'examinations/list/examinations-list.cshtml',
                     scope: {
-                        'items': '=examinationsList'
+                        'models': '=examinationsList'
                     }
                 };
             }

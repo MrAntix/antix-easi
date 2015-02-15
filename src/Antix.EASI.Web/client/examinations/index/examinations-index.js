@@ -23,8 +23,8 @@ angular.module('antix.easi.examinations.index', [
                     ExaminationsApi.search({
                             text: criteria.text
                         }).$promise
-                        .then(function(data) {
-                            $scope.examinations = data;
+                        .then(function(response) {
+                            $scope.model = response;
                         });
                 };
 
